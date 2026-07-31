@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classes | Mindful Shapes Yoga by Amogh Shinde</title>
+  <meta name="description"
+    content="Explore all yoga courses at Mindful Shapes Yoga — regular classes, teacher training, breathwork workshops, volunteer programs, and our yoga blog, by Amogh Shinde.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./assets/styles.css">
+  <style>
+    /* ====== COURSES PAGE HERO ====== */
+    .courses-hero {
+      padding: clamp(5rem, 10vw, 8rem) 0 clamp(3rem, 6vw, 5rem);
+      background: var(--color-surface);
+      border-bottom: 1px solid var(--color-border);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .courses-hero::before {
+      content: 'ॐ';
+      position: absolute;
+      right: -2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: clamp(12rem, 25vw, 22rem);
+      font-family: serif;
+      color: var(--color-primary);
+      opacity: .04;
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .courses-hero-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .courses-hero h1 {
+      font-size: clamp(2.4rem, 5.5vw, 4.5rem);
+      line-height: 1.04;
+      margin: .9rem 0 1.25rem;
+      max-width: 18ch;
+    }
+
+    .courses-hero h1 em {
+      font-style: italic;
+      color: var(--color-primary);
+    }
+
+    .courses-hero-sub {
+      font-size: clamp(.95rem, 1.8vw, 1.15rem);
+      max-width: 52ch;
+      line-height: 1.75;
+      color: var(--color-text-muted);
+      margin-bottom: 2rem;
+    }
+
+    .hero-trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      align-items: center;
+      margin-top: 2.5rem;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: .55rem;
+      font-size: .83rem;
+      font-weight: 700;
+      color: var(--color-text-muted);
+    }
+
+    .trust-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      flex-shrink: 0;
+    }
+
+    /* ====== FILTER TABS ====== */
+    .filter-section {
+      padding: 2rem 0 0;
+      background: var(--color-bg);
+      position: sticky;
+      top: 68px;
+      z-index: 30;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .filter-tabs {
+      display: flex;
+      gap: .5rem;
+      overflow-x: auto;
+      padding-bottom: .1rem;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .filter-tabs::-webkit-scrollbar {
+      display: none;
+    }
+
+    .filter-tab {
+      flex-shrink: 0;
+      padding: .65rem 1.35rem;
+      border-radius: 999px;
+      font-size: .82rem;
+      font-weight: 800;
+      letter-spacing: .04em;
+      border: 1px solid var(--color-border);
+      background: var(--color-surface);
+      color: var(--color-text-muted);
+      cursor: pointer;
+      transition: all .2s ease;
+      white-space: nowrap;
+      margin-bottom: 1rem;
+    }
+
+    .filter-tab:hover,
+    .filter-tab.active {
+      background: var(--color-primary);
+      color: #fff;
+      border-color: var(--color-primary);
+    }
+
+    /* ====== COURSES GRID SECTION ====== */
+    .all-courses-section {
+      padding: clamp(3rem, 6vw, 5rem) 0 clamp(4rem, 8vw, 6rem);
+    }
+
+    .courses-section-label {
+      margin-bottom: 2rem;
+    }
+
+    .courses-section-label h2 {
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      margin: .5rem 0 .7rem;
+    }
+
+    .courses-section-label p {
+      font-size: .95rem;
+      max-width: 60ch;
+    }
+
+    /* ====== COURSE CARD (REDESIGNED) ====== */
+    .pg-course-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.75rem;
+      margin-bottom: 3rem;
+    }
+
+    /* Solo 3rd card (no 4th card to pair with) centers itself at the same
+       width as the two cards above it, instead of stretching full-width
+       or sitting left-aligned with empty space beside it. */
+    .pg-course-card-centered {
+      grid-column: 1 / -1;
+      justify-self: center;
+      width: 100%;
+      max-width: calc(50% - .875rem);
+    }
+
+    .pg-course-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow .25s ease, transform .25s ease;
+    }
+
+    .pg-course-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-4px);
+    }
+
+    .pg-course-img {
+      aspect-ratio: 16/10;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .pg-course-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .45s ease;
+    }
+
+    .pg-course-card:hover .pg-course-img img {
+      transform: scale(1.06);
+    }
+
+    .pg-course-tag {
+      z-index: 2;
+    }
+
+    /* ===== AUTO-ROTATING PROGRAM THUMBNAILS ===== */
+    /* Two images are stacked and crossfaded on a timer (see script near the
+       end of the page). Falls back gracefully to a single static <img> for
+       no-JS environments via <noscript>. */
+    .fc-thumb-slide {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      opacity: 0;
+      transition: opacity 1s ease, transform .45s ease;
+    }
+
+    .fc-thumb-slide.is-active {
+      opacity: 1;
+    }
+
+    .pg-course-card:hover .fc-thumb-slide.is-active {
+      transform: scale(1.06);
+    }
+
+    .pg-course-tag {
+      position: absolute;
+      top: .9rem;
+      left: .9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      padding: .38rem .85rem;
+      border-radius: 999px;
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      backdrop-filter: blur(8px);
+    }
+
+    .tag-warm {
+      background: rgba(165, 90, 42, .88);
+      color: #fff9f2;
+    }
+
+    .tag-green {
+      background: rgba(63, 122, 76, .88);
+      color: #f0fdf4;
+    }
+
+    .tag-gold {
+      background: rgba(180, 130, 50, .9);
+      color: #fffbf0;
+    }
+
+    .tag-blue {
+      background: rgba(55, 90, 140, .88);
+      color: #f0f6ff;
+    }
+
+    .pg-course-body {
+      padding: 1.4rem 1.5rem 1.75rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      gap: .75rem;
+    }
+
+    .pg-course-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .45rem;
+      margin-bottom: .1rem;
+    }
+
+    .pg-meta-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: .28rem .65rem;
+      border-radius: 999px;
+      background: var(--color-primary-highlight);
+      color: var(--color-primary);
+      font-size: .7rem;
+      font-weight: 800;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .pg-course-body h3 {
+      font-size: clamp(1.3rem, 2.2vw, 1.65rem);
+      line-height: 1.15;
+      margin: 0;
+    }
+
+    .pg-course-body>p {
+      font-size: .9rem;
+      line-height: 1.7;
+      color: var(--color-text-muted);
+      margin: 0;
+    }
+
+    .pg-course-details {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .45rem;
+      padding: .85rem 1rem;
+      background: var(--color-surface-2);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      margin: .25rem 0;
+    }
+
+    .pg-course-details li {
+      font-size: .82rem;
+      color: var(--color-text-muted);
+      display: flex;
+      align-items: baseline;
+      gap: .5rem;
+    }
+
+    .pg-course-details li strong {
+      color: var(--color-text);
+      font-weight: 700;
+      min-width: 5.5rem;
+      flex-shrink: 0;
+    }
+
+    .pg-course-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: .75rem;
+      padding-top: .5rem;
+      border-top: 1px solid var(--color-border);
+      margin-top: auto;
+      flex-wrap: wrap;
+    }
+
+    .pg-price {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      color: var(--color-text);
+      line-height: 1;
+    }
+
+    .pg-price small {
+      font-family: var(--font-body);
+      font-size: .72rem;
+      color: var(--color-text-muted);
+      font-weight: 600;
+      margin-left: .2rem;
+    }
+
+    .pg-price-free {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      color: var(--color-success);
+      line-height: 1;
+    }
+
+    .btn-enroll {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      padding: .7rem 1.35rem;
+      border-radius: 999px;
+      font-size: .82rem;
+      font-weight: 800;
+      background: var(--color-primary);
+      color: #fff9f2;
+      transition: background .2s, transform .2s;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .btn-enroll:hover {
+      background: var(--color-primary-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-details {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      padding: .7rem 1.2rem;
+      border-radius: 999px;
+      font-size: .82rem;
+      font-weight: 800;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      color: var(--color-text-muted);
+      transition: all .2s;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .btn-details:hover {
+      background: var(--color-surface-2);
+      color: var(--color-text);
+    }
+
+    .pg-course-btns {
+      display: flex;
+      gap: .6rem;
+      flex-wrap: wrap;
+    }
+
+    /* ====== FEATURED / WIDE CARD ====== */
+    .pg-course-card.wide {
+      grid-column: span 2;
+      flex-direction: row;
+    }
+
+    .pg-course-card.wide .pg-course-img {
+      width: 46%;
+      flex-shrink: 0;
+      aspect-ratio: auto;
+      min-height: 280px;
+    }
+
+    .pg-course-card.wide .pg-course-body {
+      padding: 2rem 2.25rem 2rem 1.75rem;
+    }
+
+    /* ====== CTA STRIP ====== */
+    .courses-cta-strip {
+      background: linear-gradient(135deg, #1a0f06 0%, #2d1a09 50%, #1a0f06 100%);
+      padding: clamp(3.5rem, 7vw, 5.5rem) 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .courses-cta-strip::before {
+      content: 'ॐ';
+      position: absolute;
+      right: 5%;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 18rem;
+      font-family: serif;
+      color: rgba(221, 184, 120, .06);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .courses-cta-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .courses-cta-inner h2 {
+      font-size: clamp(1.8rem, 3.5vw, 3rem);
+      color: #fff9f2;
+      line-height: 1.1;
+      margin-bottom: .75rem;
+    }
+
+    .courses-cta-inner p {
+      color: rgba(255, 248, 235, .6);
+      font-size: 1rem;
+      max-width: 52ch;
+    }
+
+    .courses-cta-btns {
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+      align-items: flex-start;
+    }
+
+    .btn-cta-gold {
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      padding: .95rem 2rem;
+      border-radius: 999px;
+      font-size: .95rem;
+      font-weight: 800;
+      background: #ddb878;
+      color: #1a1008;
+      transition: background .2s, transform .2s;
+      white-space: nowrap;
+    }
+
+    .btn-cta-gold:hover {
+      background: #ebca94;
+      transform: translateY(-2px);
+    }
+
+    .btn-cta-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      padding: .95rem 2rem;
+      border-radius: 999px;
+      font-size: .95rem;
+      font-weight: 800;
+      background: rgba(255, 255, 255, .08);
+      border: 1px solid rgba(255, 255, 255, .2);
+      color: rgba(255, 248, 235, .85);
+      transition: background .2s, transform .2s;
+      white-space: nowrap;
+    }
+
+    .btn-cta-ghost:hover {
+      background: rgba(255, 255, 255, .14);
+      transform: translateY(-2px);
+    }
+
+    /* ====== FOOTER ====== */
+    .pg-footer {
+      padding: clamp(3rem, 6vw, 5rem) 0 2rem;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .pg-footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .pg-footer-brand strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: var(--color-text);
+      margin-bottom: .35rem;
+    }
+
+    .pg-footer-brand p {
+      font-size: .88rem;
+      line-height: 1.7;
+      max-width: 34ch;
+    }
+
+    .pg-footer-col h4 {
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--color-text-faint);
+      margin-bottom: 1rem;
+    }
+
+    .pg-footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .6rem;
+    }
+
+    .pg-footer-links a {
+      font-size: .9rem;
+      color: var(--color-text-muted);
+      font-weight: 600;
+      transition: color .2s;
+    }
+
+    .pg-footer-links a:hover {
+      color: var(--color-primary);
+    }
+
+    .pg-footer-bottom {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--color-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .pg-footer-bottom p {
+      font-size: .8rem;
+      color: var(--color-text-faint);
+    }
+
+    /* ====== RESPONSIVE ====== */
+    @media (max-width: 1080px) {
+      .pg-course-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .pg-course-card.wide {
+        grid-column: span 2;
+      }
+
+      .courses-cta-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .courses-cta-btns {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      .pg-footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .pg-footer-brand {
+        grid-column: span 2;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .pg-course-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pg-course-card-centered {
+        grid-column: auto;
+        justify-self: stretch;
+        max-width: none;
+      }
+
+      .pg-course-card.wide {
+        grid-column: span 1;
+        flex-direction: column;
+      }
+
+      .pg-course-card.wide .pg-course-img {
+        width: 100%;
+        min-height: 220px;
+        aspect-ratio: 16/9;
+      }
+
+      .filter-section {
+        top: 60px;
+      }
+
+      .courses-cta-btns {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .btn-cta-gold,
+      .btn-cta-ghost {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .pg-footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pg-footer-brand {
+        grid-column: span 1;
+      }
+
+      .pg-footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .pg-course-footer {
+        gap: .6rem;
+      }
+
+      .btn-enroll,
+      .btn-details {
+        flex: 1;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .courses-hero h1 {
+        max-width: none;
+      }
+
+      .hero-trust-row {
+        gap: .85rem;
+      }
+    }
+
+    .pg-course-grid.grid-filtered .pg-course-card.wide {
+      grid-column: span 1;
+      flex-direction: column;
+    }
+
+    .pg-course-grid.grid-filtered .pg-course-card.wide .pg-course-img {
+      width: 100%;
+      min-height: 220px;
+      aspect-ratio: 16/9;
+    }
+
+    .pg-course-grid.grid-filtered .pg-course-card.wide .pg-course-body {
+      padding: 1.4rem 1.5rem 1.75rem;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <audio id="bgMusic" src="./music/bg.mp3" loop preload="auto"></audio>
+  <script>
+    (function () {
+      var audio = document.getElementById('bgMusic');
+      var KEY = 'msyBgMusicTime';
+
+      var saved = parseFloat(localStorage.getItem(KEY));
+      if (!isNaN(saved) && isFinite(saved)) {
+        audio.currentTime = saved;
+      }
+
+      function startPlayback() {
+        var p = audio.play();
+        if (p !== undefined) {
+          p.catch(function () {
+            var resume = function () {
+              audio.play();
+              document.removeEventListener('click', resume);
+              document.removeEventListener('touchstart', resume);
+              document.removeEventListener('keydown', resume);
+            };
+            document.addEventListener('click', resume);
+            document.addEventListener('touchstart', resume);
+            document.addEventListener('keydown', resume);
+          });
+        }
+      }
+      startPlayback();
+
+      setInterval(function () {
+        if (!audio.paused) localStorage.setItem(KEY, audio.currentTime);
+      }, 1000);
+
+      window.addEventListener('beforeunload', function () {
+        localStorage.setItem(KEY, audio.currentTime);
+      });
+    })();
+  </script>
+  <audio id="bgMusic" src="./music/bg.mp3" loop preload="auto"></audio>
+  <script>
+    (function () {
+      var audio = document.getElementById('bgMusic');
+      var KEY = 'msyBgMusicTime';
+
+      var saved = parseFloat(localStorage.getItem(KEY));
+      if (!isNaN(saved) && isFinite(saved)) {
+        audio.currentTime = saved;
+      }
+
+      function startPlayback() {
+        var p = audio.play();
+        if (p !== undefined) {
+          p.catch(function () {
+            var resume = function () {
+              audio.play();
+              document.removeEventListener('click', resume);
+              document.removeEventListener('touchstart', resume);
+              document.removeEventListener('keydown', resume);
+            };
+            document.addEventListener('click', resume);
+            document.addEventListener('touchstart', resume);
+            document.addEventListener('keydown', resume);
+          });
+        }
+      }
+      startPlayback();
+
+      setInterval(function () {
+        if (!audio.paused) localStorage.setItem(KEY, audio.currentTime);
+      }, 1000);
+
+      window.addEventListener('beforeunload', function () {
+        localStorage.setItem(KEY, audio.currentTime);
+      });
+    })();
+  </script>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="./index.html">
+        <span class="brand-mark"
+          style="background:none;border-radius:0;padding:0;box-shadow:none;width:auto;height:52px;display:inline-flex;align-items:center;justify-content:center;">
+          <img src="./photo/logo.png" alt="Mindful Shapes Yoga logo" style="width:auto;height:100%;object-fit:contain">
+        </span>
+        <span class="brand-copy">
+          <strong>Mindful Shapes Yoga</strong>
+          <span>Yoga Ashram by Amogh Shinde</span>
+        </span>
+      </a>
+      <div class="nav-wrap">
+        <nav>
+          <button class="menu-toggle" aria-label="Toggle navigation" data-menu-toggle>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+          </button>
+          <div class="nav-links" data-nav>
+            <a href="./index.html">Home</a>
+            <a href="./courses.html"class="active">Classes</a>
+            <a href="./teacher-training.html">Teacher Training</a>
+            <a href="./meet-the-gurus.html">Gurus</a>
+            <a href="./photo.html">Ashram</a>
+            <a href="./volunteer.html">Volunteer</a>
+            <a href="./blog.html">Blog</a>
+            <a href="./contact.html">Contact</a>
+          </div>
+        </nav>
+        <button class="theme-toggle" data-theme-toggle aria-label="Switch theme"></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="wa-strip">
+    <a href="https://wa.me/919004913827?text=Hi%20Amogh%20Sir%2C%20I%20have%20a%20question%20about%20the%20yoga%20programs%20at%20Mindful%20Shapes%20Yoga."
+      target="_blank" rel="noopener noreferrer">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+      </svg>
+      Have a question? WhatsApp Amogh Shinde directly — +91 90049 13827
+    </a>
+  </div>
+
+  <main id="main">
+
+    <!-- ====== PAGE HERO ====== -->
+    <section class="courses-hero">
+      <div class="container courses-hero-inner">
+        <div class="reveal">
+          <span class="eyebrow">All Programs — Mindful Shapes Yoga</span>
+          <h1>Every Path Begins with a <em>Single Step.</em></h1>
+          <p class="courses-hero-sub">Whether you are brand new to yoga, deepening your personal practice, or ready to
+            become a certified teacher — find the program that fits your life, your goals, and your journey.</p>
+          <div class="hero-trust-row">
+            <div class="trust-item"><span class="trust-dot"></span>Online &amp; On-Campus at Chiplun, Pedhambee</div>
+            <div class="trust-item"><span class="trust-dot"></span>English, Marathi, Hindi, Spanish &amp; French</div>
+            <div class="trust-item"><span class="trust-dot"></span>Led by Amogh Shinde</div>
+            <div class="trust-item"><span class="trust-dot"></span>Certified Programs</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== FILTER TABS ====== -->
+    <div class="filter-section" aria-label="Filter courses by category">
+      <div class="container">
+        <div class="filter-tabs" role="tablist">
+          <button class="filter-tab active" role="tab" data-filter="all">
+            All Classes
+          </button>
+
+          <a href="regular-classes-campus.html" class="filter-tab" role="tab">
+            Daily Yoga Classes - Campus
+          </a>
+
+          <a href="regular-classes-online.html" class="filter-tab" role="tab">
+            Daily Yoga Classes - Online
+          </a>
+
+          <a href="pranayama-workshop.html" class="filter-tab" role="tab">
+            Pranayama & Breathwork Classes
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====== ALL COURSES ====== -->
+    <section class="all-courses-section" aria-labelledby="courses-main-heading">
+      <div class="container">
+
+        <div class="courses-section-label reveal">
+          <span class="eyebrow">Our Programs</span>
+          <h2 id="courses-main-heading">Choose Your Yoga Journey</h2>
+          <p>Carefully designed programs covering every stage — from your first class to professional certification. All
+            taught with traditional ashram depth.</p>
+        </div>
+
+        <div class="pg-course-grid">
+
+          <!-- CARD 2 — Daily Yoga Classes -->
+          <article class="pg-course-card reveal" data-category="regular-classes">
+            <div class="pg-course-img">
+              <img src="./offline-classes/8.png" alt="Group yoga practice outdoors in a park on campus" loading="lazy">
+              <span class="pg-course-tag tag-warm">Regular Classes</span>
+            </div>
+            <div class="pg-course-body">
+              <div class="pg-course-meta">
+                <span class="pg-meta-badge">For Everyone</span>
+                <span class="pg-meta-badge">Monthly Batch</span>
+              </div>
+              <h3>Daily Yoga Classes - Campus</h3>
+              <p>Structured morning and evening on-campus yoga classes open to everyone — men, women, children,
+                seniors, office professionals, and returning learners. Every posture is offered with modifications so
+                beginners, intermediate, and advanced practitioners can all practice together with confidence.</p>
+              <ul class="pg-course-details">
+                <li><strong>Format:</strong> On-Campus</li>
+                <li><strong>Audience:</strong> Open to all — beginners, intermediate &amp; advanced</li>
+                <li><strong>Focus:</strong> Posture, breath, consistency &amp; mindful movement</li>
+              </ul>
+              <div class="pg-course-footer">
+                <div class="pg-price">₹ 8,400 <small>/12 classes</small></div>
+                <div class="pg-course-btns">
+                  <a class="btn-details" href="./regular-classes-campus.html">Learn More →</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- CARD 2b — Daily Yoga Classes Online -->
+          <article class="pg-course-card reveal" data-category="regular-classes">
+            <div class="pg-course-img">
+              <img src="./online-classes/6.png" alt="Group yoga practice outdoors in a park on campus" loading="lazy">
+                  loading="lazy"></noscript>
+              <span class="pg-course-tag tag-warm">Regular Classes</span>
+            </div>
+            <div class="pg-course-body">
+              <div class="pg-course-meta">
+                <span class="pg-meta-badge">For Everyone</span>
+                <span class="pg-meta-badge">Monthly Batch</span>
+              </div>
+              <h3>Daily Yoga Classes - Online</h3>
+              <p>Structured morning and evening live online yoga classes open to everyone — men, women, children,
+                seniors, office professionals, and returning learners. Every posture is offered with modifications so
+                beginners, intermediate, and advanced practitioners can all practice together with confidence.</p>
+              <ul class="pg-course-details">
+                <li><strong>Format:</strong> Online (Live via Video Call)</li>
+                <li><strong>Audience:</strong> Open to all — beginners, intermediate &amp; advanced</li>
+                <li><strong>Focus:</strong> Posture, breath, consistency &amp; mindful movement</li>
+              </ul>
+              <div class="pg-course-footer">
+                <div class="pg-price">₹ 3,600 <small>/12 classes</small></div>
+                <div class="pg-course-btns">
+                  <a class="btn-details" href="./regular-classes-online.html">Learn More →</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- CARD 3 — Pranayama Workshop -->
+          <article class="pg-course-card pg-course-card-centered reveal" data-category="workshops">
+            <div class="pg-course-img" data-rotator data-folder="./pranayama/" data-ext="png,jpg,jpeg,webp"
+              data-max="42" data-skip="19,38" data-alt="Seated pranayama and breathwork practice">
+              <noscript><img src="./courses/8.jpg" alt="Seated pranayama breathwork practice"
+                  loading="lazy"></noscript>
+              <span class="pg-course-tag tag-blue">Workshop</span>
+            </div>
+            <div class="pg-course-body">
+              <div class="pg-course-meta">
+                <span class="pg-meta-badge">Breathwork</span>
+                <span class="pg-meta-badge">Intensive</span>
+              </div>
+              <h3>Pranayama &amp; Breathwork Classes</h3>
+              <p>Master the science of breath — from Nadi Shodhana to Kapalabhati to Bhramari. Transform your energy,
+                calm your nervous system, and unlock deeper practice.</p>
+              <ul class="pg-course-details">
+                <li><strong>Format:</strong> Weekend intensive</li>
+                <li><strong>Audience:</strong> All levels welcome</li>
+                <li><strong>Focus:</strong> Breath mechanics, focus, calm</li>
+              </ul>
+              <div class="pg-course-footer">
+                <div class="pg-price">₹ 1,800 <small>/workshop</small></div>
+                <div class="pg-course-btns">
+                  <a class="btn-details" href="./pranayama-workshop.html">Learn More →</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== CTA STRIP ====== -->
+    <section class="courses-cta-strip" aria-label="Enroll today">
+      <div class="container">
+        <div class="courses-cta-inner reveal">
+          <div>
+            <span class="eyebrow" style="background:rgba(213,170,113,.15);color:#ddb878;border:none">Ready to
+              Begin?</span>
+            <h2>Your transformation starts with one enrollment.</h2>
+            <p>Join hundreds of students who have discovered the depth, discipline, and peace that Mindful Shapes Yoga
+              offers. Amogh Shinde is waiting to guide you.</p>
+          </div>
+          <div class="courses-cta-btns">
+
+            <a class="btn-cta-ghost"
+              href="https://wa.me/919004913827?text=Hi%20Amogh%20Sir%2C%20I%20have%20a%20question%20about%20the%20yoga%20programs%20at%20Mindful%20Shapes%20Yoga."
+              target="_blank" rel="noopener noreferrer">Ask a Question</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="pg-footer">
+    <div class="container">
+      <div class="pg-footer-grid">
+        <div class="pg-footer-brand reveal">
+          <strong>Mindful Shapes Yoga</strong>
+          <span class="eyebrow" style="margin-bottom:.75rem">Founded by Amogh Shinde</span>
+          <p>Traditional ashram-rooted yoga education in Maharashtra. Certified teacher training, transformative
+            Classes, and a path to authentic practice — for every kind of learner.</p>
+        </div>
+        <div class="pg-footer-col reveal">
+          <h4>Programs</h4>
+          <ul class="pg-footer-links">
+            <li><a href="./courses.html">All Classes</a></li>
+            <li><a href="./teacher-training.html">Teacher Training</a></li>
+            <li><a href="./blog.html">Blog &amp; Journal</a></li>
+            <li><a href="./pranayama-workshop.html">Pranayama Workshop</a></li>
+            <li><a href="./volunteer.html">Volunteer &amp; Seva</a></li>
+          </ul>
+        </div>
+        <div class="pg-footer-col reveal">
+          <h4>Quick Links</h4>
+          <ul class="pg-footer-links">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./courses.html">All Classes</a></li>
+            <li><a href="./meet-the-gurus.html">Meet the Gurus</a></li>
+            <li><a href="./contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="pg-footer-bottom">
+        <p>&copy; 2025 Mindful Shapes Yoga. Founded by Amogh Shinde. All rights reserved.</p>
+        <div class="footer-creator-credit">
+          <span>Created by</span>
+          <span class="creator-name-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            Mr. Vedant Pravin Surve
+          </span>
+        </div>
+        <p style="color:var(--color-primary);font-weight:700;font-size:.82rem">Chiplun, Pedhambee, Maharashtra &mdash;
+          Online &amp; On-Campus</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./assets/app.js" defer></script>
+  <script>
+    (function () {
+      const tabs = document.querySelectorAll('.filter-tab[data-filter]');
+      const cards = document.querySelectorAll('.pg-course-card[data-category]');
+      const grid = document.querySelector('.pg-course-grid');
+      tabs.forEach(tab => {
+        tab.addEventListener('click', function () {
+          tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false') });
+          this.classList.add('active');
+          this.setAttribute('aria-selected', 'true');
+          const filter = this.getAttribute('data-filter');
+          if (filter === 'all') {
+            grid.classList.remove('grid-filtered');
+          } else {
+            grid.classList.add('grid-filtered');
+          }
+          cards.forEach(card => {
+            if (filter === 'all' || card.getAttribute('data-category') === filter) {
+              card.style.display = '';
+              card.style.animation = 'fadeInUp .35s ease both';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+    })();
+  </script>
+  <script>
+    /* ===== AUTO-ROTATING PROGRAM THUMBNAILS =====
+       Cross-fades through every real photo found in a program's folder,
+       looping forever, every ~2.8s. Missing file numbers (folders don't
+       always have every number in sequence) are detected on first try and
+       skipped automatically — nothing breaks and no broken-image icons
+       ever show. Pauses when the tab isn't visible and respects
+       prefers-reduced-motion. Only touches the two <img> layers already
+       sized by the card's existing CSS, so layout stays fully responsive. */
+    (function () {
+      var ROTATE_MS = 2800;
+      var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function tryLoad(url) {
+        return new Promise(function (resolve) {
+          var img = new Image();
+          img.onload = function () { resolve(url); };
+          img.onerror = function () { resolve(null); };
+          img.src = url;
+        });
+      }
+
+      function Rotator(el) {
+        this.el = el;
+        this.folder = el.getAttribute('data-folder') || '';
+        this.exts = (el.getAttribute('data-ext') || 'jpg').split(',');
+        this.alt = el.getAttribute('data-alt') || '';
+        this.candidates = this.buildCandidates();
+        this.pointer = 0;
+        this.slides = [null, null];
+        this.activeIdx = 0;
+        this.pendingReady = false;
+        this.timer = null;
+        this.init();
+      }
+
+      Rotator.prototype.buildCandidates = function () {
+        var namesAttr = this.el.getAttribute('data-names');
+        if (namesAttr) {
+          return namesAttr.split('|');
+        }
+        var max = parseInt(this.el.getAttribute('data-max') || '40', 10);
+        var skipAttr = this.el.getAttribute('data-skip') || '';
+        var skip = skipAttr.split(',').map(function (s) { return s.trim(); }).filter(Boolean);
+        var list = [];
+        for (var i = 1; i <= max; i++) {
+          if (skip.indexOf(String(i)) === -1) list.push(String(i));
+        }
+        return list;
+      };
+
+      // Tries each extension for a given filename; if every extension 404s,
+      // permanently removes that name from the candidate pool so later
+      // loops through the gallery stop wasting requests on it.
+      Rotator.prototype.resolveUrl = function (name) {
+        var folder = this.folder, exts = this.exts, i = 0;
+        function attempt() {
+          if (i >= exts.length) return Promise.resolve(null);
+          var url = folder + encodeURIComponent(name) + '.' + exts[i];
+          i++;
+          return tryLoad(url).then(function (res) { return res || attempt(); });
+        }
+        return attempt();
+      };
+
+      Rotator.prototype.findNext = function () {
+        var self = this;
+        var attempts = 0;
+        var startLen = this.candidates.length;
+        function tryOne() {
+          if (!self.candidates.length) return Promise.resolve(null);
+          attempts++;
+          if (attempts > startLen + 2) return Promise.resolve(null);
+          var name = self.candidates[self.pointer % self.candidates.length];
+          return self.resolveUrl(name).then(function (url) {
+            if (url) {
+              self.pointer = (self.pointer + 1) % self.candidates.length;
+              return url;
+            }
+            // Dead file — drop it from the pool permanently and retry.
+            var idx = self.candidates.indexOf(name);
+            if (idx > -1) self.candidates.splice(idx, 1);
+            if (self.pointer >= self.candidates.length) self.pointer = 0;
+            return tryOne();
+          });
+        }
+        return tryOne();
+      };
+
+      Rotator.prototype.makeSlide = function (url, visible) {
+        var img = document.createElement('img');
+        img.className = 'fc-thumb-slide' + (visible ? ' is-active' : '');
+        img.src = url;
+        img.alt = this.alt;
+        img.loading = 'lazy';
+        this.el.insertBefore(img, this.el.firstChild);
+        return img;
+      };
+
+      Rotator.prototype.preloadNext = function () {
+        var self = this;
+        this.findNext().then(function (url) {
+          if (!url) return;
+          var nextIdx = self.activeIdx === 0 ? 1 : 0;
+          if (self.slides[nextIdx]) {
+            self.slides[nextIdx].src = url;
+          } else {
+            self.slides[nextIdx] = self.makeSlide(url, false);
+          }
+          self.pendingReady = true;
+        });
+      };
+
+      Rotator.prototype.rotate = function () {
+        if (!this.pendingReady || this.candidates.length < 2) return;
+        var nextIdx = this.activeIdx === 0 ? 1 : 0;
+        if (!this.slides[nextIdx]) return;
+        this.slides[this.activeIdx].classList.remove('is-active');
+        this.slides[nextIdx].classList.add('is-active');
+        this.activeIdx = nextIdx;
+        this.pendingReady = false;
+        this.preloadNext();
+      };
+
+      Rotator.prototype.init = function () {
+        var self = this;
+        this.findNext().then(function (url) {
+          if (!url) return;
+          self.slides[0] = self.makeSlide(url, true);
+          self.activeIdx = 0;
+          self.preloadNext();
+          if (reduceMotion) return;
+          self.timer = setInterval(function () { self.rotate(); }, ROTATE_MS);
+        });
+      };
+
+      function initAll() {
+        var els = document.querySelectorAll('[data-rotator]');
+        var rotators = [];
+        els.forEach(function (el) { rotators.push(new Rotator(el)); });
+
+        // Pause timers while the tab is hidden, resume when it's visible
+        // again — saves battery/data without affecting what's shown.
+        document.addEventListener('visibilitychange', function () {
+          rotators.forEach(function (r) {
+            if (document.hidden) {
+              if (r.timer) { clearInterval(r.timer); r.timer = null; }
+            } else if (!r.timer && !reduceMotion && r.candidates.length > 1) {
+              r.timer = setInterval(function () { r.rotate(); }, ROTATE_MS);
+            }
+          });
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initAll);
+      } else {
+        initAll();
+      }
+    })();
+  </script>
+</body>
+
+</html>

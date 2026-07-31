@@ -1,0 +1,2210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mindful Shapes Yoga | Amogh Shinde | Yoga Ashram &amp; Academy</title>
+  <meta name="description"
+    content="Mindful Shapes Yoga by Amogh Shinde — traditional yoga ashram education, certified teacher training, and transformative courses. Begin your journey today.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./assets/styles.css">
+  <style>
+    /* ====== HERO VIDEO ====== */
+    .hero-video-section {
+      position: relative;
+      min-height: 100svh;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      overflow: hidden;
+      background: #0d0b08;
+    }
+
+    .hero-bg-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      opacity: 1;
+      pointer-events: none;
+    }
+
+    /* This wrapper is kept at the video's true 16:9 ratio and JS-sized
+       so it always fully covers the hero section (like background-size:cover),
+       so the Bunny.net player never has to letterbox inside its iframe. */
+    .hero-bg-video-frame {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+    }
+
+    .hero-bg-video-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .hero-video-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(175deg,
+          rgba(10, 7, 4, .05) 0%,
+          rgba(30, 16, 6, .2) 45%,
+          rgba(10, 7, 4, .65) 100%);
+    }
+
+    .hero-video-inner {
+      position: relative;
+      z-index: 2;
+      width: min(calc(100% - 2.5rem), 1200px);
+      margin-inline: auto;
+      padding-bottom: clamp(4rem, 8vw, 6rem);
+      padding-top: clamp(7rem, 14vw, 10rem);
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      padding: .45rem 1rem;
+      border-radius: 999px;
+      background: rgba(213, 170, 113, .15);
+      border: 1px solid rgba(213, 170, 113, .3);
+      color: #ddb878;
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      backdrop-filter: blur(8px);
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-tag .tag-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #ddb878;
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse-dot {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: .4;
+        transform: scale(1.5);
+      }
+    }
+
+    .hero-video-inner h1 {
+      font-size: clamp(2.8rem, 7vw, 6.5rem);
+      color: #fff9f2;
+      line-height: 1.02;
+      max-width: 16ch;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-video-inner h1 em {
+      font-style: italic;
+      color: #ddb878;
+    }
+
+    .hero-sub {
+      color: rgba(255, 248, 235, .7);
+      font-size: clamp(.95rem, 1.8vw, 1.2rem);
+      max-width: 50ch;
+      line-height: 1.75;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .btn-gold {
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      min-height: 52px;
+      padding: .9rem 2rem;
+      border-radius: 999px;
+      font-size: .95rem;
+      font-weight: 800;
+      background: #ddb878;
+      color: #1a1008;
+      transition: background .22s, transform .22s;
+      box-shadow: 0 8px 24px rgba(180, 120, 40, .3);
+    }
+
+    .btn-gold:hover {
+      background: #ebca94;
+      transform: translateY(-2px);
+    }
+
+    .btn-glass {
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      min-height: 52px;
+      padding: .9rem 2rem;
+      border-radius: 999px;
+      font-size: .95rem;
+      font-weight: 800;
+      background: rgba(255, 255, 255, .1);
+      border: 1px solid rgba(255, 255, 255, .25);
+      color: #fff9f2;
+      backdrop-filter: blur(8px);
+      transition: background .22s, transform .22s;
+    }
+
+    .btn-glass:hover {
+      background: rgba(255, 255, 255, .18);
+      transform: translateY(-2px);
+    }
+
+    .hero-stats-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+      border-top: 1px solid rgba(255, 255, 255, .12);
+      padding-top: 2.5rem;
+    }
+
+    .hero-stat-item {
+      flex: 1;
+      min-width: 130px;
+      padding-right: 2.5rem;
+      border-right: 1px solid rgba(255, 255, 255, .12);
+      margin-right: 2.5rem;
+    }
+
+    .hero-stat-item:last-child {
+      border-right: none;
+      margin-right: 0;
+      padding-right: 0;
+    }
+
+    .hero-stat-item strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      color: #ddb878;
+      line-height: 1;
+      margin-bottom: .35rem;
+    }
+
+    .hero-stat-item span {
+      font-size: .8rem;
+      color: rgba(255, 248, 235, .5);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .hero-scroll-cue {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .5rem;
+      color: rgba(255, 248, 235, .35);
+      font-size: .7rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      animation: float-cue 2.5s ease-in-out infinite;
+    }
+
+    .hero-scroll-cue svg {
+      display: block;
+    }
+
+    @keyframes float-cue {
+
+      0%,
+      100% {
+        transform: translateX(-50%) translateY(0);
+      }
+
+      50% {
+        transform: translateX(-50%) translateY(7px);
+      }
+    }
+
+    /* ====== PHILOSOPHY STRIP ====== */
+    .pillars-section {
+      background: var(--color-surface);
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+      padding: clamp(2.5rem, 5vw, 4rem) 0;
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .pillar-item {
+      padding: 1.75rem 2rem;
+      border-right: 1px solid var(--color-border);
+      text-align: center;
+    }
+
+    .pillar-item:last-child {
+      border-right: none;
+    }
+
+    .pillar-glyph {
+      font-family: var(--font-display);
+      font-size: 2.6rem;
+      color: var(--color-primary);
+      line-height: 1;
+      margin-bottom: .9rem;
+      display: block;
+    }
+
+    .pillar-item h3 {
+      font-size: 1.2rem;
+      margin-bottom: .45rem;
+    }
+
+    .pillar-item p {
+      font-size: .83rem;
+      max-width: 100%;
+      line-height: 1.65;
+    }
+
+    /* ====== ACCREDITATION BADGE ====== */
+    .accreditation-section {
+      padding: clamp(2.5rem, 5vw, 4rem) 0;
+      background: var(--color-bg);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .accreditation-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .accreditation-inner .eyebrow {
+      margin-bottom: .25rem;
+    }
+
+    .accreditation-inner h3 {
+      font-size: clamp(1.25rem, 2.2vw, 1.65rem);
+      line-height: 1.2;
+      margin: 0;
+      max-width: 28ch;
+    }
+
+    .accreditation-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(1rem, 2vw, 2rem) clamp(1.5rem, 3vw, 3rem);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      max-width: clamp(240px, 34vw, 560px);
+      width: fit-content;
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+
+    .accreditation-badge:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--color-primary);
+    }
+
+    .accreditation-badge img {
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    .accreditation-note {
+      font-size: .82rem;
+      color: var(--color-text-muted);
+      line-height: 1.6;
+      max-width: 46ch;
+      margin: 0;
+    }
+
+    @media (max-width: 520px) {
+      .accreditation-badge {
+        max-width: 200px;
+      }
+    }
+
+    /* ====== FOUNDER SECTION ====== */
+    .founder-section {
+      padding: clamp(4.5rem, 9vw, 7.5rem) 0;
+    }
+
+    .founder-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(3rem, 6vw, 4.5rem);
+    }
+
+    .founder-content-block {
+      max-width: 78ch;
+      margin-inline: auto;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .founder-content-block h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.05;
+      margin: 1rem 0 1.5rem;
+    }
+
+    .founder-content-block p {
+      font-size: 1rem;
+      line-height: 1.8;
+      margin: 0 auto 1.15rem;
+      max-width: 62ch;
+    }
+
+    .founder-mini-stat {
+      display: inline-flex;
+      align-items: center;
+      gap: .85rem;
+      background: var(--color-primary-highlight);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: .75rem 1.25rem;
+      margin: 1.5rem 0 .5rem;
+      text-align: left;
+    }
+
+    .founder-mini-stat strong {
+      font-family: var(--font-display);
+      font-size: 1.9rem;
+      color: var(--color-primary);
+      line-height: 1;
+    }
+
+    .founder-mini-stat span {
+      font-size: .78rem;
+      color: var(--color-text-muted);
+      line-height: 1.3;
+    }
+
+    .founder-chips {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .65rem;
+      margin: 2rem auto 2.5rem;
+      max-width: 42rem;
+      width: 100%;
+    }
+
+    /* ====== FOUNDER GALLERY ====== */
+    .founder-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(3, clamp(110px, 14vw, 170px));
+      grid-template-areas:
+        "a a b c"
+        "a a d c"
+        "e f d c";
+      gap: clamp(.6rem, 1.5vw, 1.1rem);
+    }
+
+    .founder-gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--color-border);
+      background: var(--color-surface-2);
+    }
+
+    .founder-gallery-item img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .5s ease;
+    }
+
+    .founder-gallery-item:hover img {
+      transform: scale(1.06);
+    }
+
+    .founder-gallery-item.item-a {
+      grid-area: a;
+    }
+
+    .founder-gallery-item.item-b {
+      grid-area: b;
+    }
+
+    .founder-gallery-item.item-c {
+      grid-area: c;
+    }
+
+    .founder-gallery-item.item-d {
+      grid-area: d;
+    }
+
+    .founder-gallery-item.item-e {
+      grid-area: e;
+    }
+
+    .founder-gallery-item.item-f {
+      grid-area: f;
+    }
+
+    .founder-gallery-item .gallery-item-tag {
+      position: absolute;
+      left: .8rem;
+      bottom: .7rem;
+      z-index: 2;
+      font-size: .68rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: #fff9f2;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity .3s ease, transform .3s ease;
+    }
+
+    .founder-gallery-item::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(20, 10, 4, .55) 0%, transparent 45%);
+      opacity: 0;
+      transition: opacity .3s ease;
+      z-index: 1;
+    }
+
+    .founder-gallery-item:hover::after {
+      opacity: 1;
+    }
+
+    .founder-gallery-item:hover .gallery-item-tag {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .founder-gallery-item.item-a img,
+    .founder-gallery-item.item-c img,
+    .founder-gallery-item.item-d img {
+      object-position: center top;
+    }
+
+    .founder-gallery-item.item-f img {
+      object-position: center 20%;
+    }
+
+    .chip {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      padding: .7rem 1rem;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      font-size: .83rem;
+      font-weight: 700;
+      color: var(--color-text);
+    }
+
+    .chip-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      flex-shrink: 0;
+    }
+
+    /* ====== COURSES ====== */
+    .courses-section {
+      padding: clamp(4.5rem, 9vw, 7.5rem) 0;
+      background: var(--color-surface);
+    }
+
+    .section-intro {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 2rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .section-intro-left h2 {
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      line-height: 1.06;
+      margin: .75rem 0 .9rem;
+      max-width: 22ch;
+    }
+
+    .section-intro-left p {
+      font-size: .95rem;
+      max-width: 48ch;
+    }
+
+    .featured-courses-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .fc-card {
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform .3s ease, box-shadow .3s ease;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .fc-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .fc-thumb {
+      aspect-ratio: 16/9;
+      position: relative;
+      overflow: hidden;
+      background: var(--color-surface-offset);
+    }
+
+    .fc-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .5s ease;
+    }
+
+    .fc-card:hover .fc-thumb img {
+      transform: scale(1.04);
+    }
+
+    /* ===== AUTO-ROTATING PROGRAM THUMBNAILS ===== */
+    /* Two images are stacked and crossfaded on a timer (see script near the
+       end of the page). Falls back gracefully to a single static <img> for
+       no-JS environments via <noscript>. */
+    .fc-thumb-slide {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      opacity: 0;
+      transition: opacity 1s ease, transform 6s ease;
+    }
+
+    .fc-thumb-slide.is-active {
+      opacity: 1;
+    }
+
+    .fc-card:hover .fc-thumb-slide.is-active {
+      transform: scale(1.04);
+    }
+
+    .fc-body {
+      padding: 1.6rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .fc-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .4rem;
+      margin-bottom: .9rem;
+    }
+
+    .fc-tag {
+      display: inline-flex;
+      padding: .28rem .65rem;
+      border-radius: 999px;
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+
+    .fc-tag-warm {
+      background: var(--color-primary-highlight);
+      color: var(--color-primary);
+    }
+
+    .fc-tag-green {
+      background: rgba(63, 122, 76, .12);
+      color: var(--color-success);
+    }
+
+    .fc-tag-gold {
+      background: rgba(213, 170, 113, .2);
+      color: #7a5915;
+    }
+
+    .fc-body h3 {
+      font-size: 1.5rem;
+      line-height: 1.15;
+      margin-bottom: .65rem;
+    }
+
+    .fc-body p {
+      font-size: .87rem;
+      line-height: 1.7;
+      flex: 1;
+      max-width: 100%;
+    }
+
+    .fc-footer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1.5rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--color-border);
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .fc-footer .btn-sm-primary {
+      width: 100%;
+      max-width: 260px;
+      justify-content: center;
+      padding: .95rem 1.75rem;
+      font-size: .92rem;
+      min-height: 48px;
+      border-radius: 999px;
+      letter-spacing: .02em;
+      box-shadow: 0 6px 16px rgba(180, 120, 40, .18);
+    }
+
+    .fc-footer .btn-sm-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 22px rgba(180, 120, 40, .28);
+    }
+
+    @media (max-width: 480px) {
+      .fc-footer .btn-sm-primary {
+        max-width: 100%;
+        font-size: .88rem;
+        padding: .85rem 1.5rem;
+      }
+    }
+
+    .fc-price {
+      font-family: var(--font-display);
+      font-size: 1.7rem;
+      color: var(--color-text);
+      line-height: 1;
+    }
+
+    .fc-price small {
+      font-size: .75rem;
+      color: var(--color-text-muted);
+      font-family: var(--font-body);
+      font-weight: 400;
+      margin-left: .2rem;
+    }
+
+    .btn-sm-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      padding: .65rem 1.25rem;
+      border-radius: 999px;
+      font-size: .82rem;
+      font-weight: 800;
+      background: var(--color-primary);
+      color: var(--color-text-inverse);
+      transition: background .2s, transform .2s;
+      white-space: nowrap;
+    }
+
+    .btn-sm-primary:hover {
+      background: var(--color-primary-hover);
+      transform: translateY(-1px);
+    }
+
+    .courses-see-all {
+      margin-top: 2.5rem;
+      text-align: center;
+    }
+
+    /* ====== WHY CHOOSE ====== */
+    .why-section {
+      padding: clamp(4.5rem, 9vw, 7.5rem) 0;
+    }
+
+    .why-header {
+      max-width: 640px;
+      margin-bottom: 3.5rem;
+    }
+
+    .why-header h2 {
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      margin: .75rem 0 1rem;
+      line-height: 1.06;
+    }
+
+    .why-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    .why-card {
+      padding: 2rem 1.75rem;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      position: relative;
+      overflow: hidden;
+      transition: transform .3s, box-shadow .3s;
+    }
+
+    .why-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .why-icon-box {
+      width: 52px;
+      height: 52px;
+      border-radius: var(--radius-md);
+      background: var(--color-primary-highlight);
+      display: grid;
+      place-items: center;
+      margin-bottom: 1.25rem;
+      color: var(--color-primary);
+      font-size: 1.5rem;
+    }
+
+    .why-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: .6rem;
+    }
+
+    .why-card p {
+      font-size: .87rem;
+      line-height: 1.7;
+      max-width: 100%;
+    }
+
+    /* ====== TESTIMONIALS ====== */
+    .testimonials-section {
+      padding: clamp(4.5rem, 9vw, 7.5rem) 0;
+      background: var(--color-surface);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .testi-card {
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: 2rem;
+    }
+
+    .testi-stars {
+      display: flex;
+      gap: .2rem;
+      margin-bottom: 1.1rem;
+      color: var(--color-accent);
+      font-size: 1rem;
+    }
+
+    .testi-quote {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-style: italic;
+      line-height: 1.65;
+      color: var(--color-text);
+      margin-bottom: 1.5rem;
+    }
+
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+    }
+
+    .testi-ava {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+      display: grid;
+      place-items: center;
+      font-family: var(--font-display);
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+
+    .testi-author strong {
+      display: block;
+      font-size: .88rem;
+    }
+
+    .testi-author span {
+      font-size: .78rem;
+      color: var(--color-text-muted);
+    }
+
+    /* ====== HOW TO START ====== */
+    .start-section {
+      padding: clamp(4.5rem, 9vw, 7.5rem) 0;
+    }
+
+    .start-header {
+      max-width: 580px;
+      margin-bottom: 3.5rem;
+    }
+
+    .start-header h2 {
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      margin: .75rem 0 1rem;
+      line-height: 1.06;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+    }
+
+    .step-card {
+      padding: 2rem 1.5rem;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      position: relative;
+    }
+
+    .step-num {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .step-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: .6rem;
+    }
+
+    .step-card p {
+      font-size: .85rem;
+      line-height: 1.7;
+      max-width: 100%;
+    }
+
+    /* ====== FINAL CTA ====== */
+    .final-cta-section {
+      padding: clamp(5rem, 10vw, 9rem) 0;
+      background: linear-gradient(160deg, #1a0e06 0%, #2c1608 60%, #1a0e06 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .final-cta-section::before {
+      content: '\0950';
+      position: absolute;
+      font-size: 32rem;
+      color: rgba(255, 255, 255, .02);
+      font-family: serif;
+      top: 50%;
+      right: -4rem;
+      transform: translateY(-50%);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .final-cta-inner {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 720px;
+      margin-inline: auto;
+    }
+
+    .final-cta-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .42rem .9rem;
+      border-radius: 999px;
+      background: rgba(213, 170, 113, .12);
+      border: 1px solid rgba(213, 170, 113, .25);
+      color: #ddb878;
+      font-size: .73rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .final-cta-inner h2 {
+      font-size: clamp(2.2rem, 5.5vw, 4.5rem);
+      color: #fff9f2;
+      line-height: 1.03;
+      margin-bottom: 1.25rem;
+    }
+
+    .final-cta-inner h2 em {
+      font-style: italic;
+      color: #ddb878;
+    }
+
+    .final-cta-inner p {
+      color: rgba(255, 248, 235, .6);
+      font-size: 1.1rem;
+      line-height: 1.75;
+      max-width: 54ch;
+      margin: 0 auto 2.5rem;
+    }
+
+    .final-cta-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .cta-divider-stats {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      margin-top: 4.5rem;
+      padding-top: 3.5rem;
+      border-top: 1px solid rgba(255, 255, 255, .09);
+      flex-wrap: wrap;
+    }
+
+    .cta-stat {
+      flex: 1;
+      min-width: 120px;
+      text-align: center;
+      padding: 0 2rem;
+      border-right: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .cta-stat:last-child {
+      border-right: none;
+    }
+
+    .cta-stat strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      color: #ddb878;
+      line-height: 1;
+      margin-bottom: .4rem;
+    }
+
+    .cta-stat span {
+      font-size: .78rem;
+      color: rgba(255, 248, 235, .45);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    /* ====== FOOTER ====== */
+    .site-footer {
+      background: var(--color-surface);
+      border-top: 1px solid var(--color-border);
+      padding: clamp(3.5rem, 7vw, 5.5rem) 0 2rem;
+    }
+
+    .footer-grid-main {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr 1fr;
+      gap: 2.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-brand-col .brand-name {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      margin: 1rem 0 .75rem;
+      line-height: 1.1;
+    }
+
+    .footer-brand-col p {
+      font-size: .875rem;
+      line-height: 1.75;
+      max-width: 26ch;
+      color: var(--color-text-muted);
+    }
+
+    .footer-brand-col .footer-tagline {
+      margin-top: 1.5rem;
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+    }
+
+    .footer-nav-col h4 {
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--color-text-faint);
+      margin-bottom: 1.1rem;
+    }
+
+    .footer-nav-col ul {
+      list-style: none;
+      display: grid;
+      gap: .55rem;
+    }
+
+    .footer-nav-col ul a {
+      font-size: .875rem;
+      color: var(--color-text-muted);
+      transition: color .2s;
+    }
+
+    .footer-nav-col ul a:hover {
+      color: var(--color-primary);
+    }
+
+    .footer-bottom-bar {
+      padding-top: 2rem;
+      border-top: 1px solid var(--color-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-bottom-bar p {
+      font-size: .78rem;
+      color: var(--color-text-faint);
+      max-width: none;
+    }
+
+    .footer-bottom-brand {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      font-size: .82rem;
+      font-weight: 700;
+      color: var(--color-text-muted);
+    }
+
+    /* ====== RESPONSIVE ====== */
+    @media (max-width: 1080px) {
+      .pillars-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .pillar-item:nth-child(2) {
+        border-right: none;
+      }
+
+      .pillar-item:nth-child(1),
+      .pillar-item:nth-child(2) {
+        border-bottom: 1px solid var(--color-border);
+      }
+
+      .pillar-item:nth-child(4) {
+        border-right: none;
+      }
+
+      .founder-gallery-grid {
+        grid-template-rows: repeat(3, clamp(90px, 16vw, 140px));
+      }
+
+      .featured-courses-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .why-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid-main {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .cta-divider-stats {
+        gap: 0;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .hero-stats-strip {
+        gap: 0;
+        flex-direction: column;
+      }
+
+      .hero-stat-item {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, .1);
+        margin-right: 0;
+        padding-right: 0;
+        padding-bottom: 1.25rem;
+        margin-bottom: 1.25rem;
+      }
+
+      .hero-stat-item:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+        margin-bottom: 0;
+      }
+
+      .pillars-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pillar-item {
+        border-right: none;
+        border-bottom: 1px solid var(--color-border);
+        text-align: left;
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1.5rem;
+      }
+
+      .pillar-item:last-child {
+        border-bottom: none;
+      }
+
+      .pillar-glyph {
+        margin-bottom: 0;
+        flex-shrink: 0;
+      }
+
+      .founder-gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: none;
+        grid-template-areas: none;
+      }
+
+      .founder-gallery-item {
+        grid-area: auto !important;
+        aspect-ratio: 3/4;
+      }
+
+      .featured-courses-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-intro {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .why-cards-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .steps-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid-main {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom-bar {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .cta-divider-stats {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .cta-stat {
+        border-right: none;
+        padding: 0;
+      }
+
+      .final-cta-btns .btn-gold,
+      .final-cta-btns .btn-glass {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .hero-btn-row .btn-gold,
+      .hero-btn-row .btn-glass {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .founder-chips {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-video-inner h1 {
+        font-size: clamp(2.2rem, 9vw, 3rem);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <audio id="bgMusic" src="./music/bg.mp3" loop preload="auto"></audio>
+  <script>
+    (function () {
+      var audio = document.getElementById('bgMusic');
+      var KEY = 'msyBgMusicTime';
+
+      var saved = parseFloat(localStorage.getItem(KEY));
+      if (!isNaN(saved) && isFinite(saved)) {
+        audio.currentTime = saved;
+      }
+
+      function startPlayback() {
+        var p = audio.play();
+        if (p !== undefined) {
+          p.catch(function () {
+            var resume = function () {
+              audio.play();
+              document.removeEventListener('click', resume);
+              document.removeEventListener('touchstart', resume);
+              document.removeEventListener('keydown', resume);
+            };
+            document.addEventListener('click', resume);
+            document.addEventListener('touchstart', resume);
+            document.addEventListener('keydown', resume);
+          });
+        }
+      }
+      startPlayback();
+
+      setInterval(function () {
+        if (!audio.paused) localStorage.setItem(KEY, audio.currentTime);
+      }, 1000);
+
+      window.addEventListener('beforeunload', function () {
+        localStorage.setItem(KEY, audio.currentTime);
+      });
+    })();
+  </script>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ====== HEADER ====== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="./index.html">
+        <span class="brand-mark"
+          style="background:none;border-radius:0;padding:0;box-shadow:none;width:auto;height:52px;display:inline-flex;align-items:center;justify-content:center;">
+          <img src="./photo/logo.png" alt="Mindful Shapes Yoga logo" style="width:auto;height:100%;object-fit:contain">
+        </span>
+        <span class="brand-copy">
+          <strong>Mindful Shapes Yoga</strong>
+          <span>Yoga Ashram by Amogh Shinde</span>
+        </span>
+      </a>
+      <div class="nav-wrap">
+        <nav>
+          <button class="menu-toggle" aria-label="Toggle navigation" data-menu-toggle>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+          </button>
+          <div class="nav-links" data-nav>
+            <a href="./index.html" class="active">Home</a>
+            <a href="./courses.html">Classes</a>
+            <a href="./teacher-training.html">Teacher Training</a>
+            <a href="./meet-the-gurus.html">Gurus</a>
+            <a href="./photo.html">Ashram</a>
+            <a href="./volunteer.html">Volunteer</a>
+            <a href="./blog.html">Blog</a>
+            <a href="./contact.html">Contact</a>
+          </div>
+        </nav>
+        <button class="theme-toggle" data-theme-toggle aria-label="Switch theme"></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ====== HERO VIDEO ====== -->
+    <section class="hero-video-section" aria-label="Welcome to Mindful Shapes Yoga">
+      <div class="hero-bg-video" aria-hidden="true">
+        <div class="hero-bg-video-frame" id="heroVideoFrame">
+          <iframe
+            src="https://player.mediadelivery.net/embed/717605/ca6e0562-ce4c-4091-88a9-17dd742d1928?autoplay=true&loop=true&muted=true&preload=true&responsive=false"
+            loading="lazy"
+            allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;"
+            allowfullscreen="true"></iframe>
+        </div>
+      </div>
+      <div class="hero-video-overlay" aria-hidden="true"></div>
+      <script>
+        (function () {
+          var container = document.querySelector('.hero-bg-video');
+          var frame = document.getElementById('heroVideoFrame');
+          if (!container || !frame) return;
+          var VIDEO_RATIO = 16 / 9; // change this if your source video isn't 16:9
+
+          function sizeHeroVideo() {
+            var cw = container.clientWidth;
+            var ch = container.clientHeight;
+            if (!cw || !ch) return;
+            var containerRatio = cw / ch;
+            var w, h;
+            if (containerRatio > VIDEO_RATIO) {
+              // container is proportionally wider than the video: match width, overflow height
+              w = cw;
+              h = cw / VIDEO_RATIO;
+            } else {
+              // container is proportionally taller/narrower: match height, overflow width
+              h = ch;
+              w = ch * VIDEO_RATIO;
+            }
+            frame.style.width = w + 'px';
+            frame.style.height = h + 'px';
+          }
+
+          sizeHeroVideo();
+          window.addEventListener('resize', sizeHeroVideo);
+          window.addEventListener('orientationchange', sizeHeroVideo);
+          if (window.ResizeObserver) {
+            new ResizeObserver(sizeHeroVideo).observe(container);
+          }
+        })();
+      </script>
+      <div class="hero-video-inner">
+        <div class="reveal">
+          <div class="hero-tag">
+            <span class="tag-dot" aria-hidden="true"></span>
+            Yoga Ashram &amp; Academy &mdash; BHARAT
+          </div>
+          <h1>Where Ancient<br><em>Wisdom</em> Shapes<br>Modern Life.</h1>
+          <p class="hero-sub">Mindful Shapes Yoga, founded by <strong style="color:rgba(255,248,235,.9)">Amogh
+              Shinde</strong>, offers traditional ashram-rooted yoga education, certified teacher training, and
+            transformative Classes — in English, Marathi, Hindi, Spanish &amp; French.</p>
+          <div class="hero-btn-row">
+            <a class="btn-gold" href="./regular-classes.html">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+              Explore Courses
+            </a>
+            <a class="btn-glass" href="./teacher-training.html">Become a Yoga Teacher</a>
+          </div>
+          <div class="hero-stats-strip">
+            <div class="hero-stat-item">
+              <strong>200H+</strong>
+              <span>Teacher Training</span>
+            </div>
+            <div class="hero-stat-item">
+              <strong>500H</strong>
+              <span>Advanced Certification</span>
+            </div>
+            <div class="hero-stat-item">
+              <strong>Online &amp; Campus</strong>
+              <span>Flexible Learning</span>
+            </div>
+            <div class="hero-stat-item">
+              <strong>5 Languages</strong>
+              <span>English, Marathi, Hindi, Spanish &amp; French</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-scroll-cue" aria-hidden="true">
+        <span>Scroll</span>
+        <svg width="16" height="20" viewBox="0 0 16 20" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="1" y="1" width="14" height="18" rx="7" />
+          <line x1="8" y1="5" x2="8" y2="9" />
+        </svg>
+      </div>
+    </section>
+
+    <!-- ====== PHILOSOPHY PILLARS ====== -->
+    <section class="pillars-section" aria-label="Our Core Pillars">
+      <div class="container">
+        <div class="pillars-grid">
+          <div class="pillar-item reveal">
+            <span class="pillar-glyph" aria-hidden="true">ॐ</span>
+            <h3>Ashram Roots</h3>
+            <p>Teaching rooted in traditional Indian yoga lineage — not just exercise, but a complete way of being.</p>
+          </div>
+          <div class="pillar-item reveal">
+            <span class="pillar-glyph" aria-hidden="true">☯</span>
+            <h3>Mindful Practice</h3>
+            <p>Every session cultivates awareness, breath, and presence — from beginner asana to advanced pranayama.</p>
+          </div>
+          <div class="pillar-item reveal">
+            <span class="pillar-glyph" aria-hidden="true">✦</span>
+            <h3>Certified Training</h3>
+            <p>Internationally recognized 200H and 500H teacher training programs with rigorous curriculum depth.</p>
+          </div>
+          <div class="pillar-item reveal">
+            <span class="pillar-glyph" aria-hidden="true">❋</span>
+            <h3>Seva &amp; Community</h3>
+            <p>Volunteer, serve, and grow — yoga beyond personal practice into service, satsang, and collective healing.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- ====== ABOUT THE FOUNDER ====== -->
+    <section class="founder-section" aria-labelledby="founder-heading">
+      <div class="container">
+        <div class="founder-wrap">
+          <div class="founder-content-block reveal">
+            <span class="eyebrow">Meet the Founder</span>
+            <h2 id="founder-heading">Amogh Shinde — A Teacher Who Lives What He Teaches.</h2>
+            <p>Amogh Shinde established Mindful Shapes Yoga with a single vision: to bring the depth of authentic ashram
+              yoga into accessible, modern education. His teaching blends traditional Hatha, Ashtanga, and pranayama
+              sciences with an understanding of modern bodies and lifestyles.</p>
+            <p>With over a decade of dedicated practice and teaching, Amogh has guided hundreds of students — from
+              complete beginners to professional instructors — through transformative journeys both on and off the mat.
+              What makes his journey unique is his conscious decision to return to his native town of Chiplun,
+              Maharashtra, to build Mindful Shapes Yoga from his village roots. While many modern yoga destinations have
+              become increasingly commercialized, Amogh envisions Chiplun as a future yoga hub of India — a space where
+              students can experience yoga in its authentic, grounded, and traditional essence amidst nature,
+              simplicity, and community living.</p>
+            <p>Through Mindful Shapes Yoga, he aims to revive the spirit of traditional yogic learning by creating a
+              bridge between ancient wisdom and modern life — not from a commercial tourist center, but from the heart
+              of rural India itself.</p>
+            <div class="founder-mini-stat">
+              <strong>12+</strong>
+              <span>Years of teaching<br>yoga &amp; wellness</span>
+            </div>
+            <div class="founder-chips">
+              <div class="chip"><span class="chip-dot"></span>Hatha &amp; Ashtanga Yoga</div>
+              <div class="chip"><span class="chip-dot"></span>Pranayama &amp; Meditation</div>
+              <div class="chip"><span class="chip-dot"></span>200H &amp; 500H TTC</div>
+              <div class="chip"><span class="chip-dot"></span>Yoga Blog &amp; Journal</div>
+              <div class="chip"><span class="chip-dot"></span>Ayush Ministry Courses</div>
+              <div class="chip"><span class="chip-dot"></span>Yoga Alliance Courses</div>
+            </div>
+            <a class="btn btn-primary"
+              href="https://wa.me/919004913827?text=Hi%20Amogh%20Sir%2C%20I%20would%20like%20to%20connect%20and%20know%20more%20about%20your%20yoga%20programs%20at%20Mindful%20Shapes%20Yoga."
+              target="_blank" rel="noopener noreferrer">Connect with Amogh</a>
+          </div>
+          <div class="founder-gallery-grid reveal">
+            <div class="founder-gallery-item item-a">
+              <img src="./amogh/1.jpg" alt="Amogh Shinde seated in padmasana meditation pose" loading="lazy"
+                width="1254" height="1254">
+              <span class="gallery-item-tag">Meditation</span>
+            </div>
+            <div class="founder-gallery-item item-b">
+              <img src="./amogh/3.jpg" alt="Amogh Shinde gesturing for silence during practice" loading="lazy"
+                width="1254" height="1254">
+              <span class="gallery-item-tag">Stillness</span>
+            </div>
+            <div class="founder-gallery-item item-c">
+              <img src="./amogh/5.png" alt="Amogh Shinde holding a traditional broom, playful portrait" loading="lazy"
+                width="931" height="1400">
+              <span class="gallery-item-tag">Tradition</span>
+            </div>
+            <div class="founder-gallery-item item-d">
+              <img src="./amogh/7.jpg" alt="Amogh Shinde in namaste prayer pose looking upward" loading="lazy"
+                width="931" height="1400">
+              <span class="gallery-item-tag">Namaste</span>
+            </div>
+            <div class="founder-gallery-item item-e">
+              <img src="./amogh/8.jpg" alt="Amogh Shinde reading the Yoga Sutras of Patanjali" loading="lazy"
+                width="1400" height="931">
+              <span class="gallery-item-tag">Wisdom</span>
+            </div>
+            <div class="founder-gallery-item item-f">
+              <img src="./amogh/10.jpg" alt="Amogh Shinde with hand on heart, expressing gratitude" loading="lazy"
+                width="931" height="1400">
+              <span class="gallery-item-tag">Gratitude</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== FEATURED COURSES ====== -->
+    <section class="courses-section" aria-labelledby="courses-heading">
+      <div class="container">
+        <div class="section-intro">
+          <div class="section-intro-left">
+            <span class="eyebrow">Our Programs</span>
+            <h2 id="courses-heading">Find the Right Path for Your Yoga Journey.</h2>
+            <p>Whether you are a beginner seeking balance, a practitioner deepening your practice, or aspiring to teach
+              — we have a course designed for you.</p>
+          </div>
+          <a class="btn btn-secondary" href="./courses.html" style="white-space:nowrap;flex-shrink:0">View All Classes
+            →</a>
+        </div>
+        <div class="featured-courses-grid">
+
+          <article class="fc-card reveal">
+            <div class="fc-thumb" data-rotator data-folder="./offline-classes/" data-ext="png,jpg,jpeg,webp"
+              data-max="27" data-alt="Daily yoga and meditation class on campus">
+              <noscript><img src="./offline-classes/8.png" alt="Daily yoga and meditation class outdoors on campus"
+                  loading="lazy"></noscript>
+            </div>
+            <div class="fc-body">
+              <div class="fc-tags">
+                <span class="fc-tag fc-tag-warm">Regular Classes</span>
+                <span class="fc-tag fc-tag-green">Beginner Friendly</span>
+              </div>
+              <h3>Daily Yoga Classes - Campus</h3>
+              <p>Structured daily on-campus classes for men, women, office professionals, and returning learners.
+                Morning and evening batches in English, Marathi, Hindi, Spanish &amp; French.</p>
+              <div class="fc-footer">
+                <a class="btn-sm-primary" href="./regular-classes-campus.html">Learn More →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="fc-card reveal">
+            <div class="fc-thumb" data-rotator data-folder="./online-classes/" data-ext="jpg,png,jpeg,webp"
+              data-max="45" data-alt="Live online yoga class via video call">
+              <noscript><img src="./courses/8.jpg" alt="Live online yoga class via video call"
+                  loading="lazy"></noscript>
+            </div>
+            <div class="fc-body">
+              <div class="fc-tags">
+                <span class="fc-tag fc-tag-warm">Regular Classes</span>
+                <span class="fc-tag fc-tag-green">Beginner Friendly</span>
+              </div>
+              <h3>Daily Yoga Classes - Online</h3>
+              <p>Structured daily live online classes for men, women, office professionals, and returning learners.
+                Morning and evening batches in English, Marathi, Hindi, Spanish &amp; French.</p>
+              <div class="fc-footer">
+                <a class="btn-sm-primary" href="./regular-classes-online.html">Learn More →</a>
+              </div>
+            </div>
+          </article>
+          
+          <article class="fc-card reveal">
+            <div class="fc-thumb" data-rotator data-folder="./TTC/" data-ext="png,jpg,jpeg,webp" data-max="45"
+              data-alt="Yoga Teacher Training in progress">
+              <noscript><img src="./TTC/12.png" alt="Yoga teacher studying Patanjali Yoga Sutras"
+                  loading="lazy"></noscript>
+            </div>
+            <div class="fc-body">
+              <div class="fc-tags">
+                <span class="fc-tag fc-tag-warm">Teacher Training</span>
+                <span class="fc-tag fc-tag-gold">200H &amp; 500H</span>
+              </div>
+              <h3>Yoga Teacher Training Certifications (TTC)</h3>
+              <p>Professional 200-hour and 500-hour Yoga Teacher Training programs rooted in authentic yogic traditions
+                and modern teaching methods. Includes Hatha Yoga, Ashtanga Yoga, pranayama, meditation, anatomy, and
+                teaching practice — aligned to both Yoga Alliance standards and the Ministry of AYUSH / Yoga
+                Certification Board (YCB).</p>
+              <div class="fc-footer">
+                <a class="btn-sm-primary" href="./teacher-training.html">Learn More →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="fc-card reveal">
+            <div class="fc-thumb" data-rotator data-folder="./blog-thumbs/" data-ext="jpg,jpeg,png,webp"
+              data-names="ajna-chakra-marathi|Asthma|benefits-of-meditation|binaural-beats|Breath as Biology|Facts On Meditattion|himsa-to-ahimsa|jyotirlinga-legend|karma-yoga|klesha-causes-of-suffering|mahashivratri|meditation-facts|Neelkant|prevention-of-heart-disease|what-is-meditation|yamas-righteous-living|आज्ञा चक्र तिसरे नेत्र आणि त्याचे आध्यात्मिक रहस्य|कर्मयोग निष्काम कर्माचा मार्ग|महाशिवरात्रीचे वेद आणि आगमांतील महत्त्व|षड्दर्शन"
+              data-alt="Yoga blog and wellness article illustration">
+              <noscript><img src="./amogh/60.jpg" alt="Reading the Yoga Sutras of Patanjali" loading="lazy"></noscript>
+            </div>
+            <div class="fc-body">
+              <div class="fc-tags">
+                <span class="fc-tag fc-tag-warm">Blog &amp; Journal</span>
+                <span class="fc-tag fc-tag-green">Free to Read</span>
+              </div>
+              <h3>Yoga Blog &amp; Wellness Articles</h3>
+              <p>Practice notes, philosophy, pranayama, and stories from the ashram — written by Amogh Shinde to
+                support your journey both on and off the mat.</p>
+              <div class="fc-footer">
+                <a class="btn-sm-primary" href="./blog.html">Learn More →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="fc-card reveal">
+            <div class="fc-thumb" data-rotator data-folder="./pranayama/" data-ext="png,jpg,jpeg,webp" data-max="42"
+              data-skip="19,38" data-alt="Pranayama and breathwork practice">
+              <noscript><img src="./courses/8.jpg" alt="Seated pranayama and breathwork practice"
+                  loading="lazy"></noscript>
+            </div>
+            <div class="fc-body">
+              <div class="fc-tags">
+                <span class="fc-tag fc-tag-warm">Pranayama</span>
+                <span class="fc-tag fc-tag-gold">Workshop</span>
+              </div>
+              <h3>Pranayama &amp; Breathwork &amp; Meditation Workshop</h3>
+              <p>Intensive workshops on the science of breath — from Nadi Shodhana to Kapalabhati. Transform your
+                energy, calm your mind, and deepen your practice.</p>
+              <div class="fc-footer">
+                <a class="btn-sm-primary" href="./pranayama-workshop.html">Learn More →</a>
+              </div>
+            </div>
+          </article>
+
+
+
+          <article class="fc-card reveal">
+            <div class="fc-thumb" data-rotator data-folder="./karma/" data-ext="png,jpg,jpeg,webp" data-max="45"
+              data-skip="19,32" data-alt="Karma yoga volunteer and seva program in action">
+              <noscript><img src="./courses/573.jpg" alt="Group yoga community class in savasana"
+                  loading="lazy"></noscript>
+            </div>
+            <div class="fc-body">
+              <div class="fc-tags">
+                <span class="fc-tag fc-tag-warm">Volunteer</span>
+                <span class="fc-tag fc-tag-green">Seva Pathway</span>
+              </div>
+              <h3>Yoga Volunteer &amp; Seva Program</h3>
+              <p>Give back through service. Join our volunteer community to assist classes, support events, and gain
+                hands-on teaching exposure while earning seva certification.</p>
+              <div class="fc-footer">
+                <a class="btn-sm-primary" href="./volunteer.html">Learn More →</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+        <div class="courses-see-all">
+          <a class="btn btn-secondary"
+            href="https://wa.me/919004913827?text=Hi%20Amogh%20Sir%2C%20I%20am%20interested%20in%20a%20yoga%20program%20at%20Mindful%20Shapes%20Yoga.%20Please%20share%20more%20details."
+            target="_blank" rel="noopener noreferrer">View Pricing &amp; Enroll Today →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== WHY MINDFUL SHAPES ====== -->
+    <section class="why-section" aria-labelledby="why-heading">
+      <div class="container">
+        <div class="why-header reveal">
+          <span class="eyebrow">Why Mindful Shapes</span>
+          <h2 id="why-heading">A Different Kind of Yoga School.</h2>
+          <p>We are not a gym-yoga studio. Mindful Shapes is rooted in ashram values — where yoga is lived, not just
+            practiced. Here is what makes us stand apart.</p>
+        </div>
+        <div class="why-cards-grid">
+          <div class="why-card reveal">
+            <div class="why-icon-box" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                <path d="M2 17l10 5 10-5M2 12l10 5 10-5" />
+              </svg>
+            </div>
+            <h3>Deep Ashram Curriculum</h3>
+            <p>Our courses draw from traditional yoga shastra — not fitness trends. You learn asana, pranayama,
+              philosophy, anatomy, and meditation as an integrated whole, the way yoga was always meant to be taught.
+            </p>
+          </div>
+          <div class="why-card reveal">
+            <div class="why-icon-box" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="8" r="4" />
+                <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+              </svg>
+            </div>
+            <h3>Direct Founder Access</h3>
+            <p>You learn directly under Amogh Shinde — not a junior instructor hired to fill batches. Every student gets
+              personal attention, mentoring, and a relationship with their teacher.</p>
+          </div>
+          <div class="why-card reveal">
+            <div class="why-icon-box" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+            </div>
+            <h3>Chiplun, Pedhambee — Online &amp; On-Campus</h3>
+            <p>Based in Pedhambee, Chiplun, Maharashtra, classes are conducted in English, Marathi, Hindi, Spanish and
+              French — making authentic yoga education accessible to local communities and international students alike.
+            </p>
+          </div>
+          <div class="why-card reveal">
+            <div class="why-icon-box" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0 1 12 2.944a11.955 11.955 0 0 1-8.618 3.04A12.02 12.02 0 0 0 3 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <h3>Certified &amp; Recognized</h3>
+            <p>All teacher training programs are structured to international standards. Graduates receive credentials
+              that are respected and recognized — so your investment in learning has real career value.</p>
+          </div>
+          <div class="why-card reveal">
+            <div class="why-icon-box" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+            </div>
+            <h3>Safe Space for All Bodies</h3>
+            <p>Beginner-friendly modifications, therapeutic yoga options, and inclusive community culture
+              — Mindful Shapes welcomes every body at every stage of their journey.</p>
+          </div>
+          <div class="why-card reveal">
+            <div class="why-icon-box" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+            </div>
+            <h3>Living Community &amp; Seva</h3>
+            <p>Beyond the mat — satsang circles, volunteer programs, community events, and a culture of mutual support.
+              At Mindful Shapes, you find sangha — your yoga family.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+        <!-- ====== ACCREDITATION BADGE ====== -->
+    <section class="accreditation-section" aria-labelledby="accreditation-heading">
+      <div class="container">
+        <div class="accreditation-inner reveal">
+          <span class="eyebrow">Accredited By</span>
+          <h3 id="accreditation-heading">AYUSH MINISTRY & YOGA ALLIANCE</h3>
+          <div class="accreditation-badge">
+            <img
+              src="https://tapasyogaindia.com/wp-content/uploads/al_opt_content/IMAGE/tapasyogaindia.com/wp-content/uploads/2024/08/tapas-yoga-india-1.jpg.bv.webp?bv_host=tapasyogaindia.com"
+              alt="Mindful Shapes Yoga — Accreditation Badge" loading="lazy">
+          </div>
+          <p class="accreditation-note">All Teacher Training programs are aligned with internationally recognised
+            standards — Yoga Alliance (USA) and the Yoga Certification Board (YCB), Ministry of AYUSH, Government of
+            India.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== TESTIMONIALS ====== -->
+    <section class="testimonials-section" aria-labelledby="testimonials-heading">
+      <div class="container">
+        <div class="reveal">
+          <span class="eyebrow">Student Stories</span>
+          <h2 id="testimonials-heading" style="font-size:clamp(1.9rem,4vw,3rem);margin:.75rem 0 0;line-height:1.06">
+            Heard From Our Students.</h2>
+        </div>
+        <div class="testimonials-grid">
+          <article class="testi-card reveal">
+            <div class="testi-stars" aria-label="5 stars">★★★★★</div>
+            <blockquote class="testi-quote">"Amogh sir's teaching style is unlike anything I experienced before. The
+              depth of his knowledge about yoga philosophy and the patient way he guides each student is truly
+              remarkable. This is real yoga."</blockquote>
+            <div class="testi-author">
+              <div class="testi-ava" aria-hidden="true">P</div>
+              <div>
+                <strong>Priya Kulkarni</strong>
+                <span>200H TTC Graduate, Pune</span>
+              </div>
+            </div>
+          </article>
+          <article class="testi-card reveal">
+            <div class="testi-stars" aria-label="5 stars">★★★★★</div>
+            <blockquote class="testi-quote">"I started with the blog before I ever joined a class — Amogh sir's
+              articles on pranayama and breathwork gave me enough confidence to walk in and try my first session.
+              Now I read every new post."</blockquote>
+            <div class="testi-author">
+              <div class="testi-ava" aria-hidden="true">S</div>
+              <div>
+                <strong>Sneha Deshmukh</strong>
+                <span>Regular Classes Student, Nashik</span>
+              </div>
+            </div>
+          </article>
+          <article class="testi-card reveal">
+            <div class="testi-stars" aria-label="5 stars">★★★★★</div>
+            <blockquote class="testi-quote">"The 500H advanced training changed not just how I teach, but how I live.
+              Mindful Shapes is a true ashram in spirit — the community, the values, and the quality of education here
+              is exceptional."</blockquote>
+            <div class="testi-author">
+              <div class="testi-ava" aria-hidden="true">R</div>
+              <div>
+                <strong>Rahul Mhatre</strong>
+                <span>500H TTC Graduate, Mumbai</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== HOW TO START ====== -->
+    <section class="start-section" aria-labelledby="start-heading">
+      <div class="container">
+        <div class="start-header reveal">
+          <span class="eyebrow">Begin Your Journey</span>
+          <h2 id="start-heading">Starting is Simpler Than You Think.</h2>
+          <p>Four easy steps to begin your transformation at Mindful Shapes Yoga.</p>
+        </div>
+        <div class="steps-grid">
+          <div class="step-card reveal">
+            <div class="step-num" aria-hidden="true">1</div>
+            <h3>Explore the Programs</h3>
+            <p>Browse our courses, teacher training tracks, workshops. Each program page has full details, schedules,
+              and what to expect.</p>
+          </div>
+          <div class="step-card reveal">
+            <div class="step-num" aria-hidden="true">2</div>
+            <h3>Choose Your Path</h3>
+            <p>Whether you want regular classes, a certification track — select the program that fits your goal,
+              availability, and readiness.</p>
+          </div>
+          <div class="step-card reveal">
+            <div class="step-num" aria-hidden="true">3</div>
+            <h3>Enroll or Inquire</h3>
+            <p>Use the Purchase page to enroll directly, or contact us to ask any questions. We are happy to guide you
+              to the right program personally.</p>
+          </div>
+          <div class="step-card reveal">
+            <div class="step-num" aria-hidden="true">4</div>
+            <h3>Show Up &amp; Transform</h3>
+            <p>Come to your first class — online or on-campus — and let Mindful Shapes do what it does best: guide you
+              into a deeper, more meaningful life through yoga.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== FINAL CTA ====== -->
+    <section class="final-cta-section" aria-labelledby="cta-heading">
+      <div class="container">
+        <div class="final-cta-inner reveal">
+          <div class="final-cta-tag" aria-hidden="true">&#10023; Begin Today</div>
+          <h2 id="cta-heading">Your Transformation<br>Starts with One <em>Breath.</em></h2>
+          <p>Join hundreds of students who found depth, clarity, and purpose through authentic yoga education at Mindful
+            Shapes. The first step is choosing to begin.</p>
+          <div class="final-cta-btns">
+            <a class="btn-gold"
+              href="https://wa.me/919004913827?text=Hi%20Amogh%20Sir%2C%20I%20am%20interested%20in%20a%20yoga%20program%20at%20Mindful%20Shapes%20Yoga.%20Please%20share%20more%20details."
+              target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+              Enroll Now
+            </a>
+            <a class="btn-glass"
+              href="https://wa.me/919004913827?text=Hi%20Amogh%20Sir%2C%20I%20would%20like%20to%20know%20more%20about%20your%20yoga%20programs%20at%20Mindful%20Shapes%20Yoga."
+              target="_blank" rel="noopener noreferrer">Talk to Amogh Sir</a>
+          </div>
+          <div class="cta-divider-stats">
+            <div class="cta-stat">
+              <strong>500+</strong>
+              <span>Students Trained</span>
+            </div>
+            <div class="cta-stat">
+              <strong>12+</strong>
+              <span>Years Experience</span>
+            </div>
+            <div class="cta-stat">
+              <strong>200H &amp; 500H</strong>
+              <span>TTC Programs</span>
+            </div>
+            <div class="cta-stat">
+              <strong>5 Languages</strong>
+              <span>English, Marathi, Hindi, Spanish &amp; French</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid-main">
+        <div class="footer-brand-col">
+          <div class="brand" style="display:flex;align-items:center;gap:.75rem">
+            <span class="brand-mark"
+              style="background:none;border-radius:0;padding:0;box-shadow:none;width:auto;height:52px;display:inline-flex;align-items:center;justify-content:center;">
+              <img src="./photo/logo.png" alt="Mindful Shapes Yoga logo"
+                style="width:auto;height:100%;object-fit:contain">
+            </span>
+          </div>
+          <div class="brand-name">Mindful Shapes Yoga</div>
+          <p>A yoga ashram and academy founded by Amogh Shinde — bringing traditional yoga wisdom to modern students
+            across Maharashtra and beyond.</p>
+          <div class="footer-tagline">Yoga is a Way of Life</div>
+        </div>
+        <div class="footer-nav-col">
+          <h4>Programs</h4>
+          <ul>
+            <li><a href="./regular-classes.html">Regular Classes</a></li>
+            <li><a href="./teacher-training.html">Teacher Training (TTC)</a></li>
+            <li><a href="./ttc-200.html">200H TTC</a></li>
+            <li><a href="./ttc-500.html">500H TTC</a></li>
+            <li><a href="./pranayama-workshop.html">Pranayama Workshop</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="./blog.html">Blog &amp; Journal</a></li>
+            <li><a href="./camps-workshops.html">Camps &amp; Workshops</a></li>
+            <li><a href="./yoga-protocol-instructor.html">Yoga Protocol Instructor</a></li>
+            <li><a href="./volunteer.html">Volunteer Program</a></li>
+            <li><a href="./yoga-volunteer-certification.html">Volunteer Certification</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./courses.html">All Classes</a></li>
+            <li><a href="./meet-the-gurus.html">Meet the Gurus</a></li>
+            <li><a href="./blog.html">Blog</a></li>
+            <li><a href="./contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom-bar">
+        <p>&copy; 2025 Mindful Shapes Yoga. Founded by Amogh Shinde. All rights reserved.</p>
+        <div class="footer-creator-credit">
+          <span>Created by</span>
+          <span class="creator-name-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            Mr. Vedant Pravin Surve
+          </span>
+        </div>
+        <div class="footer-bottom-brand">
+          <span style="color:var(--color-primary)">ॐ</span>
+          <span>Pedhambee, Chiplun, Maharashtra</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./assets/app.js" defer></script>
+  <script>
+    /* ===== AUTO-ROTATING PROGRAM THUMBNAILS =====
+       Cross-fades through every real photo found in a program's folder,
+       looping forever, every ~2.8s. Missing file numbers (folders don't
+       always have every number in sequence) are detected on first try and
+       skipped automatically — nothing breaks and no broken-image icons
+       ever show. Pauses when the tab isn't visible and respects
+       prefers-reduced-motion. Works from small phones to desktop since it
+       only touches the two <img> layers already sized by CSS. */
+    (function () {
+      var ROTATE_MS = 2800;
+      var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function tryLoad(url) {
+        return new Promise(function (resolve) {
+          var img = new Image();
+          img.onload = function () { resolve(url); };
+          img.onerror = function () { resolve(null); };
+          img.src = url;
+        });
+      }
+
+      function Rotator(el) {
+        this.el = el;
+        this.folder = el.getAttribute('data-folder') || '';
+        this.exts = (el.getAttribute('data-ext') || 'jpg').split(',');
+        this.alt = el.getAttribute('data-alt') || '';
+        this.candidates = this.buildCandidates();
+        this.pointer = 0;
+        this.slides = [null, null];
+        this.activeIdx = 0;
+        this.pendingReady = false;
+        this.timer = null;
+        this.init();
+      }
+
+      Rotator.prototype.buildCandidates = function () {
+        var namesAttr = this.el.getAttribute('data-names');
+        if (namesAttr) {
+          return namesAttr.split('|');
+        }
+        var max = parseInt(this.el.getAttribute('data-max') || '40', 10);
+        var skipAttr = this.el.getAttribute('data-skip') || '';
+        var skip = skipAttr.split(',').map(function (s) { return s.trim(); }).filter(Boolean);
+        var list = [];
+        for (var i = 1; i <= max; i++) {
+          if (skip.indexOf(String(i)) === -1) list.push(String(i));
+        }
+        return list;
+      };
+
+      // Tries each extension for a given filename; if every extension 404s,
+      // permanently removes that name from the candidate pool so later
+      // loops through the gallery stop wasting requests on it.
+      Rotator.prototype.resolveUrl = function (name) {
+        var folder = this.folder, exts = this.exts, i = 0;
+        function attempt() {
+          if (i >= exts.length) return Promise.resolve(null);
+          var url = folder + encodeURIComponent(name) + '.' + exts[i];
+          i++;
+          return tryLoad(url).then(function (res) { return res || attempt(); });
+        }
+        return attempt();
+      };
+
+      Rotator.prototype.findNext = function () {
+        var self = this;
+        var attempts = 0;
+        var startLen = this.candidates.length;
+        function tryOne() {
+          if (!self.candidates.length) return Promise.resolve(null);
+          attempts++;
+          if (attempts > startLen + 2) return Promise.resolve(null);
+          var name = self.candidates[self.pointer % self.candidates.length];
+          return self.resolveUrl(name).then(function (url) {
+            if (url) {
+              self.pointer = (self.pointer + 1) % self.candidates.length;
+              return url;
+            }
+            // Dead file — drop it from the pool permanently and retry.
+            var idx = self.candidates.indexOf(name);
+            if (idx > -1) self.candidates.splice(idx, 1);
+            if (self.pointer >= self.candidates.length) self.pointer = 0;
+            return tryOne();
+          });
+        }
+        return tryOne();
+      };
+
+      Rotator.prototype.makeSlide = function (url, visible) {
+        var img = document.createElement('img');
+        img.className = 'fc-thumb-slide' + (visible ? ' is-active' : '');
+        img.src = url;
+        img.alt = this.alt;
+        img.loading = 'lazy';
+        this.el.appendChild(img);
+        return img;
+      };
+
+      Rotator.prototype.preloadNext = function () {
+        var self = this;
+        this.findNext().then(function (url) {
+          if (!url) return;
+          var nextIdx = self.activeIdx === 0 ? 1 : 0;
+          if (self.slides[nextIdx]) {
+            self.slides[nextIdx].src = url;
+          } else {
+            self.slides[nextIdx] = self.makeSlide(url, false);
+          }
+          self.pendingReady = true;
+        });
+      };
+
+      Rotator.prototype.rotate = function () {
+        if (!this.pendingReady || this.candidates.length < 2) return;
+        var nextIdx = this.activeIdx === 0 ? 1 : 0;
+        if (!this.slides[nextIdx]) return;
+        this.slides[this.activeIdx].classList.remove('is-active');
+        this.slides[nextIdx].classList.add('is-active');
+        this.activeIdx = nextIdx;
+        this.pendingReady = false;
+        this.preloadNext();
+      };
+
+      Rotator.prototype.init = function () {
+        var self = this;
+        this.findNext().then(function (url) {
+          if (!url) return;
+          self.slides[0] = self.makeSlide(url, true);
+          self.activeIdx = 0;
+          self.preloadNext();
+          if (reduceMotion) return;
+          self.timer = setInterval(function () { self.rotate(); }, ROTATE_MS);
+        });
+      };
+
+      function initAll() {
+        var els = document.querySelectorAll('[data-rotator]');
+        var rotators = [];
+        els.forEach(function (el) { rotators.push(new Rotator(el)); });
+
+        // Pause timers while the tab is hidden, resume when it's visible
+        // again — saves battery/data without affecting what's shown.
+        document.addEventListener('visibilitychange', function () {
+          rotators.forEach(function (r) {
+            if (document.hidden) {
+              if (r.timer) { clearInterval(r.timer); r.timer = null; }
+            } else if (!r.timer && !reduceMotion && r.candidates.length > 1) {
+              r.timer = setInterval(function () { r.rotate(); }, ROTATE_MS);
+            }
+          });
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initAll);
+      } else {
+        initAll();
+      }
+    })();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,1 @@
+most important thing you have to make sure that you dont ruine the responsive ness anywhere, this website should support all devices and when i will open on phone or pc or laptop it should not break or bad impression layout so pls take care of that and make it everywhere responsive

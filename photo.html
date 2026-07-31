@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photos | Mindful Shapes Yoga by Amogh Shinde</title>
+  <meta name="description"
+    content="Photos from Mindful Shapes Yoga — nourishing meals, community moments, and everyday life at our ashram retreat in Chiplun, Maharashtra.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./assets/styles.css">
+  <script>
+    // Some photo files may be .jpg, .png, .jpeg or .webp. If the first guess
+    // fails to load, this quietly tries the next likely extension so the
+    // gallery never shows a broken image.
+    function pgImgFallback(img) {
+      var tries = ['.png', '.jpeg', '.webp', '.JPG'];
+      var attempt = parseInt(img.getAttribute('data-try') || '0', 10);
+      if (attempt < tries.length) {
+        img.setAttribute('data-try', String(attempt + 1));
+        img.src = img.getAttribute('data-base') + tries[attempt];
+      } else {
+        img.onerror = null;
+      }
+    }
+  </script>
+  <style>
+    /* ====== PHOTOS — HERO ====== */
+    .photos-hero {
+      padding: clamp(5rem, 10vw, 8rem) 0 clamp(3rem, 6vw, 5rem);
+      background: var(--color-surface);
+      border-bottom: 1px solid var(--color-border);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .photos-hero::before {
+      content: 'ॐ';
+      position: absolute;
+      right: -2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: clamp(12rem, 25vw, 22rem);
+      font-family: serif;
+      color: var(--color-primary);
+      opacity: .04;
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .photos-hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .photos-hero-inner .eyebrow {
+      justify-content: center;
+    }
+
+    .photos-hero-inner h1 {
+      font-size: clamp(2.1rem, 5vw, 3.4rem);
+      line-height: 1.12;
+      margin: 1rem 0 1.1rem;
+    }
+
+    .photos-hero-inner p {
+      color: var(--color-text-muted);
+      font-size: 1.02rem;
+      line-height: 1.8;
+    }
+
+    .photos-hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 1.1rem 1.5rem;
+      margin-top: 1.85rem;
+    }
+
+    .photos-hero-link {
+      font-size: .85rem;
+      font-weight: 700;
+      color: var(--color-text-muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: 2px;
+      transition: color .2s ease, border-color .2s ease;
+    }
+
+    .photos-hero-link:hover {
+      color: var(--color-primary);
+      border-color: var(--color-primary);
+    }
+
+    /* ====== HERO STATS STRIP ====== */
+    .photos-hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: clamp(1.5rem, 5vw, 3rem);
+      margin-top: clamp(2rem, 4vw, 2.75rem);
+      padding-top: clamp(1.5rem, 3vw, 2rem);
+      border-top: 1px solid var(--color-border);
+    }
+
+    .photos-hero-stat strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 3vw, 2.1rem);
+      color: var(--color-primary);
+      line-height: 1;
+      margin-bottom: .35rem;
+    }
+
+    .photos-hero-stat span {
+      font-size: .74rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--color-text-faint);
+    }
+
+    /* ====== FILTER BAR ====== */
+    .photos-gallery-section {
+      padding: clamp(3rem, 6vw, 4.5rem) 0 clamp(3.5rem, 7vw, 5.5rem);
+    }
+
+    .photos-filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: .65rem;
+      margin: 0 auto clamp(2rem, 4vw, 2.75rem);
+    }
+
+    .photos-filter-btn {
+      font-family: inherit;
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .02em;
+      color: var(--color-text-muted);
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 999px;
+      padding: .55rem 1.3rem;
+      cursor: pointer;
+      transition: background .2s ease, color .2s ease, border-color .2s ease;
+    }
+
+    .photos-filter-btn:hover {
+      color: var(--color-primary);
+      border-color: var(--color-primary);
+    }
+
+    .photos-filter-btn.is-active {
+      background: var(--color-primary);
+      border-color: var(--color-primary);
+      color: #fff9f2;
+    }
+
+    /* ====== MASONRY GALLERY ====== */
+    .photos-gallery {
+      column-count: 4;
+      column-gap: 1.1rem;
+    }
+
+    .pg-item {
+      display: block;
+      width: 100%;
+      break-inside: avoid;
+      margin-bottom: 1.1rem;
+      border: 1px solid var(--color-border);
+      padding: 0;
+      background: var(--color-surface-offset);
+      cursor: pointer;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      position: relative;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow .3s ease, transform .3s ease, border-color .3s ease;
+    }
+
+    .pg-item:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+      border-color: var(--color-primary);
+    }
+
+    .pg-item.is-hidden {
+      display: none;
+    }
+
+    .pg-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform .5s ease;
+    }
+
+    .pg-item-caption {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 2rem .9rem .8rem;
+      background: linear-gradient(180deg, rgba(10, 7, 4, 0) 0%, rgba(10, 7, 4, .78) 100%);
+      color: #fff9f2;
+      font-size: .78rem;
+      font-weight: 600;
+      line-height: 1.4;
+      text-align: left;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity .3s ease, transform .3s ease;
+    }
+
+    .pg-item:hover img {
+      transform: scale(1.06);
+    }
+
+    .pg-item:hover .pg-item-caption,
+    .pg-item:focus-visible .pg-item-caption {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .pg-item:focus-visible {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 3px;
+    }
+
+    /* ====== LIGHTBOX ====== */
+    .pg-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(1rem, 5vw, 3rem);
+      background: rgba(10, 7, 4, .93);
+    }
+
+    .pg-lightbox.active {
+      display: flex;
+    }
+
+    .pg-lightbox-img {
+      max-width: 90vw;
+      max-height: 76vh;
+      border-radius: var(--radius-lg);
+      box-shadow: 0 25px 70px rgba(0, 0, 0, .55);
+    }
+
+    .pg-lightbox-info {
+      position: absolute;
+      bottom: clamp(1rem, 4vw, 2rem);
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .3rem;
+      text-align: center;
+      max-width: 84vw;
+      padding: 0 1rem;
+    }
+
+    .pg-lightbox-caption {
+      color: #fff9f2;
+      font-size: .92rem;
+      font-weight: 600;
+    }
+
+    .pg-lightbox-counter {
+      color: rgba(255, 248, 235, .7);
+      font-size: .76rem;
+      font-weight: 700;
+      letter-spacing: .05em;
+    }
+
+    .pg-lightbox-close,
+    .pg-lightbox-prev,
+    .pg-lightbox-next {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, .1);
+      border: 1px solid rgba(255, 255, 255, .25);
+      color: #fff9f2;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background .2s;
+    }
+
+    .pg-lightbox-close:hover,
+    .pg-lightbox-prev:hover,
+    .pg-lightbox-next:hover {
+      background: rgba(255, 255, 255, .2);
+    }
+
+    .pg-lightbox-close {
+      top: clamp(1rem, 4vw, 1.75rem);
+      right: clamp(1rem, 4vw, 1.75rem);
+      width: 42px;
+      height: 42px;
+      font-size: 1.4rem;
+    }
+
+    .pg-lightbox-prev,
+    .pg-lightbox-next {
+      top: 45%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      font-size: 1.1rem;
+    }
+
+    .pg-lightbox-prev {
+      left: clamp(.5rem, 3vw, 1.75rem);
+    }
+
+    .pg-lightbox-next {
+      right: clamp(.5rem, 3vw, 1.75rem);
+    }
+
+    /* ====== FOOTER ====== */
+    .site-footer {
+      background: var(--color-surface);
+      border-top: 1px solid var(--color-border);
+      padding: clamp(3.5rem, 7vw, 5.5rem) 0 2rem;
+    }
+
+    .footer-grid-main {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr 1fr;
+      gap: 2.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-brand-col .brand-name {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      margin: 1rem 0 .75rem;
+      line-height: 1.1;
+    }
+
+    .footer-brand-col p {
+      font-size: .875rem;
+      line-height: 1.75;
+      max-width: 26ch;
+      color: var(--color-text-muted);
+    }
+
+    .footer-brand-col .footer-tagline {
+      margin-top: 1.5rem;
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+    }
+
+    .footer-nav-col h4 {
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--color-text-faint);
+      margin-bottom: 1.1rem;
+    }
+
+    .footer-nav-col ul {
+      list-style: none;
+      display: grid;
+      gap: .55rem;
+    }
+
+    .footer-nav-col ul a {
+      font-size: .875rem;
+      color: var(--color-text-muted);
+      transition: color .2s;
+    }
+
+    .footer-nav-col ul a:hover {
+      color: var(--color-primary);
+    }
+
+    .footer-bottom-bar {
+      padding-top: 2rem;
+      border-top: 1px solid var(--color-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-bottom-bar p {
+      font-size: .78rem;
+      color: var(--color-text-faint);
+      max-width: none;
+    }
+
+    .footer-bottom-brand {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      font-size: .82rem;
+      font-weight: 700;
+      color: var(--color-text-muted);
+    }
+
+    /* ====== RESPONSIVE ====== */
+    @media (max-width: 1080px) {
+      .photos-gallery {
+        column-count: 3;
+      }
+
+      .footer-grid-main {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .photos-gallery {
+        column-count: 2;
+        column-gap: .85rem;
+      }
+
+      .pg-item {
+        margin-bottom: .85rem;
+      }
+
+      .footer-grid-main {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-bottom-bar {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 460px) {
+      .photos-gallery {
+        column-count: 1;
+      }
+
+      .photos-hero-cta {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .photos-hero-stats {
+        gap: 1.5rem 2rem;
+      }
+
+      .pg-lightbox-prev,
+      .pg-lightbox-next {
+        width: 38px;
+        height: 38px;
+      }
+
+      .pg-lightbox-close {
+        width: 36px;
+        height: 36px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <audio id="bgMusic" src="./music/bg.mp3" loop preload="auto"></audio>
+  <script>
+    (function () {
+      var audio = document.getElementById('bgMusic');
+      var KEY = 'msyBgMusicTime';
+
+      var saved = parseFloat(localStorage.getItem(KEY));
+      if (!isNaN(saved) && isFinite(saved)) {
+        audio.currentTime = saved;
+      }
+
+      function startPlayback() {
+        var p = audio.play();
+        if (p !== undefined) {
+          p.catch(function () {
+            var resume = function () {
+              audio.play();
+              document.removeEventListener('click', resume);
+              document.removeEventListener('touchstart', resume);
+              document.removeEventListener('keydown', resume);
+            };
+            document.addEventListener('click', resume);
+            document.addEventListener('touchstart', resume);
+            document.addEventListener('keydown', resume);
+          });
+        }
+      }
+      startPlayback();
+
+      setInterval(function () {
+        if (!audio.paused) localStorage.setItem(KEY, audio.currentTime);
+      }, 1000);
+
+      window.addEventListener('beforeunload', function () {
+        localStorage.setItem(KEY, audio.currentTime);
+      });
+    })();
+  </script>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ====== HEADER ====== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="./index.html">
+        <span class="brand-mark"
+          style="background:none;border-radius:0;padding:0;box-shadow:none;width:auto;height:52px;display:inline-flex;align-items:center;justify-content:center;">
+          <img src="./photo/logo.png" alt="Mindful Shapes Yoga logo" style="width:auto;height:100%;object-fit:contain">
+        </span>
+        <span class="brand-copy">
+          <strong>Mindful Shapes Yoga</strong>
+          <span>Photo Gallery</span>
+        </span>
+      </a>
+      <div class="nav-wrap">
+        <nav>
+          <button class="menu-toggle" aria-label="Toggle navigation" data-menu-toggle>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+          </button>
+          <div class="nav-links" data-nav>
+            <a href="./index.html">Home</a>
+            <a href="./courses.html">Classes</a>
+            <a href="./teacher-training.html">Teacher Training</a>
+            <a href="./meet-the-gurus.html">Gurus</a>
+            <a href="./photo.html"class="active">Ashram</a>
+            <a href="./volunteer.html">Volunteer</a>
+            <a href="./blog.html">Blog</a>
+            <a href="./contact.html">Contact</a>
+          </div>
+        </nav>
+        <button class="theme-toggle" data-theme-toggle aria-label="Switch theme"></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ====== HERO ====== -->
+    <section class="photos-hero">
+      <div class="container photos-hero-inner">
+        <span class="eyebrow">Our Gallery</span>
+        <h1>A Glimpse Into <em>Ashram Life</em></h1>
+        <p>From nourishing home-style meals to quiet mornings by the pool, these photos capture what daily life
+          feels like at Mindful Shapes Yoga — on campus in Chiplun, Maharashtra.</p>
+        <div class="photos-hero-cta">
+          <a class="btn btn-primary"
+            href="https://wa.me/919004913827?text=Hi%20Amogh%20Sir%2C%20I%20saw%20your%20photo%20gallery%20and%20would%20love%20to%20know%20more%20about%20visiting%20Mindful%20Shapes%20Yoga."
+            target="_blank" rel="noopener noreferrer">Plan Your Visit</a>
+          <a class="photos-hero-link" href="#photos-heading">Browse the Gallery ↓</a>
+        </div>
+        <div class="photos-hero-stats">
+          <div class="photos-hero-stat">
+            <strong>36+</strong>
+            <span>Photos</span>
+          </div>
+          <div class="photos-hero-stat">
+            <strong>Meals</strong>
+            <span>Home-Style Kitchen</span>
+          </div>
+          <div class="photos-hero-stat">
+            <strong>Community</strong>
+            <span>Shared Moments</span>
+          </div>
+          <div class="photos-hero-stat">
+            <strong>Chiplun</strong>
+            <span>Rooms</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== GALLERY ====== -->
+    <section class="photos-gallery-section" aria-labelledby="photos-heading">
+      <div class="container">
+        <h2 id="photos-heading" class="sr-only"
+          style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">Photo Gallery</h2>
+
+        <div class="photos-filter-bar reveal" role="group" aria-label="Filter photos by category">
+          <button type="button" class="photos-filter-btn is-active" data-filter="all" aria-pressed="true">All
+            Photos</button>
+          <button type="button" class="photos-filter-btn" data-filter="meals" aria-pressed="false">Meals</button>
+          <button type="button" class="photos-filter-btn" data-filter="community"
+            aria-pressed="false">Community</button>
+          <button type="button" class="photos-filter-btn" data-filter="retreat" aria-pressed="false">Rooms</button>
+        </div>
+
+        <div class="photos-gallery" id="photosGallery">
+
+          <button class="pg-item reveal" type="button" data-category="meals">
+            <img data-base="./gallery/1" src="./gallery/1.jpg" alt="A traditional thali, served fresh" loading="lazy"
+              onerror="pgImgFallback(this)">
+            <span class="pg-item-caption">A traditional thali, served fresh</span>
+          </button>
+
+          <button class="pg-item reveal" type="button" data-category="meals">
+            <img data-base="./gallery/3" src="./gallery/3.jpg" alt="Warm paratha, straight off the tawa"
+              loading="lazy" onerror="pgImgFallback(this)">
+            <span class="pg-item-caption">Warm paratha, straight off the tawa</span>
+          </button>
+
+          <button class="pg-item reveal" type="button" data-category="meals">
+            <img data-base="./gallery/4" src="./gallery/4.jpg" alt="A wholesome breakfast spread" loading="lazy"
+              onerror="pgImgFallback(this)">
+            <span class="pg-item-caption">A wholesome breakfast spread</span>
+          </button>
+
+          <button class="pg-item reveal" type="button" data-category="meals">
+            <img data-base="./gallery/5" src="./gallery/5.jpg" alt="A simple, home-style meal" loading="lazy"
+              onerror="pgImgFallback(this)">
+            <span class="pg-item-caption">A simple, home-style meal</span>
+          </button>
+
+          <button class="pg-item reveal" type="button" data-category="meals">
+            <img data-base="./gallery/6" src="./gallery/6.jpg" alt="Fresh strawberries with cream" loading="lazy"
+              onerror="pgImgFallback(this)">
+            <span class="pg-item-caption">Fresh strawberries with cream</span>
+          </button>
+
+          <button class="pg-item reveal" type="button" data-category="meals">
+            <img data-base="./gallery/7" src="./gallery/7.jpg" alt="A generous thali, full of flavor" loading="lazy"
+              onerror="pgImgFallback(this)">
+            <span class="pg-item-caption">A generous thali, full of flavor</span>
+          </button>
+
+          <button class="pg-item reveal" type="button" data-category="meals">
+            <img data-base="./gallery/8" src="./gallery/8.jpg" alt="Rice, chutney and fresh bread" loading="lazy"
+              onerror="pgImgFallback(this)">
+            <span class="pg-item-caption">Rice, chutney and fresh bread</span>
+          </button>
+
+          <button class="pg-item reveal" type="button" data-category="meals">
+            <img data-base="./gallery/9" src="./gallery/9.jpg" alt="Steamed rice with a side of sabzi" loading="lazy"
+              onerror="pgImgFallback(this)">
+            <span class="pg-item-caption">Steamed rice with a side of sabzi</span>
+          </button>
+
+          <button class="pg-item reveal" type="button" data-category="meals">
+            <img data-base="./gallery/10" src="./gallery/10.jpg" alt="Traditional sweets, made with love"
+              loading="lazy" onerror="pgImgFallback(this)">
+            <span class="pg-item-caption">Traditional sweets, made with love</span>
+          </button>
+
+          <button class="pg-item reveal" type="button" data-category="meals">
+            <img data-base="./gallery/11" src="./gallery/11.jpg" alt="A classic South Indian breakfast"
+              loading="lazy" onerror="pgImgFallback(this)">
+            <span class="pg-item-caption">A classic South Indian breakfast</span>
+          </button>
+
+          <button class="pg-item reveal" type="button" data-category="meals">
+            <img data-base="./gallery/12" src="./gallery/12.jpg" alt="Fresh paneer, prepared in-house" loading="lazy"
+              onerror="pgImgFallback(this)">
+            <span class="pg-item-caption">Fresh paneer, prepared in-house</span>
+          </button>
+
+          <button class="pg-item reveal" type="button" data-category="meals">
+            <img data-base="./gallery/13" src="./gallery/13.jpg" alt="Served the traditional way, on banana leaf"
+              loading="lazy" onerror="pgImgFallback(this)">
+            <span class="pg-item-caption">Served the traditional way, on banana leaf</span>
+          </button>
+
+          <button class="pg-item reveal" type="button" data-category="meals">
+            <img data-base="./gallery/14" src="./gallery/14.jpg" alt="Freshly fried puris" loading="lazy"
+              onerror="pgImgFallback(this)">
+            <span class="pg-item-caption">Freshly fried puris</span>
+          </button>
+
+          <button class="pg-item reveal" type="button" data-category="meals">
+            <img data-base="./gallery/15" src="./gallery/15.jpg" alt="A banana-leaf thali with seasonal sides"
+              loading="lazy" onerror="pgImgFallback(this)">
+            <span class="pg-item-caption">A banana-leaf thali with seasonal sides</span>
+          </button>
+
+          <button class="pg-item reveal" type="button" data-category="meals">
+            <img data-base="./gallery/16" src="./gallery/16.jpg" alt="A thali of small, flavorful bites"
+              loading="lazy" onerror="pgImgFallback(this)">
+            <span class="pg-item-caption">A thali of small, flavorful bites</span>
+          </button>
+
+          <button class="pg-item reveal" type="button" data-category="community">
+            <img data-base="./gallery/17" src="./gallery/17.jpg" alt="Sharing a meal together" loading="lazy"
+              onerror="pgImgFallback(this)">
+            <span class="pg-item-caption">Sharing a meal together</span>
+          </button>
+
+          <button class="pg-item reveal" type="button" data-category="community">
+            <img data-base="./gallery/18" src="./gallery/18.jpg" alt="Mealtime with the Mindful Shapes family"
+              loading="lazy" onerror="pgImgFallback(this)">
+            <span class="pg-item-caption">Mealtime with the Mindful Shapes family</span>
+          </button>
+
+          <button class="pg-item reveal" type="button" data-category="meals">
+            <img data-base="./gallery/19" src="./gallery/19.jpg" alt="Roti and chai, the simple way" loading="lazy"
+              onerror="pgImgFallback(this)">
+            <span class="pg-item-caption">Roti and chai, the simple way</span>
+          </button>
+
+          <button class="pg-item reveal" type="button" data-category="meals">
+            <img data-base="./gallery/20" src="./gallery/20.jpg" alt="Hot off the tawa" loading="lazy"
+              onerror="pgImgFallback(this)">
+            <span class="pg-item-caption">Hot off the tawa</span>
+          </button>
+
+          <button class="pg-item reveal" type="button" data-category="meals">
+            <img data-base="./gallery/21" src="./gallery/21.jpg" alt="Preparing fresh dairy in the kitchen"
+              loading="lazy" onerror="pgImgFallback(this)">
+            <span class="pg-item-caption">Preparing fresh dairy in the kitchen</span>
+          </button>
+
+          <button class="pg-item reveal" type="button" data-category="meals">
+            <img data-base="./gallery/22" src="./gallery/22.jpg" alt="Slow-cooked, the traditional way"
+              loading="lazy" onerror="pgImgFallback(this)">
+            <span class="pg-item-caption">Slow-cooked, the traditional way</span>
+          </button>
+
+          <button class="pg-item reveal" type="button" data-category="meals">
+            <img data-base="./gallery/23" src="./gallery/23.jpg" alt="Cooking with care, every single day"
+              loading="lazy" onerror="pgImgFallback(this)">
+            <span class="pg-item-caption">Cooking with care, every single day</span>
+          </button>
+
+          <button class="pg-item reveal" type="button" data-category="meals">
+            <img data-base="./gallery/24" src="./gallery/24.jpg" alt="A South Indian breakfast thali" loading="lazy"
+              onerror="pgImgFallback(this)">
+            <span class="pg-item-caption">A South Indian breakfast thali</span>
+          </button>
+
+          <button class="pg-item reveal" type="button" data-category="retreat">
+            <img data-base="./gallery/25" src="./gallery/25.jpg" alt="Our garden pathway, framed in green"
+              loading="lazy" onerror="pgImgFallback(this)">
+            <span class="pg-item-caption">Our garden pathway, framed in green</span>
+          </button>
+
+          <button class="pg-item reveal" type="button" data-category="retreat">
+            <img data-base="./gallery/26" src="./gallery/26.jpg" alt="Welcome to the retreat grounds" loading="lazy"
+              onerror="pgImgFallback(this)">
+            <span class="pg-item-caption">Welcome to the retreat grounds</span>
+          </button>
+
+          <button class="pg-item reveal" type="button" data-category="retreat">
+            <img data-base="./gallery/27" src="./gallery/27.jpg" alt="The pool deck, ready for a quiet swim"
+              loading="lazy" onerror="pgImgFallback(this)">
+            <span class="pg-item-caption">The pool deck, ready for a quiet swim</span>
+          </button>
+
+          <button class="pg-item reveal" type="button" data-category="retreat">
+            <img data-base="./gallery/28" src="./gallery/28.jpg" alt="A quiet balcony, wrapped in greenery"
+              loading="lazy" onerror="pgImgFallback(this)">
+            <span class="pg-item-caption">A quiet balcony, wrapped in greenery</span>
+          </button>
+
+          <button class="pg-item reveal" type="button" data-category="retreat">
+            <img data-base="./gallery/29" src="./gallery/29.jpg" alt="The retreat grounds, seen from above"
+              loading="lazy" onerror="pgImgFallback(this)">
+            <span class="pg-item-caption">The retreat grounds, seen from above</span>
+          </button>
+
+          <button class="pg-item reveal" type="button" data-category="retreat">
+            <img data-base="./gallery/30" src="./gallery/30.jpg" alt="Our shared practice and rest hall"
+              loading="lazy" onerror="pgImgFallback(this)">
+            <span class="pg-item-caption">Our shared practice and rest hall</span>
+          </button>
+
+          <button class="pg-item reveal" type="button" data-category="retreat">
+            <img data-base="./gallery/31" src="./gallery/31.jpg" alt="The pool, seen from above" loading="lazy"
+              onerror="pgImgFallback(this)">
+            <span class="pg-item-caption">The pool, seen from above</span>
+          </button>
+
+          <button class="pg-item reveal" type="button" data-category="retreat">
+            <img data-base="./gallery/32" src="./gallery/32.jpg" alt="Cottages, set among the trees" loading="lazy"
+              onerror="pgImgFallback(this)">
+            <span class="pg-item-caption">Cottages, set among the trees</span>
+          </button>
+
+          <button class="pg-item reveal" type="button" data-category="retreat">
+            <img data-base="./gallery/33" src="./gallery/33.jpg" alt="A quiet walkway through the greenery"
+              loading="lazy" onerror="pgImgFallback(this)">
+            <span class="pg-item-caption">A quiet walkway through the greenery</span>
+          </button>
+
+          <button class="pg-item reveal" type="button" data-category="retreat">
+            <img data-base="./gallery/34" src="./gallery/34.jpg" alt="A comfortable, simple room to rest in"
+              loading="lazy" onerror="pgImgFallback(this)">
+            <span class="pg-item-caption">A comfortable, simple room to rest in</span>
+          </button>
+
+          <button class="pg-item reveal" type="button" data-category="retreat">
+            <img data-base="./gallery/35" src="./gallery/35.jpg" alt="The pool at dusk" loading="lazy"
+              onerror="pgImgFallback(this)">
+            <span class="pg-item-caption">The pool at dusk</span>
+          </button>
+
+          <button class="pg-item reveal" type="button" data-category="retreat">
+            <img data-base="./gallery/36" src="./gallery/36.jpg" alt="The retreat, lit up at nightfall"
+              loading="lazy" onerror="pgImgFallback(this)">
+            <span class="pg-item-caption">The retreat, lit up at nightfall</span>
+          </button>
+
+          <button class="pg-item reveal" type="button" data-category="retreat">
+            <img data-base="./gallery/37" src="./gallery/37.jpg" alt="Evenings, spent outdoors together"
+              loading="lazy" onerror="pgImgFallback(this)">
+            <span class="pg-item-caption">Evenings, spent outdoors together</span>
+          </button>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="pg-lightbox" id="pgLightbox" aria-hidden="true">
+      <button class="pg-lightbox-close" id="pgLightboxClose" aria-label="Close gallery">&times;</button>
+      <button class="pg-lightbox-prev" id="pgLightboxPrev" aria-label="Previous image">&#10094;</button>
+      <img class="pg-lightbox-img" id="pgLightboxImg" src="" alt="">
+      <button class="pg-lightbox-next" id="pgLightboxNext" aria-label="Next image">&#10095;</button>
+      <div class="pg-lightbox-info">
+        <span class="pg-lightbox-caption" id="pgLightboxCaption"></span>
+        <span class="pg-lightbox-counter" id="pgLightboxCounter"></span>
+      </div>
+    </div>
+
+    <!-- ====== CTA ====== -->
+    <section class="dark-cta">
+      <div class="container dark-cta-inner">
+        <span class="eyebrow">Come Experience It Yourself</span>
+        <h2>Ready to live these moments <em>in person</em>?</h2>
+        <p>From shared meals to quiet mornings on the mat, the best way to know Mindful Shapes Yoga is to visit.</p>
+        <div class="dark-cta-btns">
+          <a class="btn-hero-gold"
+            href="https://wa.me/919004913827?text=Hi%20Amogh%20Sir%2C%20I%20saw%20your%20photo%20gallery%20and%20would%20love%20to%20know%20more%20about%20visiting%20Mindful%20Shapes%20Yoga."
+            target="_blank" rel="noopener noreferrer">Connect on WhatsApp</a>
+          <a class="btn-hero-ghost" href="./courses.html">Explore Our Programs</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid-main">
+        <div class="footer-brand-col">
+          <div class="brand" style="display:flex;align-items:center;gap:.75rem">
+            <span class="brand-mark"
+              style="background:none;border-radius:0;padding:0;box-shadow:none;width:auto;height:52px;display:inline-flex;align-items:center;justify-content:center;">
+              <img src="./photo/logo.png" alt="Mindful Shapes Yoga logo"
+                style="width:auto;height:100%;object-fit:contain">
+            </span>
+          </div>
+          <div class="brand-name">Mindful Shapes Yoga</div>
+          <p>A yoga ashram and academy founded by Amogh Shinde — bringing traditional yoga wisdom to modern students
+            across Maharashtra and beyond.</p>
+          <div class="footer-tagline">Yoga is a Way of Life</div>
+        </div>
+        <div class="footer-nav-col">
+          <h4>Programs</h4>
+          <ul>
+            <li><a href="./regular-classes.html">Regular Classes</a></li>
+            <li><a href="./teacher-training.html">Teacher Training (TTC)</a></li>
+            <li><a href="./ttc-200.html">200H TTC</a></li>
+            <li><a href="./ttc-500.html">500H TTC</a></li>
+            <li><a href="./pranayama-workshop.html">Pranayama Workshop</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="./photo.html">Photo Gallery</a></li>
+            <li><a href="./blog.html">Blog &amp; Journal</a></li>
+            <li><a href="./camps-workshops.html">Camps &amp; Workshops</a></li>
+            <li><a href="./volunteer.html">Volunteer Program</a></li>
+            <li><a href="./yoga-volunteer-certification.html">Volunteer Certification</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./courses.html">All Classes</a></li>
+            <li><a href="./meet-the-gurus.html">Meet the Gurus</a></li>
+            <li><a href="./blog.html">Blog</a></li>
+            <li><a href="./contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom-bar">
+        <p>&copy; 2025 Mindful Shapes Yoga. Founded by Amogh Shinde. All rights reserved.</p>
+        <div class="footer-creator-credit">
+          <span>Created by</span>
+          <span class="creator-name-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            Mr. Vedant Pravin Surve
+          </span>
+        </div>
+        <div class="footer-bottom-brand">
+          <span style="color:var(--color-primary)">ॐ</span>
+          <span>Pedhambee, Chiplun, Maharashtra</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./assets/app.js" defer></script>
+  <script>
+    (function () {
+      var itemsAll = Array.prototype.slice.call(document.querySelectorAll('#photosGallery .pg-item'));
+      if (!itemsAll.length) return;
+
+      var lightbox = document.getElementById('pgLightbox');
+      var lightboxImg = document.getElementById('pgLightboxImg');
+      var caption = document.getElementById('pgLightboxCaption');
+      var counter = document.getElementById('pgLightboxCounter');
+      var closeBtn = document.getElementById('pgLightboxClose');
+      var prevBtn = document.getElementById('pgLightboxPrev');
+      var nextBtn = document.getElementById('pgLightboxNext');
+      var visibleItems = itemsAll;
+      var current = 0;
+
+      function getVisible() {
+        return itemsAll.filter(function (item) {
+          return !item.classList.contains('is-hidden');
+        });
+      }
+
+      function show(index) {
+        if (!visibleItems.length) return;
+        current = (index + visibleItems.length) % visibleItems.length;
+        var item = visibleItems[current];
+        var img = item.querySelector('img');
+        var cap = item.querySelector('.pg-item-caption');
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        caption.textContent = cap ? cap.textContent : '';
+        counter.textContent = (current + 1) + ' / ' + visibleItems.length;
+      }
+
+      function open(item) {
+        visibleItems = getVisible();
+        var idx = visibleItems.indexOf(item);
+        show(idx < 0 ? 0 : idx);
+        lightbox.classList.add('active');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function close() {
+        lightbox.classList.remove('active');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      itemsAll.forEach(function (item) {
+        item.addEventListener('click', function () { open(item); });
+      });
+
+      closeBtn.addEventListener('click', close);
+      prevBtn.addEventListener('click', function () { show(current - 1); });
+      nextBtn.addEventListener('click', function () { show(current + 1); });
+
+      lightbox.addEventListener('click', function (e) {
+        if (e.target === lightbox) close();
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === 'Escape') close();
+        if (e.key === 'ArrowLeft') show(current - 1);
+        if (e.key === 'ArrowRight') show(current + 1);
+      });
+
+      // ---- Filter tabs ----
+      var filterBtns = Array.prototype.slice.call(document.querySelectorAll('.photos-filter-btn'));
+      filterBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          filterBtns.forEach(function (b) {
+            b.classList.remove('is-active');
+            b.setAttribute('aria-pressed', 'false');
+          });
+          btn.classList.add('is-active');
+          btn.setAttribute('aria-pressed', 'true');
+
+          var filter = btn.getAttribute('data-filter');
+          itemsAll.forEach(function (item) {
+            var match = filter === 'all' || item.getAttribute('data-category') === filter;
+            item.classList.toggle('is-hidden', !match);
+          });
+        });
+      });
+    })();
+  </script>
+</body>
+
+</html>

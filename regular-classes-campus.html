@@ -1,0 +1,1838 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>On-Campus Yoga Classes | Mindful Shapes Yoga — Amogh Shinde</title>
+  <meta name="description"
+    content="Join daily on-campus yoga asana classes at Mindful Shapes Yoga, led by Amogh Shinde. Morning & evening batches at our Pedhambee, Chiplun ashram, in English, Marathi, Hindi, Spanish & French. Starting ₹8,400 for 12 classes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./assets/styles.css">
+  <style>
+    /* ===== HERO ===== */
+    .cp-hero {
+      position: relative;
+      min-height: clamp(55vh, 70vh, 80vh);
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      background: #0d0b08;
+    }
+
+    .cp-hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .cp-hero-video-frame {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+    }
+
+    .cp-hero-video-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .cp-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(175deg, rgba(10, 7, 4, .1) 0%, rgba(10, 7, 4, .62) 100%);
+    }
+
+    .cp-hero-inner {
+      position: relative;
+      z-index: 2;
+      width: min(calc(100% - 2rem), 1200px);
+      margin-inline: auto;
+      padding: clamp(3rem, 6vw, 5rem) 0 clamp(2.5rem, 5vw, 4rem);
+    }
+
+    .cp-hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .4rem 1rem;
+      border-radius: 999px;
+      background: rgba(165, 90, 42, .2);
+      border: 1px solid rgba(165, 90, 42, .35);
+      color: #ddb878;
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+
+    .cp-hero-inner h1 {
+      font-size: clamp(2.2rem, 5.5vw, 4.2rem);
+      color: #fff9f2;
+      line-height: 1.05;
+      max-width: 18ch;
+      margin-bottom: 1rem;
+    }
+
+    .cp-hero-inner h1 em {
+      font-style: italic;
+      color: #ddb878;
+    }
+
+    .cp-hero-sub {
+      color: rgba(255, 248, 235, .72);
+      font-size: clamp(.9rem, 1.6vw, 1.1rem);
+      max-width: 52ch;
+      line-height: 1.75;
+      margin-bottom: 2rem;
+    }
+
+    .cp-hero-btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .85rem;
+    }
+
+    .btn-hero-gold {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .85rem 1.9rem;
+      border-radius: 999px;
+      font-size: .9rem;
+      font-weight: 800;
+      background: #ddb878;
+      color: #1a1008;
+      transition: background .2s, transform .2s;
+    }
+
+    .btn-hero-gold:hover {
+      background: #ebca94;
+      transform: translateY(-2px);
+    }
+
+    .btn-hero-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .85rem 1.7rem;
+      border-radius: 999px;
+      font-size: .9rem;
+      font-weight: 800;
+      background: rgba(255, 255, 255, .1);
+      border: 1px solid rgba(255, 255, 255, .25);
+      color: #fff9f2;
+      transition: background .2s, transform .2s;
+    }
+
+    .btn-hero-ghost:hover {
+      background: rgba(255, 255, 255, .18);
+      transform: translateY(-2px);
+    }
+
+    /* ===== STAT STRIP ===== */
+    .stat-strip {
+      background: var(--color-surface);
+      border-bottom: 1px solid var(--color-border);
+      padding: 1.5rem 0;
+    }
+
+    .stat-strip-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+
+    .strip-stat {
+      padding: .75rem 1.5rem;
+      border-right: 1px solid var(--color-border);
+      text-align: center;
+    }
+
+    .strip-stat:last-child {
+      border-right: none;
+    }
+
+    .strip-stat strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      color: var(--color-primary);
+      line-height: 1;
+      margin-bottom: .25rem;
+    }
+
+    .strip-stat span {
+      font-size: .75rem;
+      color: var(--color-text-muted);
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    /* ===== MAIN CONTENT ===== */
+    .cp-main {
+      padding: clamp(3rem, 6vw, 5rem) 0;
+    }
+
+    .cp-layout {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    /* ===== CONTENT BLOCKS ===== */
+    .cp-section {
+      margin-bottom: 2.5rem;
+    }
+
+    .cp-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .cp-section h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      margin: .6rem 0 1rem;
+      line-height: 1.1;
+    }
+
+    .cp-section p {
+      font-size: .97rem;
+      line-height: 1.8;
+      color: var(--color-text-muted);
+      margin-bottom: .9rem;
+      max-width: 65ch;
+    }
+
+    .cp-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: 1.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .cp-card h3 {
+      font-size: clamp(1.25rem, 2vw, 1.6rem);
+      margin-bottom: 1rem;
+    }
+
+    .cp-two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .cp-info-box {
+      background: var(--color-surface-2);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem;
+    }
+
+    .cp-info-box h4 {
+      font-size: 1rem;
+      margin-bottom: .75rem;
+      color: var(--color-text);
+    }
+
+    .cp-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .55rem;
+    }
+
+    .cp-list li {
+      font-size: .875rem;
+      color: var(--color-text-muted);
+      display: flex;
+      align-items: flex-start;
+      gap: .6rem;
+      line-height: 1.5;
+    }
+
+    .cp-list li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      flex-shrink: 0;
+      margin-top: .45rem;
+    }
+
+    .week-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: .75rem;
+      margin-top: 1rem;
+    }
+
+    .week-item {
+      background: var(--color-surface-2);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.1rem;
+    }
+
+    .week-item strong {
+      display: block;
+      font-size: .8rem;
+      font-weight: 800;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      margin-bottom: .35rem;
+    }
+
+    .week-item span {
+      font-size: .875rem;
+      color: var(--color-text-muted);
+      line-height: 1.5;
+    }
+
+    /* ===== STICKY SIDEBAR ===== */
+    .cp-sidebar {
+      position: sticky;
+      top: 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .price-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+    }
+
+    .price-card-top {
+      padding: 1.5rem 1.5rem 1.25rem;
+      border-bottom: 1px solid var(--color-border);
+      background: linear-gradient(135deg, var(--color-primary-highlight), var(--color-surface));
+    }
+
+    .price-card-top .eyebrow {
+      margin-bottom: .75rem;
+    }
+
+    .price-main {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      color: var(--color-text);
+      line-height: 1;
+    }
+
+    .price-main small {
+      font-family: var(--font-body);
+      font-size: .8rem;
+      color: var(--color-text-muted);
+      font-weight: 600;
+    }
+
+    .price-card-body {
+      padding: 1.25rem 1.5rem 1.5rem;
+    }
+
+    .price-includes {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .6rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .price-includes li {
+      font-size: .85rem;
+      color: var(--color-text-muted);
+      display: flex;
+      align-items: center;
+      gap: .55rem;
+    }
+
+    .check-icon {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    .check-icon::after {
+      content: '';
+      width: 7px;
+      height: 4px;
+      border-left: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+      transform: rotate(-45deg) translateY(-1px);
+      display: block;
+    }
+
+    .btn-enroll-full {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      width: 100%;
+      padding: .95rem;
+      border-radius: var(--radius-lg);
+      font-size: .92rem;
+      font-weight: 800;
+      background: var(--color-primary);
+      color: #fff9f2;
+      transition: background .2s, transform .2s;
+    }
+
+    .btn-enroll-full:hover {
+      background: var(--color-primary-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-contact-full {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      width: 100%;
+      padding: .85rem;
+      border-radius: var(--radius-lg);
+      font-size: .88rem;
+      font-weight: 700;
+      background: var(--color-surface-2);
+      border: 1px solid var(--color-border);
+      color: var(--color-text-muted);
+      transition: all .2s;
+      margin-top: .65rem;
+    }
+
+    .btn-contact-full:hover {
+      background: var(--color-surface-offset);
+      color: var(--color-text);
+    }
+
+    .sidebar-info {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: 1.25rem;
+    }
+
+    .sidebar-info h4 {
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--color-text-faint);
+      margin-bottom: 1rem;
+    }
+
+    .info-row {
+      display: flex;
+      align-items: flex-start;
+      gap: .75rem;
+      padding: .6rem 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .info-row:last-child {
+      border-bottom: none;
+    }
+
+    .info-row-label {
+      font-size: .78rem;
+      font-weight: 800;
+      color: var(--color-text-faint);
+      min-width: 80px;
+      flex-shrink: 0;
+      padding-top: .1rem;
+    }
+
+    .info-row-val {
+      font-size: .85rem;
+      color: var(--color-text-muted);
+      line-height: 1.5;
+    }
+
+    /* ===== PLANS SECTION ===== */
+    .plans-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+
+    .plan-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: 1.5rem;
+      position: relative;
+    }
+
+    .plan-card.featured {
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 1px var(--color-primary);
+    }
+
+    .plan-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--color-primary);
+      color: #fff9f2;
+      font-size: .68rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: .3rem .9rem;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    .plan-card h4 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      margin-bottom: .25rem;
+    }
+
+    .plan-price {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      color: var(--color-text);
+      line-height: 1;
+      margin: .5rem 0 .25rem;
+    }
+
+    .plan-price small {
+      font-family: var(--font-body);
+      font-size: .75rem;
+      color: var(--color-text-muted);
+      font-weight: 600;
+    }
+
+    .plan-save {
+      font-size: .75rem;
+      color: var(--color-success);
+      font-weight: 700;
+      margin-bottom: .9rem;
+    }
+
+    .plan-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .45rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .plan-features li {
+      font-size: .82rem;
+      color: var(--color-text-muted);
+      display: flex;
+      align-items: flex-start;
+      gap: .5rem;
+    }
+
+    .plan-features li::before {
+      content: '✓';
+      color: var(--color-primary);
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .btn-plan {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: .75rem;
+      border-radius: var(--radius-lg);
+      font-size: .85rem;
+      font-weight: 800;
+      background: var(--color-primary-highlight);
+      color: var(--color-primary);
+      border: 1px solid var(--color-primary);
+      transition: all .2s;
+    }
+
+    .btn-plan:hover,
+    .plan-card.featured .btn-plan {
+      background: var(--color-primary);
+      color: #fff9f2;
+    }
+
+    /* ===== FAQ ===== */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+      margin-top: 1.25rem;
+    }
+
+    .faq-list details {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 1.1rem 1.25rem;
+    }
+
+    .faq-list details[open] {
+      border-color: color-mix(in srgb, var(--color-primary) 30%, var(--color-border));
+    }
+
+    .faq-list summary {
+      font-size: .95rem;
+      font-weight: 700;
+      color: var(--color-text);
+      cursor: pointer;
+    }
+
+    .faq-list details p {
+      padding-top: .85rem;
+      font-size: .88rem;
+      line-height: 1.75;
+      color: var(--color-text-muted);
+      max-width: none;
+    }
+
+    /* ===== PHOTO STRIP ===== */
+    .photo-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+    }
+
+    .photo-strip img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
+    }
+
+    .photo-strip img:first-child {
+      border-radius: var(--radius-xl) 0 0 var(--radius-xl);
+    }
+
+    .photo-strip img:last-child {
+      border-radius: 0 var(--radius-xl) var(--radius-xl) 0;
+    }
+
+    /* ===== CTA DARK ===== */
+    .cp-cta {
+      background: linear-gradient(135deg, #1a0f06, #2d1a09);
+      padding: clamp(3rem, 6vw, 5rem) 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cp-cta::before {
+      content: 'ॐ';
+      position: absolute;
+      font-size: 20rem;
+      font-family: serif;
+      color: rgba(221, 184, 120, .04);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      line-height: 1;
+    }
+
+    .cp-cta-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .cp-cta h2 {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      color: #fff9f2;
+      margin: .75rem 0 1rem;
+      max-width: 18ch;
+      margin-inline: auto;
+    }
+
+    .cp-cta p {
+      color: rgba(255, 248, 235, .6);
+      font-size: 1rem;
+      margin-bottom: 2rem;
+      max-width: 48ch;
+      margin-inline: auto;
+    }
+
+    .cp-cta-btns {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    /* ===== FOOTER ===== */
+    .cp-footer {
+      padding: clamp(2.5rem, 5vw, 4rem) 0 1.5rem;
+      border-top: 1px solid var(--color-border);
+    }
+
+    .cp-footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .cp-footer-brand strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      margin-bottom: .35rem;
+    }
+
+    .cp-footer-brand p {
+      font-size: .85rem;
+      line-height: 1.7;
+      max-width: 32ch;
+    }
+
+    .cp-footer-col h5 {
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--color-text-faint);
+      margin-bottom: .85rem;
+    }
+
+    .cp-footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+    }
+
+    .cp-footer-col ul a {
+      font-size: .87rem;
+      color: var(--color-text-muted);
+      font-weight: 600;
+      transition: color .2s;
+    }
+
+    .cp-footer-col ul a:hover {
+      color: var(--color-primary);
+    }
+
+    .cp-footer-bottom {
+      border-top: 1px solid var(--color-border);
+      padding-top: 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .cp-footer-bottom p {
+      font-size: .78rem;
+      color: var(--color-text-faint);
+      max-width: none;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1080px) {
+      .cp-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .cp-sidebar {
+        position: static;
+      }
+
+      .plans-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stat-strip-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .strip-stat:nth-child(2) {
+        border-right: none;
+      }
+
+      .strip-stat:nth-child(3),
+      .strip-stat:nth-child(4) {
+        border-top: 1px solid var(--color-border);
+      }
+
+      .cp-footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .cp-footer-brand {
+        grid-column: span 2;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .cp-two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .week-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .plans-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .plan-card.featured {
+        margin-top: 1rem;
+      }
+
+      .stat-strip-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .photo-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-strip img:first-child {
+        border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+      }
+
+      .photo-strip img:last-child {
+        border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+      }
+
+      .cp-hero-btn-row .btn-hero-gold,
+      .cp-hero-btn-row .btn-hero-ghost {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .cp-footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cp-footer-brand {
+        grid-column: span 1;
+      }
+
+      .cp-footer-bottom {
+        flex-direction: column;
+      }
+
+      .cp-cta-btns .btn-hero-gold,
+      .cp-cta-btns .btn-hero-ghost {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .stat-strip-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .strip-stat {
+        padding: .6rem .85rem;
+      }
+    }
+
+    /* ===== ON-CAMPUS GALLERY (3-ROW SLIDING GRID) ===== */
+    .cp-gallery-section {
+      padding: clamp(3rem, 6vw, 5rem) 0;
+      background: var(--color-surface);
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .cp-gallery-header {
+      text-align: center;
+      max-width: 620px;
+      margin: 0 auto clamp(2rem, 4vw, 2.75rem);
+    }
+
+    .cp-gallery-header p {
+      color: var(--color-text-muted);
+      line-height: 1.75;
+      margin-top: .75rem;
+      font-size: .97rem;
+    }
+
+    /* 3 fixed rows; new columns are added automatically as slides scroll
+       sideways. Column width scales fluidly with the viewport (capped at
+       200px) so this works from small phones up to desktop with zero
+       breakpoints, and needs no changes when more photos are added later. */
+    .cp-gallery-grid {
+      display: grid;
+      grid-template-rows: repeat(3, 1fr);
+      grid-auto-flow: column;
+      grid-auto-columns: min(38vw, 200px);
+      gap: .85rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      padding: .25rem .25rem 1.5rem;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .cp-gallery-grid::-webkit-scrollbar {
+      display: none;
+    }
+
+    .cp-gallery-item {
+      position: relative;
+      display: block;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      padding: 0;
+      margin: 0;
+      border: none;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      cursor: pointer;
+      background: var(--color-surface-2);
+      scroll-snap-align: start;
+    }
+
+    .cp-gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .5s ease;
+    }
+
+    .cp-gallery-item::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(10, 7, 4, 0) 55%, rgba(10, 7, 4, .5) 100%);
+      opacity: 0;
+      transition: opacity .3s ease;
+    }
+
+    .cp-gallery-item::before {
+      content: '\2295';
+      position: absolute;
+      right: .6rem;
+      bottom: .55rem;
+      color: #fff9f2;
+      font-size: 1.1rem;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity .3s ease, transform .3s ease;
+      z-index: 1;
+    }
+
+    .cp-gallery-item:hover img {
+      transform: scale(1.08);
+    }
+
+    .cp-gallery-item:hover::after,
+    .cp-gallery-item:hover::before {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .cp-gallery-item:focus-visible {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 3px;
+    }
+
+    .cp-gallery-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.1rem;
+      margin-top: .5rem;
+      flex-wrap: wrap;
+    }
+
+    .cp-gallery-btn {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1px solid var(--color-border);
+      background: var(--color-surface);
+      color: var(--color-text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+      font-size: 1.1rem;
+      transition: background .2s, color .2s, border-color .2s;
+    }
+
+    .cp-gallery-btn:hover {
+      background: var(--color-primary);
+      color: #fff9f2;
+      border-color: var(--color-primary);
+    }
+
+    .cp-gallery-dots {
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 280px;
+    }
+
+    .cp-gallery-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--color-border);
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      transition: background .2s, transform .2s;
+    }
+
+    .cp-gallery-dot.active {
+      background: var(--color-primary);
+      transform: scale(1.35);
+    }
+
+    /* ===== LIGHTBOX ===== */
+    .cp-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(1rem, 5vw, 3rem);
+      background: rgba(10, 7, 4, .93);
+    }
+
+    .cp-lightbox.active {
+      display: flex;
+    }
+
+    .cp-lightbox-img {
+      max-width: 90vw;
+      max-height: 82vh;
+      border-radius: var(--radius-lg);
+      box-shadow: 0 25px 70px rgba(0, 0, 0, .55);
+    }
+
+    .cp-lightbox-counter {
+      position: absolute;
+      bottom: clamp(1rem, 4vw, 2rem);
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255, 248, 235, .75);
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .05em;
+    }
+
+    .cp-lightbox-close,
+    .cp-lightbox-prev,
+    .cp-lightbox-next {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, .1);
+      border: 1px solid rgba(255, 255, 255, .25);
+      color: #fff9f2;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background .2s, transform .2s;
+    }
+
+    .cp-lightbox-close:hover,
+    .cp-lightbox-prev:hover,
+    .cp-lightbox-next:hover {
+      background: rgba(255, 255, 255, .2);
+    }
+
+    .cp-lightbox-close {
+      top: clamp(1rem, 4vw, 1.75rem);
+      right: clamp(1rem, 4vw, 1.75rem);
+      width: 42px;
+      height: 42px;
+      font-size: 1.4rem;
+    }
+
+    .cp-lightbox-prev,
+    .cp-lightbox-next {
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      font-size: 1.1rem;
+    }
+
+    .cp-lightbox-prev {
+      left: clamp(.5rem, 3vw, 1.75rem);
+    }
+
+    .cp-lightbox-next {
+      right: clamp(.5rem, 3vw, 1.75rem);
+    }
+
+    @media (max-width: 420px) {
+      .cp-gallery-grid {
+        gap: .6rem;
+      }
+
+      .cp-lightbox-prev,
+      .cp-lightbox-next {
+        width: 38px;
+        height: 38px;
+      }
+
+      .cp-lightbox-close {
+        width: 36px;
+        height: 36px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <audio id="bgMusic" src="./music/bg.mp3" loop preload="auto"></audio>
+  <script>
+    (function () {
+      var audio = document.getElementById('bgMusic');
+      var KEY = 'msyBgMusicTime';
+
+      var saved = parseFloat(localStorage.getItem(KEY));
+      if (!isNaN(saved) && isFinite(saved)) {
+        audio.currentTime = saved;
+      }
+
+      function startPlayback() {
+        var p = audio.play();
+        if (p !== undefined) {
+          p.catch(function () {
+            var resume = function () {
+              audio.play();
+              document.removeEventListener('click', resume);
+              document.removeEventListener('touchstart', resume);
+              document.removeEventListener('keydown', resume);
+            };
+            document.addEventListener('click', resume);
+            document.addEventListener('touchstart', resume);
+            document.addEventListener('keydown', resume);
+          });
+        }
+      }
+      startPlayback();
+
+      setInterval(function () {
+        if (!audio.paused) localStorage.setItem(KEY, audio.currentTime);
+      }, 1000);
+
+      window.addEventListener('beforeunload', function () {
+        localStorage.setItem(KEY, audio.currentTime);
+      });
+    })();
+  </script>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="./index.html">
+        <span class="brand-mark"
+          style="background:none;border-radius:0;padding:0;box-shadow:none;width:auto;height:52px;display:inline-flex;align-items:center;justify-content:center;">
+          <img src="./photo/logo.png" alt="Mindful Shapes Yoga logo" style="width:auto;height:100%;object-fit:contain">
+        </span>
+        <span class="brand-copy">
+          <strong>Mindful Shapes Yoga</strong>
+          <span>Yoga Ashram by Amogh Shinde</span>
+        </span>
+      </a>
+      <div class="nav-wrap">
+        <nav>
+          <button class="menu-toggle" aria-label="Toggle navigation" data-menu-toggle>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+          </button>
+          <div class="nav-links" data-nav>
+            <a href="./index.html">Home</a>
+            <a href="./courses.html">Classes</a>
+            <a href="./teacher-training.html">Teacher Training</a>
+            <a href="./meet-the-gurus.html">Gurus</a>
+            <a href="./photo.html">Ashram</a>
+            <a href="./volunteer.html">Volunteer</a>
+            <a href="./blog.html">Blog</a>
+            <a href="./contact.html">Contact</a>
+          </div>
+        </nav>
+        <button class="theme-toggle" data-theme-toggle aria-label="Switch theme"></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="wa-strip">
+    <a href="https://wa.me/919004913827?text=Hi%20Amogh%20Sir%2C%20I%20am%20interested%20in%20the%20Daily%20Asana%20%26%20Wellness%20Classes%20at%20Mindful%20Shapes%20Yoga.%20Please%20share%20more%20details."
+      target="_blank" rel="noopener noreferrer">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+      </svg>
+      Enquire about Regular Classes — WhatsApp Amogh Shinde: +91 90049 13827
+    </a>
+  </div>
+
+  <main id="main">
+
+    <section class="cp-hero" aria-label="Regular Yoga Classes">
+      <div class="cp-hero-video" aria-hidden="true">
+        <div class="cp-hero-video-frame" id="heroVideoFrameCampus">
+          <iframe
+            src="https://player.mediadelivery.net/embed/717605/d7031acd-5fc5-4635-8b22-1f043c639780?autoplay=true&loop=true&muted=true&preload=true&responsive=true"
+            loading="lazy"
+            allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;"
+            allowfullscreen="true"></iframe>
+        </div>
+      </div>
+      <div class="cp-hero-overlay" aria-hidden="true"></div>
+      <div class="cp-hero-inner">
+        <div class="reveal">
+          <div class="cp-hero-tag">On-Campus Classes &mdash; Mindful Shapes Yoga</div>
+          <h1>Daily Asana &amp; <em>Wellness</em> Classes — On Campus</h1>
+          <p class="cp-hero-sub">Consistent, guided, in-person yoga practice for every body — from complete beginners to
+            returning practitioners. Morning &amp; evening batches at our Pedhambee, Chiplun ashram, in English,
+            Marathi, Hindi, Spanish &amp; French.</p>
+          <div class="cp-hero-btn-row">
+            <a class="btn-hero-gold"
+              href="https://wa.me/919004913827?text=Hi%20Amogh%20Sir%2C%20I%20am%20interested%20in%20Daily%20Asana%20%26%20Wellness%20Classes.%20Please%20share%20more%20details."
+              target="_blank" rel="noopener noreferrer">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+              Enroll Now — ₹8,400 for 12 Classes
+            </a>
+            <a class="btn-hero-ghost"
+              href="https://wa.me/919004913827?text=Hi%20Amogh%20Sir%2C%20I%20am%20interested%20in%20the%20Daily%20Asana%20%26%20Wellness%20Classes%20at%20Mindful%20Shapes%20Yoga.%20Please%20share%20more%20details."
+              target="_blank" rel="noopener noreferrer">Ask a Question</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      (function () {
+        var container = document.querySelector('.cp-hero');
+        var frame = document.getElementById('heroVideoFrameCampus');
+        if (!container || !frame) return;
+        var VIDEO_RATIO = 16 / 9;
+
+        function sizeHeroVideo() {
+          var cw = container.clientWidth;
+          var ch = container.clientHeight;
+          if (!cw || !ch) return;
+          var containerRatio = cw / ch;
+          var w, h;
+          if (containerRatio > VIDEO_RATIO) {
+            w = cw;
+            h = cw / VIDEO_RATIO;
+          } else {
+            h = ch;
+            w = ch * VIDEO_RATIO;
+          }
+          frame.style.width = w + 'px';
+          frame.style.height = h + 'px';
+        }
+
+        sizeHeroVideo();
+        window.addEventListener('resize', sizeHeroVideo);
+        window.addEventListener('orientationchange', sizeHeroVideo);
+        if (window.ResizeObserver) new ResizeObserver(sizeHeroVideo).observe(container);
+      })();
+    </script>
+
+    <div class="stat-strip">
+      <div class="container">
+        <div class="stat-strip-grid">
+          <div class="strip-stat"><strong>6 Days</strong><span>Per Week</span></div>
+          <div class="strip-stat"><strong>2 Batches</strong><span>Morning &amp; Evening</span></div>
+          <div class="strip-stat"><strong>On-Campus</strong><span>Pedhambee Ashram</span></div>
+          <div class="strip-stat"><strong>All Levels</strong><span>Welcome</span></div>
+        </div>
+      </div>
+    </div>
+
+    <section class="cp-main">
+      <div class="container">
+        <div class="cp-layout">
+
+          <div class="cp-content">
+
+            <div class="cp-section reveal">
+              <span class="eyebrow">About This Program</span>
+              <h2>Yoga That Builds Real, Lasting Habit</h2>
+              <p>At Mindful Shapes Yoga, regular classes are not just workout sessions — they are a systematic,
+                teacher-guided journey toward stronger body awareness, deeper breath, and genuine postural
+                transformation. Led personally by Amogh Shinde and his trained team, each class follows a structured
+                progression that respects where you are today and builds toward where you want to be.</p>
+              <p>Whether you are stepping on a mat for the first time, returning after a long gap, or maintaining a
+                steady practice — our regular classes create the consistent structure that makes real change possible.
+              </p>
+            </div>
+
+            <div class="cp-section reveal">
+              <span class="eyebrow">What You Learn</span>
+              <h2>A Progressive, Month-by-Month Curriculum</h2>
+              <p>Each month builds on the last. Classes are never random — they follow a structured curriculum designed
+                to deepen your practice systematically.</p>
+              <div class="cp-card">
+                <h3>Month-by-Month Learning Path</h3>
+                <div class="week-grid">
+                  <div class="week-item">
+                    <strong>Month 1 — Foundation</strong>
+                    <span>Body awareness, breath basics, sun salutations, fundamental standing poses, safe spinal
+                      movement</span>
+                  </div>
+                  <div class="week-item">
+                    <strong>Month 2 — Strength</strong>
+                    <span>Core engagement, warrior sequences, balance poses, hip openers, introductory backbends</span>
+                  </div>
+                  <div class="week-item">
+                    <strong>Month 3 — Breath</strong>
+                    <span>Pranayama integration, Ujjayi breath, deeper forward folds, seated postures,
+                      concentration</span>
+                  </div>
+                  <div class="week-item">
+                    <strong>Month 4+ — Deepening</strong>
+                    <span>Inversions, advanced sequences, meditation introduction, advanced pranayama, daily practice
+                      design</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cp-card" style="margin-top:1.25rem">
+                <h3>Each Class Includes</h3>
+                <div class="cp-two-col">
+                  <div class="cp-info-box">
+                    <h4>Asana Practice</h4>
+                    <ul class="cp-list">
+                      <li>Standing, seated, and supine postures</li>
+                      <li>Alignment corrections from instructor</li>
+                      <li>Modifications for every body type</li>
+                      <li>Sun salutation variations</li>
+                      <li>Balance and inversion preparation</li>
+                    </ul>
+                  </div>
+                  <div class="cp-info-box">
+                    <h4>Mind &amp; Breath</h4>
+                    <ul class="cp-list">
+                      <li>Guided pranayama (5–10 min)</li>
+                      <li>Warm-up and cool-down ritual</li>
+                      <li>Savasana with guided relaxation</li>
+                      <li>Weekly theme-based focus</li>
+                      <li>Q&amp;A time with instructor</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="cp-section reveal">
+              <span class="eyebrow">Schedule</span>
+              <h2>Flexible Timings That Fit Your Life</h2>
+              <div class="cp-card">
+                <div class="week-grid">
+                  <div class="week-item">
+                    <strong>Morning Batch</strong>
+                    <span>6:00 AM – 7:15 AM (Mon–Sat)<br>Ideal for working professionals</span>
+                  </div>
+                  <div class="week-item">
+                    <strong>Evening Batch</strong>
+                    <span>6:30 PM – 7:45 PM (Mon–Sat)<br>Ideal for homemakers &amp; students</span>
+                  </div>
+                  <div class="week-item">
+                    <strong>Trial Class</strong>
+                    <span>Free walk-in trial, any batch<br>Book your slot via WhatsApp</span>
+                  </div>
+                  <div class="week-item">
+                    <strong>Sunday</strong>
+                    <span>8:00 AM – 9:30 AM<br>Extended practice &amp; pranayama focus</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="cp-section reveal">
+              <span class="eyebrow">Pricing Plans</span>
+              <h2>Simple, Transparent Pricing</h2>
+              <p>No hidden fees. Pay once, practice fully. All plans include full on-campus access to daily classes.</p>
+              <div class="plans-grid">
+                <div class="plan-card">
+                  <h4>12 Classes</h4>
+                  <div class="plan-price">₹8,400 <small>total</small></div>
+                  <p class="plan-save">₹700 per class</p>
+                  <ul class="plan-features">
+                    <li>Flexible scheduling</li>
+                    <li>Morning or evening batch</li>
+                    <li>Full on-campus ashram access</li>
+                    <li>WhatsApp support group</li>
+                    <li>Progress tracking</li>
+                  </ul>
+                  <a class="btn-plan"
+                    href="https://wa.me/919004913827?text=Hi%20Amogh%20Sir%2C%20I%20am%20interested%20in%20Daily%20Asana%20%26%20Wellness%20Classes.%20Please%20share%20more%20details."
+                    target="_blank" rel="noopener noreferrer">Choose 12 Classes</a>
+                </div>
+                <div class="plan-card featured">
+                  <div class="plan-badge">Most Popular</div>
+                  <h4>24 Classes</h4>
+                  <div class="plan-price">₹12,000 <small>total</small></div>
+                  <p class="plan-save">₹500 per class &middot; Save ₹4,800</p>
+                  <ul class="plan-features">
+                    <li>Everything in 12 Classes</li>
+                    <li>Both morning &amp; evening batches</li>
+                    <li>1 free pranayama workshop</li>
+                    <li>Diet &amp; routine guidance</li>
+                    <li>Progress assessment call</li>
+                  </ul>
+                  <a class="btn-plan"
+                    href="https://wa.me/919004913827?text=Hi%20Amogh%20Sir%2C%20I%20am%20interested%20in%20Daily%20Asana%20%26%20Wellness%20Classes.%20Please%20share%20more%20details."
+                    target="_blank" rel="noopener noreferrer">Choose 24 Classes</a>
+                </div>
+                <div class="plan-card">
+                  <h4>60 Classes</h4>
+                  <div class="plan-price">₹24,000 <small>total</small></div>
+                  <p class="plan-save">Approx. ₹400 per class &middot; Save ₹18,000</p>
+                  <ul class="plan-features">
+                    <li>Everything in 24 Classes</li>
+                    <li>2 free pranayama workshops</li>
+                    <li>Yoga protocol booklet</li>
+                    <li>Priority batch seat reservation</li>
+                    <li>Completion certificate</li>
+                  </ul>
+                  <a class="btn-plan"
+                    href="https://wa.me/919004913827?text=Hi%20Amogh%20Sir%2C%20I%20am%20interested%20in%20Daily%20Asana%20%26%20Wellness%20Classes.%20Please%20share%20more%20details."
+                    target="_blank" rel="noopener noreferrer">Choose 60 Classes</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="cp-section reveal">
+              <span class="eyebrow">Frequently Asked Questions</span>
+              <h2>Your Questions, Answered</h2>
+              <div class="faq-list">
+                <details>
+                  <summary>Do I need prior yoga experience to join?</summary>
+                  <p>No experience is required. Our regular classes are designed to accommodate complete beginners. The
+                    instructor will offer modifications for every pose so you can practice safely from day one.</p>
+                </details>
+                <details>
+                  <summary>Can I attend both morning and evening batches?</summary>
+                  <p>The 24-class and 60-class packages include access to both batches. The 12-class package includes access to one
+                    fixed batch. You can switch batches once per month if space allows.</p>
+                </details>
+                <details>
+                  <summary>Where is the campus located and is parking available?</summary>
+                  <p>Our ashram campus is located in Pedhambee, Chiplun, Maharashtra. Two-wheeler and car parking is
+                    available on-site. Message us on WhatsApp for exact directions and a map link.</p>
+                </details>
+                <details>
+                  <summary>What do I need to bring for on-campus classes?</summary>
+                  <p>A yoga mat (we have a few spares if needed), comfortable clothing that allows movement, a small
+                    towel, and a water bottle. No footwear is required inside the yoga hall.</p>
+                </details>
+                <details>
+                  <summary>Can I pause my membership due to travel or illness?</summary>
+                  <p>Yes. We offer a pause option of up to 15 days per 3-month period. Unused days are carried forward.
+                    Please inform us in advance via WhatsApp or phone.</p>
+                </details>
+                <details>
+                  <summary>Is this class suitable for seniors or people with injuries?</summary>
+                  <p>We welcome students of all ages including seniors. Please inform the instructor about any injuries,
+                    surgeries, or health conditions before joining so that appropriate modifications can be prepared for
+                    you.</p>
+                </details>
+              </div>
+            </div>
+
+          </div>
+
+          <aside class="cp-sidebar">
+            <div class="price-card reveal">
+              <div class="price-card-top">
+                <span class="eyebrow">Starting From</span>
+                <div class="price-main">₹8,400 <small>/12 classes</small></div>
+                <p style="font-size:.82rem;color:var(--color-text-muted);margin-top:.35rem;max-width:none">Best value:
+                  ₹24,000 for 60 classes (approx. ₹400/class)</p>
+              </div>
+              <div class="price-card-body">
+                <ul class="price-includes">
+                  <li><span class="check-icon"></span>6 days/week classes</li>
+                  <li><span class="check-icon"></span>Full on-campus class access</li>
+                  <li><span class="check-icon"></span>Expert instructor corrections</li>
+                  <li><span class="check-icon"></span>English, Marathi, Hindi, Spanish &amp; French guidance</li>
+                  <li><span class="check-icon"></span>WhatsApp support group</li>
+                </ul>
+                <a class="btn-enroll-full"
+                  href="https://wa.me/919004913827?text=Hi%20Amogh%20Sir%2C%20I%20am%20interested%20in%20Daily%20Asana%20%26%20Wellness%20Classes.%20Please%20share%20more%20details."
+                  target="_blank" rel="noopener noreferrer">
+                  Enroll Now →
+                </a>
+                <a class="btn-contact-full"
+                  href="https://wa.me/919004913827?text=Hi%20Amogh%20Sir%2C%20I%20am%20interested%20in%20the%20Daily%20Asana%20%26%20Wellness%20Classes%20at%20Mindful%20Shapes%20Yoga.%20Please%20share%20more%20details."
+                  target="_blank" rel="noopener noreferrer">Ask a Question</a>
+              </div>
+            </div>
+            <div class="sidebar-info reveal">
+              <h4>Program Details</h4>
+              <div class="info-row">
+                <span class="info-row-label">Duration</span>
+                <span class="info-row-val">Class-based package (no subscription)</span>
+              </div>
+              <div class="info-row">
+                <span class="info-row-label">Schedule</span>
+                <span class="info-row-val">6 days/week — Mon to Sat</span>
+              </div>
+              <div class="info-row">
+                <span class="info-row-label">Timings</span>
+                <span class="info-row-val">6:00 AM or 6:30 PM batch</span>
+              </div>
+              <div class="info-row">
+                <span class="info-row-label">Language</span>
+                <span class="info-row-val">English, Marathi, Hindi, Spanish &amp; French</span>
+              </div>
+              <div class="info-row">
+                <span class="info-row-label">Format</span>
+                <span class="info-row-val">On-Campus (In-Person)</span>
+              </div>
+              <div class="info-row">
+                <span class="info-row-label">Level</span>
+                <span class="info-row-val">All levels — beginner to intermediate</span>
+              </div>
+              <div class="info-row">
+                <span class="info-row-label">Instructor</span>
+                <span class="info-row-val">Amogh Shinde &amp; team</span>
+              </div>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="cp-gallery-section" aria-labelledby="gallery-heading">
+      <div class="container">
+        <div class="cp-gallery-header reveal">
+          <span class="eyebrow">On-Campus Life</span>
+          <h2 id="gallery-heading">A Glimpse Inside Our Ashram Classes</h2>
+          <p>Real moments from our on-campus sessions — outdoor asana practice, inversions, group classes, and
+            community events at Mindful Shapes Yoga, Pedhambee, Chiplun.</p>
+        </div>
+        <div class="cp-gallery-grid" id="cpGalleryGrid">
+          <!-- To add more photos later: copy one .cp-gallery-item block, change
+               the src + alt, paste it before the closing </div> of this grid.
+               Arrows, dots and the lightbox all update automatically — nothing
+               else needs to change. -->
+          <button class="cp-gallery-item reveal" type="button" data-index="0">
+            <img src="./offline-classes/1.png" alt="Outdoor backbend yoga pose practice among palm trees" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="1">
+            <img src="./offline-classes/2.png" alt="Indoor seated meditation group session" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="2">
+            <img src="./offline-classes/3.png" alt="Acro yoga partner pose practice outdoors" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="3">
+            <img src="./offline-classes/4.png" alt="Instructor assisting a student with alignment outdoors" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="4">
+            <img src="./offline-classes/5.png" alt="Children's yoga class lying in a circle on the grass" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="5">
+            <img src="./offline-classes/6.png" alt="Outdoor community yoga session along a street" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="6">
+            <img src="./offline-classes/7.png" alt="Home practice headstand pose indoors" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="7">
+            <img src="./offline-classes/8.png" alt="Group forward fold pose in an open-air studio" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="8">
+            <img src="./offline-classes/9.png" alt="Student practicing headstand against the wall" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="9">
+            <img src="./offline-classes/10.png" alt="Student practicing supported headstand pose" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="10">
+            <img src="./offline-classes/11.png" alt="School students group photo after a yoga session" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="11">
+            <img src="./offline-classes/12.png" alt="Community outreach yoga session with participants" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="12">
+            <img src="./offline-classes/13.png" alt="Group downward dog pose in a decorated ashram hall" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="13">
+            <img src="./offline-classes/14.png" alt="Group yoga class practicing on an outdoor courtyard" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="14">
+            <img src="./offline-classes/15.png" alt="Group yoga class in the courtyard, wide view" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="15">
+            <img src="./offline-classes/16.png" alt="Group yoga class practicing on the courtyard in the evening" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="16">
+            <img src="./offline-classes/17.png" alt="Instructor assisting a student with an inversion pose indoors" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="17">
+            <img src="./offline-classes/18.png" alt="Instructor assisting a student with an inversion pose, indoor hall" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="18">
+            <img src="./offline-classes/19.png" alt="Instructor assisting a student in a standing balance pose outdoors" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="19">
+            <img src="./offline-classes/20.png" alt="Instructor assisting a student in a standing pose indoors" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="20">
+            <img src="./offline-classes/21.png" alt="Group class seated together indoors with hands raised" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="21">
+            <img src="./offline-classes/22.png" alt="Group class seated together indoors, hands raised, wide view" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="22">
+            <img src="./offline-classes/23.png" alt="Student practicing an extended leg raise pose outdoors" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="23">
+            <img src="./offline-classes/24.png" alt="Child practicing a shoulder stand pose indoors" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="24">
+            <img src="./offline-classes/25.png" alt="Student practicing a jumping pose outdoors in the park" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="25">
+            <img src="./offline-classes/26.png" alt="Student practicing a lunge pose outdoors in the park" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="26">
+            <img src="./offline-classes/27.png" alt="Student practicing crow pose (bakasana) outdoors on grass" loading="lazy">
+          </button>
+        </div>
+
+        <div class="cp-gallery-controls">
+          <button class="cp-gallery-btn" id="cpGalleryPrev" aria-label="Previous photos">&#10094;</button>
+          <div class="cp-gallery-dots" id="cpGalleryDots"></div>
+          <button class="cp-gallery-btn" id="cpGalleryNext" aria-label="Next photos">&#10095;</button>
+        </div>
+      </div>
+    </section>
+
+    <div class="cp-lightbox" id="cpLightbox" aria-hidden="true">
+      <button class="cp-lightbox-close" id="cpLightboxClose" aria-label="Close gallery">&times;</button>
+      <button class="cp-lightbox-prev" id="cpLightboxPrev" aria-label="Previous image">&#10094;</button>
+      <img class="cp-lightbox-img" id="cpLightboxImg" src="" alt="">
+      <button class="cp-lightbox-next" id="cpLightboxNext" aria-label="Next image">&#10095;</button>
+      <span class="cp-lightbox-counter" id="cpLightboxCounter"></span>
+    </div>
+
+    <section class="cp-cta" aria-label="Enroll in regular classes">
+      <div class="container cp-cta-inner reveal">
+        <span class="eyebrow" style="background:rgba(213,170,113,.15);color:#ddb878">Start Your Practice</span>
+        <h2>Your first class is the hardest. Everything after that gets better.</h2>
+        <p>Join morning or evening batches led by Amogh Shinde. Consistent practice over months is what creates lasting
+          transformation.</p>
+        <div class="cp-cta-btns">
+          <a class="btn-hero-gold"
+            href="https://wa.me/919004913827?text=Hi%20Amogh%20Sir%2C%20I%20am%20interested%20in%20Daily%20Asana%20%26%20Wellness%20Classes.%20Please%20share%20more%20details."
+            target="_blank" rel="noopener noreferrer">Enroll Today</a>
+          <a class="btn-hero-ghost" href="./courses.html">View All Classes</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="cp-footer">
+    <div class="container">
+      <div class="cp-footer-grid">
+        <div class="cp-footer-brand reveal">
+          <strong>Mindful Shapes Yoga</strong>
+          <span class="eyebrow" style="margin-bottom:.6rem">Founded by Amogh Shinde</span>
+          <p>Traditional ashram-rooted yoga in Maharashtra. Online &amp; on-campus courses in English, Marathi, Hindi,
+            Spanish &amp; French.</p>
+        </div>
+        <div class="cp-footer-col reveal">
+          <h5>All Programs</h5>
+          <ul>
+            <li><a href="./regular-classes.html">Regular Classes</a></li>
+            <li><a href="./teacher-training.html">Teacher Training</a></li>
+            <li><a href="./prenatal-yoga.html">Prenatal Yoga</a></li>
+            <li><a href="./pranayama-workshop.html">Pranayama Workshop</a></li>
+            <li><a href="./volunteer.html">Volunteer &amp; Seva</a></li>
+          </ul>
+        </div>
+        <div class="cp-footer-col reveal">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./courses.html">All Classes</a></li>
+            <li><a href="./courses.html">All Classes</a></li>
+            <li><a href="./contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="cp-footer-bottom">
+        <p>&copy; 2025 Mindful Shapes Yoga. Founded by Amogh Shinde. All rights reserved.</p>
+        <div class="footer-creator-credit">
+          <span>Created by</span>
+          <span class="creator-name-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            Mr. Vedant Pravin Surve
+          </span>
+        </div>
+        <p style="color:var(--color-primary);font-weight:700">Pedhambee, Chiplun, Maharashtra &mdash; Online &amp;
+          On-Campus &mdash; English, Marathi, Hindi, Spanish &amp; French</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./assets/app.js" defer></script>
+  <script>
+    (function () {
+      var grid = document.getElementById('cpGalleryGrid');
+      var items = Array.prototype.slice.call(document.querySelectorAll('#cpGalleryGrid .cp-gallery-item'));
+      if (!grid || !items.length) return;
+
+      var ROWS = 3;
+      var totalCols = Math.ceil(items.length / ROWS);
+      var prevBtn = document.getElementById('cpGalleryPrev');
+      var nextBtn = document.getElementById('cpGalleryNext');
+      var dotsWrap = document.getElementById('cpGalleryDots');
+      var activeCol = 0;
+      var syncing = false;
+
+      // Build one dot per column of photos so this auto-adjusts whenever
+      // more images are added later — no HTML edits needed.
+      for (var c = 0; c < totalCols; c++) {
+        (function (colIndex) {
+          var dot = document.createElement('button');
+          dot.type = 'button';
+          dot.className = 'cp-gallery-dot' + (colIndex === 0 ? ' active' : '');
+          dot.setAttribute('aria-label', 'Go to photo set ' + (colIndex + 1));
+          dot.addEventListener('click', function () { goToCol(colIndex); });
+          dotsWrap.appendChild(dot);
+        })(c);
+      }
+      var dots = Array.prototype.slice.call(dotsWrap.children);
+
+      function columnStep() {
+        var style = getComputedStyle(grid);
+        var gap = parseFloat(style.columnGap || style.gap || '0') || 0;
+        return items[0].getBoundingClientRect().width + gap;
+      }
+
+      function setActive(colIndex) {
+        activeCol = Math.max(0, Math.min(totalCols - 1, colIndex));
+        dots.forEach(function (d, i) { d.classList.toggle('active', i === activeCol); });
+      }
+
+      function goToCol(colIndex) {
+        syncing = true;
+        grid.scrollTo({ left: columnStep() * colIndex, behavior: 'smooth' });
+        setActive(colIndex);
+        window.setTimeout(function () { syncing = false; }, 400);
+      }
+
+      prevBtn.addEventListener('click', function () { goToCol(activeCol - 1); });
+      nextBtn.addEventListener('click', function () { goToCol(activeCol + 1); });
+
+      // Keep dots in sync if the person swipes/drags the grid directly
+      var rafPending = false;
+      grid.addEventListener('scroll', function () {
+        if (syncing || rafPending) return;
+        rafPending = true;
+        window.requestAnimationFrame(function () {
+          var step = columnStep();
+          if (step > 0) setActive(Math.round(grid.scrollLeft / step));
+          rafPending = false;
+        });
+      });
+    })();
+  </script>
+  <script>
+    (function () {
+      var items = Array.prototype.slice.call(document.querySelectorAll('#cpGalleryGrid .cp-gallery-item'));
+      if (!items.length) return;
+
+      var lightbox = document.getElementById('cpLightbox');
+      var lightboxImg = document.getElementById('cpLightboxImg');
+      var counter = document.getElementById('cpLightboxCounter');
+      var closeBtn = document.getElementById('cpLightboxClose');
+      var prevBtn = document.getElementById('cpLightboxPrev');
+      var nextBtn = document.getElementById('cpLightboxNext');
+      var current = 0;
+
+      function show(index) {
+        current = (index + items.length) % items.length;
+        var img = items[current].querySelector('img');
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        counter.textContent = (current + 1) + ' / ' + items.length;
+      }
+
+      function open(index) {
+        show(index);
+        lightbox.classList.add('active');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function close() {
+        lightbox.classList.remove('active');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      items.forEach(function (item, i) {
+        item.addEventListener('click', function () { open(i); });
+      });
+
+      closeBtn.addEventListener('click', close);
+      prevBtn.addEventListener('click', function () { show(current - 1); });
+      nextBtn.addEventListener('click', function () { show(current + 1); });
+
+      lightbox.addEventListener('click', function (e) {
+        if (e.target === lightbox) close();
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === 'Escape') close();
+        if (e.key === 'ArrowLeft') show(current - 1);
+        if (e.key === 'ArrowRight') show(current + 1);
+      });
+    })();
+  </script>
+</body>
+</html>

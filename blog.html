@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yoga Blog &amp; Journal | Mindful Shapes Yoga — Amogh Shinde</title>
+  <meta name="description"
+    content="Articles, practice notes, and yogic wisdom from Mindful Shapes Yoga — Hatha, Ashtanga, pranayama, meditation, Ayurveda, teacher training insights, and stories from our ashram community.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./assets/styles.css">
+  <style>
+    /* ====== BLOG HERO ====== */
+    .blog-hero {
+      position: relative;
+      min-height: clamp(46vh, 56vh, 62vh);
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      background: #0d0b08;
+    }
+
+    .blog-hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .blog-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(175deg, rgba(10, 7, 4, .25) 0%, rgba(10, 7, 4, .92) 100%);
+    }
+
+    .blog-hero-inner {
+      position: relative;
+      z-index: 2;
+      width: min(calc(100% - 2rem), 1200px);
+      margin-inline: auto;
+      padding: clamp(3rem, 6vw, 5rem) 0 clamp(2.5rem, 5vw, 4rem);
+    }
+
+    .blog-hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .4rem 1rem;
+      border-radius: 999px;
+      background: rgba(221, 184, 120, .15);
+      border: 1px solid rgba(221, 184, 120, .35);
+      color: #ddb878;
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+
+    .blog-hero-inner h1 {
+      font-size: clamp(2.2rem, 5.5vw, 4rem);
+      color: #fff9f2;
+      line-height: 1.06;
+      max-width: 18ch;
+      margin-bottom: 1rem;
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
+
+    .blog-hero-inner h1 em {
+      font-style: italic;
+      color: #ddb878;
+    }
+
+    .blog-hero-sub {
+      color: rgba(255, 248, 235, .72);
+      font-size: clamp(.9rem, 1.6vw, 1.1rem);
+      max-width: 56ch;
+      line-height: 1.75;
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
+
+    /* ====== SEARCH + FILTER BAR ====== */
+    .blog-toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: var(--color-surface, #fff);
+      border-bottom: 1px solid var(--color-border, #eadfce);
+      padding: 1.1rem 0;
+    }
+
+    .blog-toolbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .blog-search {
+      position: relative;
+      flex: 1 1 260px;
+      max-width: 340px;
+    }
+
+    .blog-search input {
+      width: 100%;
+      padding: .7rem 1rem .7rem 2.5rem;
+      border-radius: 999px;
+      border: 1px solid var(--color-border, #eadfce);
+      background: var(--color-surface-2, #faf6ee);
+      color: var(--color-text, #2a1f14);
+      font-family: var(--font-body, inherit);
+      font-size: .88rem;
+      outline: none;
+      transition: border-color .2s, box-shadow .2s;
+    }
+
+    .blog-search input:focus {
+      border-color: var(--color-primary, #ddb878);
+      box-shadow: 0 0 0 3px rgba(221, 184, 120, .18);
+    }
+
+    .blog-search svg {
+      position: absolute;
+      left: .85rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--color-text-faint, #9a8b76);
+      pointer-events: none;
+    }
+
+    .blog-cats {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      flex-wrap: wrap;
+      flex: 2 1 480px;
+      overflow-x: auto;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      padding-bottom: 2px;
+    }
+
+    .blog-cats::-webkit-scrollbar {
+      display: none;
+    }
+
+    .cat-chip {
+      flex-shrink: 0;
+      padding: .5rem 1.1rem;
+      border-radius: 999px;
+      border: 1px solid var(--color-border, #eadfce);
+      background: transparent;
+      color: var(--color-text-muted, #6b5c47);
+      font-family: var(--font-body, inherit);
+      font-size: .8rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background .2s, color .2s, border-color .2s;
+      white-space: nowrap;
+    }
+
+    .cat-chip:hover {
+      border-color: var(--color-primary, #ddb878);
+      color: var(--color-text, #2a1f14);
+    }
+
+    .cat-chip.is-active {
+      background: var(--color-primary, #ddb878);
+      border-color: var(--color-primary, #ddb878);
+      color: #fff9f2;
+    }
+
+    /* ====== BLOG GRID ====== */
+    .blog-main {
+      padding: clamp(2.5rem, 5vw, 4rem) 0 clamp(3rem, 6vw, 5rem);
+    }
+
+    .blog-results-meta {
+      font-size: .85rem;
+      color: var(--color-text-faint, #9a8b76);
+      margin-bottom: 1.5rem;
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.75rem;
+    }
+
+    .post-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--color-surface, #fff);
+      border: 1px solid var(--color-border, #eadfce);
+      border-radius: var(--radius-xl, 18px);
+      overflow: hidden;
+      transition: transform .25s, box-shadow .25s, border-color .25s;
+    }
+
+    .post-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px -20px rgba(60, 40, 15, .25);
+      border-color: var(--color-primary, #ddb878);
+    }
+
+    .post-thumb {
+      position: relative;
+      aspect-ratio: 16/10.5;
+      overflow: hidden;
+      background: var(--color-surface-2, #faf6ee);
+    }
+
+    .post-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .5s;
+    }
+
+    .post-card:hover .post-thumb img {
+      transform: scale(1.06);
+    }
+
+    .post-cat-badge {
+      position: absolute;
+      top: .85rem;
+      left: .85rem;
+      padding: .35rem .8rem;
+      border-radius: 999px;
+      background: rgba(13, 11, 8, .72);
+      backdrop-filter: blur(6px);
+      color: #ddb878;
+      font-size: .68rem;
+      font-weight: 800;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .post-pdf-badge {
+      position: absolute;
+      top: .85rem;
+      right: .85rem;
+      padding: .3rem .65rem;
+      border-radius: 8px;
+      background: rgba(255, 249, 242, .95);
+      color: #b0221c;
+      font-size: .68rem;
+      font-weight: 800;
+      letter-spacing: .04em;
+    }
+
+    .post-body {
+      padding: 1.4rem 1.4rem 1.6rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .post-meta {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      font-size: .76rem;
+      color: var(--color-text-faint, #9a8b76);
+      font-weight: 600;
+      margin-bottom: .6rem;
+      text-transform: uppercase;
+      letter-spacing: .03em;
+    }
+
+    .post-meta .dot {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--color-text-faint, #9a8b76);
+    }
+
+    .post-body h3 {
+      font-size: clamp(1.1rem, 1.6vw, 1.3rem);
+      line-height: 1.28;
+      margin-bottom: .6rem;
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
+
+    .post-body p {
+      font-size: .88rem;
+      color: var(--color-text-muted, #6b5c47);
+      line-height: 1.65;
+      margin-bottom: 1.1rem;
+      flex: 1;
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
+
+    .post-read-link {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      font-size: .82rem;
+      font-weight: 800;
+      color: var(--color-primary, #ddb878);
+      align-self: flex-start;
+      transition: gap .2s;
+    }
+
+    .post-read-link:hover {
+      gap: .65rem;
+    }
+
+    .blog-empty {
+      text-align: center;
+      padding: 4rem 1rem;
+      color: var(--color-text-muted, #6b5c47);
+      display: none;
+    }
+
+    .blog-empty h3 {
+      font-size: 1.4rem;
+      margin-bottom: .5rem;
+      color: var(--color-text, #2a1f14);
+    }
+
+    .blog-loadmore-wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: 3rem;
+    }
+
+    .btn-loadmore {
+      padding: .9rem 2.2rem;
+      border-radius: 999px;
+      border: 1px solid var(--color-border, #eadfce);
+      background: var(--color-surface, #fff);
+      color: var(--color-text, #2a1f14);
+      font-family: var(--font-body, inherit);
+      font-weight: 800;
+      font-size: .9rem;
+      cursor: pointer;
+      transition: background .2s, border-color .2s, transform .2s;
+    }
+
+    .btn-loadmore:hover {
+      border-color: var(--color-primary, #ddb878);
+      transform: translateY(-2px);
+    }
+
+    .btn-loadmore:disabled {
+      opacity: .45;
+      cursor: default;
+      transform: none;
+    }
+
+    /* ====== RESPONSIVE ====== */
+    @media (max-width: 1080px) {
+      .blog-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .blog-toolbar-inner {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .blog-search {
+        max-width: none;
+      }
+
+      .blog-search input {
+        /* keeps font-size at 16px so iOS Safari doesn't auto-zoom the page on focus */
+        font-size: 16px;
+      }
+
+      .blog-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .blog-hero {
+        min-height: clamp(40vh, 48vh, 56vh);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .blog-hero-inner h1 {
+        max-width: none;
+      }
+
+      .post-body {
+        padding: 1.2rem 1.1rem 1.4rem;
+      }
+
+      .cat-chip {
+        padding: .45rem .9rem;
+        font-size: .76rem;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .blog-hero-tag {
+        font-size: .66rem;
+        padding: .35rem .85rem;
+      }
+
+      .blog-toolbar {
+        padding: .9rem 0;
+      }
+
+      .post-meta {
+        flex-wrap: wrap;
+        row-gap: .3rem;
+      }
+
+      .btn-loadmore {
+        width: 100%;
+      }
+    }
+
+    /* short/landscape phones: keep the hero from swallowing the whole viewport */
+    @media (max-height: 480px) and (orientation: landscape) {
+      .blog-hero {
+        min-height: auto;
+      }
+
+      .blog-hero-inner {
+        padding: 2rem 0;
+      }
+    }
+
+    /* ====== FOOTER ====== */
+    .blog-footer {
+      background: #12100c;
+      color: rgba(255, 248, 235, .78);
+      padding: clamp(3rem, 6vw, 4.5rem) 0 0;
+    }
+
+    .bf-top {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.3fr;
+      gap: 2.5rem;
+      padding-bottom: clamp(2.5rem, 5vw, 3.5rem);
+    }
+
+    .bf-brand-logo {
+      display: flex;
+      align-items: center;
+      gap: .7rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .bf-brand-logo img {
+      height: 42px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .bf-brand-logo strong {
+      font-family: var(--font-display, 'Cormorant Garamond', serif);
+      font-size: 1.35rem;
+      color: #fff9f2;
+      line-height: 1.15;
+    }
+
+    .bf-brand p {
+      font-size: .88rem;
+      line-height: 1.75;
+      color: rgba(255, 248, 235, .58);
+      max-width: 34ch;
+      margin-bottom: 1.5rem;
+    }
+
+    .bf-social {
+      display: flex;
+      gap: .65rem;
+    }
+
+    .bf-social a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .06);
+      border: 1px solid rgba(255, 255, 255, .12);
+      color: rgba(255, 248, 235, .75);
+      transition: background .2s, border-color .2s, color .2s, transform .2s;
+    }
+
+    .bf-social a:hover {
+      background: #ddb878;
+      border-color: #ddb878;
+      color: #1a1008;
+      transform: translateY(-2px);
+    }
+
+    .bf-col h4 {
+      font-family: var(--font-body, 'Manrope', sans-serif);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: #ddb878;
+      margin-bottom: 1.2rem;
+    }
+
+    .bf-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .8rem;
+    }
+
+    .bf-col a {
+      font-size: .88rem;
+      color: rgba(255, 248, 235, .68);
+      transition: color .2s, padding-left .2s;
+    }
+
+    .bf-col a:hover {
+      color: #fff9f2;
+      padding-left: .25rem;
+    }
+
+    .bf-newsletter p {
+      font-size: .85rem;
+      line-height: 1.65;
+      color: rgba(255, 248, 235, .58);
+      margin-bottom: 1.1rem;
+    }
+
+    .bf-newsletter-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      padding: .8rem 1.5rem;
+      border-radius: 999px;
+      background: #ddb878;
+      color: #1a1008;
+      font-size: .84rem;
+      font-weight: 800;
+      transition: background .2s, transform .2s;
+    }
+
+    .bf-newsletter-btn:hover {
+      background: #ebca94;
+      transform: translateY(-2px);
+    }
+
+    .bf-bottom {
+      border-top: 1px solid rgba(255, 255, 255, .1);
+      padding: 1.5rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .bf-bottom p {
+      font-size: .78rem;
+      color: rgba(255, 248, 235, .45);
+      margin: 0;
+    }
+
+    .bf-bottom-right {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .78rem;
+      color: rgba(255, 248, 235, .45);
+      font-weight: 600;
+    }
+
+    .bf-bottom-right .om {
+      color: #ddb878;
+    }
+
+    @media (max-width: 1080px) {
+      .bf-top {
+        grid-template-columns: 1fr 1fr;
+        row-gap: 2.5rem;
+      }
+
+      .bf-brand {
+        grid-column: 1 / -1;
+      }
+
+      .bf-brand p {
+        max-width: 48ch;
+      }
+    }
+
+    /* ====== PDF DOWNLOAD FEEDBACK ====== */
+    .pdf-toast {
+      position: fixed;
+      left: 50%;
+      bottom: 1.5rem;
+      transform: translate(-50%, 20px);
+      background: #1a1008;
+      color: #fff9f2;
+      padding: .8rem 1.3rem;
+      border-radius: 999px;
+      font-family: var(--font-body, 'Manrope', sans-serif);
+      font-size: .82rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      box-shadow: 0 12px 30px -10px rgba(0, 0, 0, .5);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .25s, transform .25s;
+      z-index: 999;
+      max-width: calc(100% - 2rem);
+    }
+
+    .pdf-toast.is-visible {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+
+    .pdf-toast-spinner {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 2px solid rgba(255, 249, 242, .3);
+      border-top-color: #ddb878;
+      animation: pdfToastSpin .7s linear infinite;
+      flex-shrink: 0;
+    }
+
+    .pdf-toast-text {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    @keyframes pdfToastSpin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @media (max-width: 760px) {
+      .bf-top {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .bf-brand-logo {
+        justify-content: center;
+      }
+
+      .bf-brand p {
+        max-width: none;
+        margin-inline: auto;
+      }
+
+      .bf-social {
+        justify-content: center;
+      }
+
+      .bf-col ul {
+        align-items: center;
+      }
+
+      .bf-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <audio id="bgMusic" src="./music/bg.mp3" loop preload="auto"></audio>
+  <script>
+    (function () {
+      var audio = document.getElementById('bgMusic');
+      var KEY = 'msyBgMusicTime';
+      var saved = parseFloat(localStorage.getItem(KEY));
+      if (!isNaN(saved) && isFinite(saved)) { audio.currentTime = saved; }
+      function startPlayback() {
+        var p = audio.play();
+        if (p !== undefined) {
+          p.catch(function () {
+            var resume = function () {
+              audio.play();
+              document.removeEventListener('click', resume);
+              document.removeEventListener('touchstart', resume);
+              document.removeEventListener('keydown', resume);
+            };
+            document.addEventListener('click', resume);
+            document.addEventListener('touchstart', resume);
+            document.addEventListener('keydown', resume);
+          });
+        }
+      }
+      startPlayback();
+      setInterval(function () { if (!audio.paused) localStorage.setItem(KEY, audio.currentTime); }, 1000);
+      window.addEventListener('beforeunload', function () { localStorage.setItem(KEY, audio.currentTime); });
+    })();
+  </script>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="pdf-toast" id="pdfToast" role="status" aria-live="polite">
+    <span class="pdf-toast-spinner" aria-hidden="true"></span>
+    <span class="pdf-toast-text" id="pdfToastText"></span>
+  </div>
+
+  <!-- ====== HEADER ====== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="./index.html">
+        <span class="brand-mark"
+          style="background:none;border-radius:0;padding:0;box-shadow:none;width:auto;height:52px;display:inline-flex;align-items:center;justify-content:center;">
+          <img src="./photo/logo.png" alt="Mindful Shapes Yoga logo" style="width:auto;height:100%;object-fit:contain">
+        </span>
+        <span class="brand-copy">
+          <strong>Mindful Shapes Yoga</strong>
+          <span>Yoga Ashram by Amogh Shinde</span>
+        </span>
+      </a>
+      <div class="nav-wrap">
+        <nav>
+          <button class="menu-toggle" aria-label="Toggle navigation" data-menu-toggle>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+          </button>
+          <div class="nav-links" data-nav>
+            <a href="./index.html">Home</a>
+            <a href="./courses.html">Classes</a>
+            <a href="./teacher-training.html">Teacher Training</a>
+            <a href="./meet-the-gurus.html">Gurus</a>
+            <a href="./photo.html">Ashram</a>
+            <a href="./volunteer.html">Volunteer</a>
+            <a href="./blog.html"class="active">Blog</a>
+            <a href="./contact.html">Contact</a>
+          </div>
+        </nav>
+        <button class="theme-toggle" data-theme-toggle aria-label="Switch theme"></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="wa-strip">
+    <a href="https://wa.me/919004913827?text=Hi%20Amogh%20Sir%2C%20I%27d%20love%20to%20get%20new%20yoga%20articles%20and%20practice%20tips%20from%20Mindful%20Shapes%20Yoga."
+      target="_blank" rel="noopener noreferrer">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+      </svg>
+      Get new articles &amp; practice tips on WhatsApp — Chat with Amogh Shinde: +91 90049 13827
+    </a>
+  </div>
+
+  <main id="main">
+
+    <!-- ====== BLOG HERO ====== -->
+    <section class="blog-hero" aria-labelledby="blog-heading">
+      <img class="blog-hero-bg" src="./amogh/8.jpg" alt="Amogh Shinde reading the Yoga Sutras of Patanjali" loading="eager">
+      <div class="blog-hero-overlay" aria-hidden="true"></div>
+      <div class="blog-hero-inner">
+        <div class="blog-hero-tag">Yoga Journal</div>
+        <h1 id="blog-heading">Stories, Practice Notes &amp; <em>Wisdom</em> from the Mat.</h1>
+        <p class="blog-hero-sub">Reflections on asana, breath, philosophy, and life at the ashram — written from
+          Amogh Shinde's own teaching and study, for students at every stage of the path.</p>
+      </div>
+    </section>
+
+    <!-- ====== TOOLBAR: SEARCH + CATEGORIES ====== -->
+    <div class="blog-toolbar">
+      <div class="container blog-toolbar-inner">
+        <div class="blog-search">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="7" />
+            <path d="M21 21l-4.3-4.3" />
+          </svg>
+          <input type="search" id="blogSearch" placeholder="Search articles..." aria-label="Search articles">
+        </div>
+        <div class="blog-cats" id="blogCats" role="tablist" aria-label="Filter by category">
+          <button class="cat-chip is-active" data-cat="all" role="tab" aria-selected="true">All Articles</button>
+          <button class="cat-chip" data-cat="Yoga Philosophy" role="tab" aria-selected="false">Yoga Philosophy</button>
+          <button class="cat-chip" data-cat="Meditation" role="tab" aria-selected="false">Meditation</button>
+          <button class="cat-chip" data-cat="Pranayama & Breathwork" role="tab" aria-selected="false">Pranayama &amp; Breathwork</button>
+          <button class="cat-chip" data-cat="Ayurveda & Wellness" role="tab" aria-selected="false">Ayurveda &amp; Wellness</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====== BLOG GRID (rendered by script below from the `posts` array) ====== -->
+    <section class="blog-main">
+      <div class="container">
+        <p class="blog-results-meta" id="blogResultsMeta"></p>
+        <div class="blog-grid" id="blogGrid"></div>
+        <div class="blog-empty" id="blogEmpty">
+          <h3>No articles found</h3>
+          <p>Try a different search term or choose another category.</p>
+        </div>
+        <div class="blog-loadmore-wrap">
+          <button class="btn-loadmore" id="loadMoreBtn">Load More Articles</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== NEWSLETTER / WHATSAPP CTA ====== -->
+    <section class="dark-cta">
+      <div class="container dark-cta-inner">
+        <span class="eyebrow">Never miss an article</span>
+        <h2>New posts, straight to your <em>WhatsApp.</em></h2>
+        <p>We publish new practice notes and teachings regularly. Message us once and we'll let you know when a
+          fresh article is up.</p>
+        <div class="dark-cta-btns">
+          <a class="btn-hero-gold"
+            href="https://wa.me/919004913827?text=Hi%20Amogh%20Sir%2C%20please%20let%20me%20know%20when%20new%20yoga%20blog%20articles%20are%20published."
+            target="_blank" rel="noopener noreferrer">Get Notified</a>
+          <a class="btn-hero-ghost" href="./courses.html">Explore Our Classes</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="blog-footer">
+    <div class="container bf-top">
+      <div class="bf-brand">
+        <div class="bf-brand-logo">
+          <img src="./photo/logo.png" alt="Mindful Shapes Yoga logo">
+          <strong>Mindful Shapes<br>Yoga</strong>
+        </div>
+        <p>A yoga ashram and academy founded by Amogh Shinde — bringing traditional yoga wisdom, teacher training,
+          and now a growing journal of practice notes, to students across Maharashtra and beyond.</p>
+        <div class="bf-social" aria-label="Social links">
+          <a href="https://wa.me/919004913827" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+            </svg>
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="2" width="20" height="20" rx="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+            </svg>
+          </a>
+          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="5" width="20" height="14" rx="4" />
+              <path d="M10 9l5 3-5 3z" fill="currentColor" stroke="none" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="bf-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./courses.html">All Classes</a></li>
+          <li><a href="./blog.html">Blog &amp; Journal</a></li>
+          <li><a href="./volunteer.html">Volunteer Program</a></li>
+          <li><a href="./contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="bf-col">
+        <h4>Programs</h4>
+        <ul>
+          <li><a href="./regular-classes.html">Regular Classes</a></li>
+          <li><a href="./teacher-training.html">Teacher Training (TTC)</a></li>
+          <li><a href="./ttc-200.html">200H TTC</a></li>
+          <li><a href="./ttc-500.html">500H TTC</a></li>
+          <li><a href="./pranayama-workshop.html">Pranayama Workshop</a></li>
+        </ul>
+      </div>
+
+      <div class="bf-col bf-newsletter">
+        <h4>Stay in the Loop</h4>
+        <p>Get new articles and practice tips the moment they're published — straight to your WhatsApp.</p>
+        <a class="bf-newsletter-btn"
+          href="https://wa.me/919004913827?text=Hi%20Amogh%20Sir%2C%20please%20let%20me%20know%20when%20new%20yoga%20blog%20articles%20are%20published."
+          target="_blank" rel="noopener noreferrer">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M12 5v14M5 12h14" />
+          </svg>
+          Get Notified
+        </a>
+      </div>
+    </div>
+
+    <div class="container bf-bottom">
+      <p>&copy; 2025 Mindful Shapes Yoga. Founded by Amogh Shinde. All rights reserved.</p>
+      <div class="footer-creator-credit">
+        <span>Created by</span>
+        <span class="creator-name-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          Mr. Vedant Pravin Surve
+        </span>
+      </div>
+      <div class="bf-bottom-right">
+        <span class="om">ॐ</span>
+        <span>Pedhambee, Chiplun, Maharashtra</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./assets/app.js" defer></script>
+
+  <!-- ======================================================================
+       BLOG DATA + RENDER ENGINE
+       ----------------------------------------------------------------------
+       HOW TO ADD A NEW ARTICLE (works for 1 post or 100):
+       1. Drop the PDF into the /blog-pdfs/ folder next to this file.
+       2. Copy one object inside the `posts` array below.
+       3. Fill in title, excerpt, category (must match one of the filter chips
+          above), date (YYYY-MM-DD), readMin, image (a thumbnail — a JPG of
+          the PDF's first page works well, saved in /blog-thumbs/), and pdf
+          (the path to the PDF file in /blog-pdfs/).
+       4. Save. No other code needs to change — search, filters, sorting,
+          and "Load More" pagination all work automatically off this list.
+          Each card's thumbnail, title, and "Download PDF" button all link
+          straight to the PDF file — clicking any of them downloads it.
+  ======================================================================= -->
+  <script>
+    const posts = [
+      {
+        title: "Ajna Chakra: The Third Eye and Its Mystical Significance",
+        excerpt: "The symbolism, mantra, and glandular connection of the third eye chakra, plus five practices — from Trataka to Shambhavi Mudra — to awaken it.",
+        category: "Yoga Philosophy",
+        date: "2026-07-16",
+        readMin: 5,
+        image: "./blog-thumbs/ajna-chakra-marathi.png",
+        alt: "Ajna Chakra: The Third Eye and Its Mystical Significance PDF cover",
+        pdf: "./blog-pdfs/ajna-chakra-marathi.pdf"
+      },
+      {
+        title: "Pranayama for Asthma",
+        excerpt: "A look at clinical research on controlled-breathing exercises and how they measurably eased airway irritability in asthma patients.",
+        category: "Pranayama & Breathwork",
+        date: "2026-07-14",
+        readMin: 3,
+        image: "./blog-thumbs/Asthma.png",
+        alt: "Pranayama for Asthma PDF cover",
+        pdf: "./blog-pdfs/Asthma.pdf"
+      },
+      {
+        title: "Benefits of Meditation",
+        excerpt: "Eight evidence-informed reasons to sit daily — from stress reduction and sharper focus to better sleep and a stronger immune system.",
+        category: "Meditation",
+        date: "2026-07-12",
+        readMin: 4,
+        image: "./blog-thumbs/benefits-of-meditation.png",
+        alt: "Benefits of Meditation PDF cover",
+        pdf: "./blog-pdfs/benefits-of-meditation.pdf"
+      },
+      {
+        title: "Binaural Beats: The Sound of Deep Meditation",
+        excerpt: "How two slightly different tones in each ear can nudge the brain toward the relaxed states meditators spend years training for.",
+        category: "Meditation",
+        date: "2026-07-08",
+        readMin: 6,
+        image: "./blog-thumbs/binaural-beats.png",
+        alt: "Binaural Beats blog post PDF cover",
+        pdf: "./blog-pdfs/binaural-beats.pdf"
+      },
+      {
+        title: "Breath as Biology, Breath as Prāṇa",
+        excerpt: "Where modern respiratory science and the yogic understanding of prana actually meet — and where they part ways.",
+        category: "Pranayama & Breathwork",
+        date: "2026-07-06",
+        readMin: 5,
+        image: "./blog-thumbs/Breath as Biology.png",
+        alt: "Breath as Biology, Breath as Prāṇa PDF cover",
+        pdf: "./blog-pdfs/Breath as Biology, Breath as Prāṇa.pdf"
+      },
+      {
+        title: "Facts on Meditation",
+        excerpt: "A few lesser-known, well-documented facts about what meditation actually does to the brain and body over time.",
+        category: "Meditation",
+        date: "2026-07-05",
+        readMin: 3,
+        image: "./blog-thumbs/Facts On Meditattion.png",
+        alt: "Facts on Meditation PDF cover",
+        pdf: "./blog-pdfs/Facts On Meditattion.pdf"
+      },
+      {
+        title: "Meditation Facts",
+        excerpt: "Where the word 'meditation' actually comes from, and the two basic approaches — concentrative and mindfulness — behind every technique.",
+        category: "Meditation",
+        date: "2026-07-04",
+        readMin: 4,
+        image: "./blog-thumbs/meditation-facts.png",
+        alt: "Meditation Facts PDF cover",
+        pdf: "./blog-pdfs/meditation-facts.pdf"
+      },
+      {
+        title: "Himsa to Ahimsa: From Conflict to Harmony",
+        excerpt: "The three yogic causes of anger — Krta, Karita, and Anumodita — and how the practice of Ahimsa helps you let go of them.",
+        category: "Yoga Philosophy",
+        date: "2026-06-30",
+        readMin: 3,
+        image: "./blog-thumbs/himsa-to-ahimsa.png",
+        alt: "Himsa to Ahimsa blog post PDF cover",
+        pdf: "./blog-pdfs/himsa-to-ahimsa.pdf"
+      },
+      {
+        title: "The Legend of Jyotirlinga: The Infinite Pillar of Light",
+        excerpt: "The Puranic story of Shiva's boundless pillar of fire, and what it means for ego, consciousness, and the search for truth.",
+        category: "Yoga Philosophy",
+        date: "2026-06-26",
+        readMin: 6,
+        image: "./blog-thumbs/jyotirlinga-legend.png",
+        alt: "The Legend of Jyotirlinga PDF cover",
+        pdf: "./blog-pdfs/jyotirlinga-legend.pdf"
+      },
+      {
+        title: "Karma Yoga: The Path of Selfless Action",
+        excerpt: "The Bhagavad Gita's teaching of Nishkama Karma — acting with full dedication while releasing attachment to the outcome.",
+        category: "Yoga Philosophy",
+        date: "2026-06-21",
+        readMin: 5,
+        image: "./blog-thumbs/karma-yoga.png",
+        alt: "Karma Yoga: The Path of Selfless Action PDF cover",
+        pdf: "./blog-pdfs/karma-yoga.pdf"
+      },
+      {
+        title: "Klesha: The Causes of Suffering in Yoga Philosophy",
+        excerpt: "Patanjali's five root afflictions — Avidya, Asmita, Raga, Dvesha, and Abhinivesha — explained with everyday examples of each.",
+        category: "Yoga Philosophy",
+        date: "2026-06-17",
+        readMin: 7,
+        image: "./blog-thumbs/klesha-causes-of-suffering.png",
+        alt: "Klesha: The Causes of Suffering in Yoga Philosophy PDF cover",
+        pdf: "./blog-pdfs/klesha-causes-of-suffering.pdf"
+      },
+      {
+        title: "Mahashivratri: The Great Night of Shiva",
+        excerpt: "The Vedic and Puranic roots of this sacred night — from the Ananda Tandava to the story of Neelkanth — and why it's kept as a night of practice.",
+        category: "Yoga Philosophy",
+        date: "2026-06-12",
+        readMin: 4,
+        image: "./blog-thumbs/mahashivratri.png",
+        alt: "Mahashivratri: The Great Night of Shiva PDF cover",
+        pdf: "./blog-pdfs/mahashivratri.pdf"
+      },
+      {
+        title: "The Legend of Neelkanth: A Confluence of Vedic and Modern Philosophies",
+        excerpt: "Why Shiva held the poison Halahala in his throat instead of swallowing it — and the lesson in detachment it still offers today.",
+        category: "Yoga Philosophy",
+        date: "2026-06-08",
+        readMin: 7,
+        image: "./blog-thumbs/Neelkant.png",
+        alt: "The Legend of Neelkanth PDF cover",
+        pdf: "./blog-pdfs/Neelkant.pdf"
+      },
+      {
+        title: "Prevention of Heart Attacks",
+        excerpt: "The Dr. Dean Ornish study on reversing arterial blockage through a vegetarian diet, moderate exercise, and daily yoga and meditation.",
+        category: "Ayurveda & Wellness",
+        date: "2026-05-29",
+        readMin: 3,
+        image: "./blog-thumbs/prevention-of-heart-disease.png",
+        alt: "Prevention of Heart Attacks PDF cover",
+        pdf: "./blog-pdfs/prevention-of-heart-disease.pdf"
+      },
+      {
+        title: "Shad Darshanas: The Six Philosophical Schools of India",
+        excerpt: "From Nyaya's logic to Vedanta's self-inquiry — a tour of the six classical schools that shaped Indian philosophical and yogic thought.",
+        category: "Yoga Philosophy",
+        date: "2026-05-24",
+        readMin: 9,
+        image: "./blog-thumbs/षड्दर्शन.png",
+        alt: "Shad Darshanas: The Six Philosophical Schools of India PDF cover",
+        pdf: "./blog-pdfs/षड्दर्शन.pdf"
+      },
+      {
+        title: "What is Meditation?",
+        excerpt: "Three classical lenses on meditation — Dhyana, Bhavana, and Manana — and why meditation is better understood as a verb than a noun.",
+        category: "Meditation",
+        date: "2026-05-14",
+        readMin: 4,
+        image: "./blog-thumbs/what-is-meditation.png",
+        alt: "What is Meditation PDF cover",
+        pdf: "./blog-pdfs/what-is-meditation.pdf"
+      },
+      {
+        title: "Yamas: The Art of Righteous Living",
+        excerpt: "Why restraint comes before transformation, and how the five Yamas — from Ahimsa to Aparigraha — form the base of a yogic life.",
+        category: "Yoga Philosophy",
+        date: "2026-05-09",
+        readMin: 4,
+        image: "./blog-thumbs/yamas-righteous-living.png",
+        alt: "Yamas: The Art of Righteous Living PDF cover",
+        pdf: "./blog-pdfs/yamas-righteous-living.pdf"
+      },
+      {
+        title: "आज्ञा चक्र: तिसरे नेत्र आणि त्याचे आध्यात्मिक रहस्य",
+        excerpt: "आज्ञा चक्राचे प्रतीकात्मक महत्त्व, बीज मंत्र आणि पिनियल ग्रंथीशी असलेला संबंध, तसेच ते जागृत करण्याच्या पद्धती.",
+        category: "Yoga Philosophy",
+        date: "2026-05-04",
+        readMin: 5,
+        image: "./blog-thumbs/आज्ञा चक्र तिसरे नेत्र आणि त्याचे आध्यात्मिक रहस्य.png",
+        alt: "आज्ञा चक्र PDF cover",
+        pdf: "./blog-pdfs/आज्ञा चक्र तिसरे नेत्र आणि त्याचे आध्यात्मिक रहस्य.pdf"
+      },
+      {
+        title: "कर्मयोग: निष्काम कर्माचा मार्ग",
+        excerpt: "भगवद्गीतेच्या शिकवणीनुसार निष्काम कर्म म्हणजे काय, आणि फळाची अपेक्षा न ठेवता कर्तव्य पार पाडणे का महत्त्वाचे आहे.",
+        category: "Yoga Philosophy",
+        date: "2026-04-29",
+        readMin: 5,
+        image: "./blog-thumbs/कर्मयोग निष्काम कर्माचा मार्ग.png",
+        alt: "कर्मयोग PDF cover",
+        pdf: "./blog-pdfs/कर्मयोग निष्काम कर्माचा मार्ग.pdf"
+      },
+      {
+        title: "महाशिवरात्रीचे वेद आणि आगमांतील महत्त्व",
+        excerpt: "महाशिवरात्रीचे वेद आणि पुराणांतील महत्त्व, आनंद तांडव, नीलकंठाची कथा आणि आत्मचिंतनासाठी या रात्रीचे महत्त्व.",
+        category: "Yoga Philosophy",
+        date: "2026-04-24",
+        readMin: 4,
+        image: "./blog-thumbs/महाशिवरात्रीचे वेद आणि आगमांतील महत्त्व.png",
+        alt: "महाशिवरात्री PDF cover",
+        pdf: "./blog-pdfs/महाशिवरात्रीचे वेद आणि आगमांतील महत्त्व.pdf"
+      }
+    ];
+
+    const PAGE_SIZE = 6;
+    let activeCategory = "all";
+    let searchTerm = "";
+    let visibleCount = PAGE_SIZE;
+
+    const gridEl = document.getElementById("blogGrid");
+    const emptyEl = document.getElementById("blogEmpty");
+    const metaEl = document.getElementById("blogResultsMeta");
+    const loadMoreBtn = document.getElementById("loadMoreBtn");
+
+    function decodeEntities(str) {
+      const el = document.createElement("textarea");
+      el.innerHTML = str;
+      return el.value;
+    }
+
+    function formatDate(iso) {
+      const d = new Date(iso + "T00:00:00");
+      return d.toLocaleDateString("en-IN", { month: "short", day: "numeric", year: "numeric" });
+    }
+
+    function getFiltered() {
+      return posts
+        .filter(p => activeCategory === "all" || p.category === activeCategory)
+        .filter(p => {
+          if (!searchTerm) return true;
+          const hay = (decodeEntities(p.title) + " " + decodeEntities(p.excerpt)).toLowerCase();
+          return hay.includes(searchTerm.toLowerCase());
+        })
+        .sort((a, b) => new Date(b.date) - new Date(a.date));
+    }
+
+    function cardHTML(p) {
+      const fileName = p.pdf.split("/").pop();
+      return `
+        <article class="post-card">
+          <a class="post-thumb" href="${p.pdf}" download aria-hidden="true" tabindex="-1">
+            <img src="${p.image}" alt="${p.alt || ""}" loading="lazy">
+            <span class="post-cat-badge">${p.category}</span>
+            <span class="post-pdf-badge">PDF</span>
+          </a>
+          <div class="post-body">
+            <div class="post-meta">
+              <span>${formatDate(p.date)}</span>
+              <span class="dot" aria-hidden="true"></span>
+              <span>${p.readMin} min read</span>
+            </div>
+            <h3><a href="${p.pdf}" download style="color:inherit">${p.title}</a></h3>
+            <p>${p.excerpt}</p>
+            <a class="post-read-link" href="${p.pdf}" download="${fileName}">
+              Download PDF
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M12 3v12m0 0l-4-4m4 4l4-4M4 19h16" />
+              </svg>
+            </a>
+          </div>
+        </article>`;
+    }
+
+    function render() {
+      const filtered = getFiltered();
+      const toShow = filtered.slice(0, visibleCount);
+
+      gridEl.innerHTML = toShow.map(cardHTML).join("");
+      emptyEl.style.display = filtered.length === 0 ? "block" : "none";
+      gridEl.style.display = filtered.length === 0 ? "none" : "grid";
+
+      metaEl.textContent = filtered.length
+        ? `Showing ${toShow.length} of ${filtered.length} article${filtered.length === 1 ? "" : "s"}`
+        : "";
+
+      loadMoreBtn.style.display = visibleCount >= filtered.length ? "none" : "inline-flex";
+    }
+
+    document.getElementById("blogCats").addEventListener("click", function (e) {
+      const btn = e.target.closest(".cat-chip");
+      if (!btn) return;
+      document.querySelectorAll(".cat-chip").forEach(c => {
+        c.classList.remove("is-active");
+        c.setAttribute("aria-selected", "false");
+      });
+      btn.classList.add("is-active");
+      btn.setAttribute("aria-selected", "true");
+      activeCategory = btn.dataset.cat;
+      visibleCount = PAGE_SIZE;
+      render();
+    });
+
+    document.getElementById("blogSearch").addEventListener("input", function (e) {
+      searchTerm = e.target.value.trim();
+      visibleCount = PAGE_SIZE;
+      render();
+    });
+
+    loadMoreBtn.addEventListener("click", function () {
+      visibleCount += PAGE_SIZE;
+      render();
+    });
+
+    // ====== PDF prefetch + download feedback ======
+    // Warms the browser cache for a PDF the moment a finger/cursor touches its
+    // card, so by the time the tap/click actually registers, the file is
+    // already loading (or fully cached) instead of starting cold.
+    const pdfToast = document.getElementById("pdfToast");
+    const pdfToastText = document.getElementById("pdfToastText");
+    const prefetchedPdfs = new Set();
+    let pdfToastTimer = null;
+
+    function prefetchPdf(href) {
+      if (!href || prefetchedPdfs.has(href)) return;
+      prefetchedPdfs.add(href);
+      const link = document.createElement("link");
+      link.rel = "prefetch";
+      link.href = href;
+      document.head.appendChild(link);
+    }
+
+    function showPdfToast(label) {
+      clearTimeout(pdfToastTimer);
+      pdfToastText.textContent = label;
+      pdfToast.classList.add("is-visible");
+      pdfToastTimer = setTimeout(function () {
+        pdfToast.classList.remove("is-visible");
+      }, 2600);
+    }
+
+    gridEl.addEventListener("pointerover", function (e) {
+      const link = e.target.closest('a[href$=".pdf"]');
+      if (link) prefetchPdf(link.getAttribute("href"));
+    });
+
+    gridEl.addEventListener("touchstart", function (e) {
+      const link = e.target.closest('a[href$=".pdf"]');
+      if (link) prefetchPdf(link.getAttribute("href"));
+    }, { passive: true });
+
+    gridEl.addEventListener("click", function (e) {
+      const link = e.target.closest('a[href$=".pdf"]');
+      if (!link) return;
+      const card = link.closest(".post-card");
+      const titleEl = card && card.querySelector("h3");
+      const title = titleEl ? titleEl.textContent.trim() : "PDF";
+      showPdfToast("Downloading \u201c" + title + "\u201d\u2026");
+    });
+
+    render();
+  </script>
+</body>
+
+</html>

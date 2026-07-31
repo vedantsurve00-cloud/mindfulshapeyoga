@@ -1,0 +1,1870 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Volunteer & Seva Program | Mindful Shapes Yoga — Amogh Shinde</title>
+  <meta name="description"
+    content="Join the Volunteer and Seva program at Mindful Shapes Yoga. Support classes, events, and community outreach. Learn yoga from the inside — free of cost.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./assets/styles.css">
+  <style>
+    .cp-hero {
+      position: relative;
+      min-height: clamp(55vh, 70vh, 80vh);
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      background: #0d0b08
+    }
+
+    .cp-hero-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .cp-hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .cp-hero-video-frame {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100%;
+    }
+
+    .cp-hero-video-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .cp-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(175deg, rgba(10, 7, 4, .1) 0%, rgba(10, 7, 4, .88) 100%)
+    }
+
+    .cp-hero-inner {
+      position: relative;
+      z-index: 2;
+      width: min(calc(100% - 2rem), 1200px);
+      margin-inline: auto;
+      padding: clamp(3rem, 6vw, 5rem) 0 clamp(2.5rem, 5vw, 4rem)
+    }
+
+    .cp-hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .4rem 1rem;
+      border-radius: 999px;
+      background: rgba(165, 90, 42, .2);
+      border: 1px solid rgba(165, 90, 42, .35);
+      color: #ddb878;
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem
+    }
+
+    .cp-hero-inner h1 {
+      font-size: clamp(2.2rem, 5.5vw, 4.2rem);
+      color: #fff9f2;
+      line-height: 1.05;
+      max-width: 18ch;
+      margin-bottom: 1rem
+    }
+
+    .cp-hero-inner h1 em {
+      font-style: italic;
+      color: #ddb878
+    }
+
+    .cp-hero-sub {
+      color: rgba(255, 248, 235, .72);
+      font-size: clamp(.9rem, 1.6vw, 1.1rem);
+      max-width: 52ch;
+      line-height: 1.75;
+      margin-bottom: 2rem
+    }
+
+    .cp-hero-btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .85rem
+    }
+
+    .btn-hero-gold {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .85rem 1.9rem;
+      border-radius: 999px;
+      font-size: .9rem;
+      font-weight: 800;
+      background: #ddb878;
+      color: #1a1008;
+      transition: background .2s, transform .2s
+    }
+
+    .btn-hero-gold:hover {
+      background: #ebca94;
+      transform: translateY(-2px)
+    }
+
+    .btn-hero-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .85rem 1.7rem;
+      border-radius: 999px;
+      font-size: .9rem;
+      font-weight: 800;
+      background: rgba(255, 255, 255, .1);
+      border: 1px solid rgba(255, 255, 255, .25);
+      color: #fff9f2;
+      transition: background .2s, transform .2s
+    }
+
+    .btn-hero-ghost:hover {
+      background: rgba(255, 255, 255, .18);
+      transform: translateY(-2px)
+    }
+
+    .stat-strip {
+      background: var(--color-surface);
+      border-bottom: 1px solid var(--color-border);
+      padding: 1.5rem 0
+    }
+
+    .stat-strip-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr)
+    }
+
+    .strip-stat {
+      padding: .75rem 1.5rem;
+      border-right: 1px solid var(--color-border);
+      text-align: center
+    }
+
+    .strip-stat:last-child {
+      border-right: none
+    }
+
+    .strip-stat strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: clamp(1.3rem, 2.5vw, 1.9rem);
+      color: var(--color-primary);
+      line-height: 1;
+      margin-bottom: .25rem
+    }
+
+    .strip-stat span {
+      font-size: .72rem;
+      color: var(--color-text-muted);
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase
+    }
+
+    .cp-main {
+      padding: clamp(3rem, 6vw, 5rem) 0
+    }
+
+    .cp-layout {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 2.5rem;
+      align-items: start
+    }
+
+    .cp-section {
+      margin-bottom: 2.5rem
+    }
+
+    .cp-section h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      margin: .6rem 0 1rem;
+      line-height: 1.1
+    }
+
+    .cp-section p {
+      font-size: .97rem;
+      line-height: 1.8;
+      color: var(--color-text-muted);
+      margin-bottom: .9rem;
+      max-width: 65ch
+    }
+
+    .cp-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: 1.75rem;
+      margin-bottom: 1.25rem
+    }
+
+    .cp-card h3 {
+      font-size: clamp(1.2rem, 2vw, 1.55rem);
+      margin-bottom: 1rem
+    }
+
+    .role-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1rem
+    }
+
+    .role-card {
+      background: var(--color-surface-2);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem
+    }
+
+    .role-tag {
+      font-size: .68rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      display: block;
+      margin-bottom: .45rem
+    }
+
+    .role-card strong {
+      display: block;
+      font-size: .92rem;
+      font-weight: 800;
+      color: var(--color-text);
+      margin-bottom: .4rem
+    }
+
+    .role-card span {
+      font-size: .82rem;
+      color: var(--color-text-muted);
+      line-height: 1.5
+    }
+
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .75rem;
+      margin-top: 1rem
+    }
+
+    .benefit-item {
+      background: var(--color-surface-2);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.1rem;
+      display: flex;
+      gap: .65rem;
+      align-items: flex-start
+    }
+
+    .benefit-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      flex-shrink: 0;
+      margin-top: .2rem
+    }
+
+    .benefit-item strong {
+      display: block;
+      font-size: .85rem;
+      font-weight: 800;
+      color: var(--color-text);
+      margin-bottom: .2rem
+    }
+
+    .benefit-item span {
+      font-size: .8rem;
+      color: var(--color-text-muted);
+      line-height: 1.45
+    }
+
+    .photo-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1.5rem 0;
+      border-radius: var(--radius-xl);
+      overflow: hidden
+    }
+
+    .photo-strip img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block
+    }
+
+    .process-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 1rem;
+      counter-reset: step-counter
+    }
+
+    .process-step {
+      display: flex;
+      gap: 1.25rem;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--color-border);
+      counter-increment: step-counter
+    }
+
+    .process-step:last-child {
+      border-bottom: none
+    }
+
+    .step-num {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .88rem;
+      font-weight: 800;
+      flex-shrink: 0
+    }
+
+    .step-text strong {
+      display: block;
+      font-size: .92rem;
+      font-weight: 800;
+      color: var(--color-text);
+      margin-bottom: .3rem
+    }
+
+    .step-text span {
+      font-size: .85rem;
+      color: var(--color-text-muted);
+      line-height: 1.55
+    }
+
+    .cp-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .55rem
+    }
+
+    .cp-list li {
+      font-size: .875rem;
+      color: var(--color-text-muted);
+      display: flex;
+      align-items: flex-start;
+      gap: .6rem;
+      line-height: 1.5
+    }
+
+    .cp-list li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      flex-shrink: 0;
+      margin-top: .45rem
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+      margin-top: 1rem
+    }
+
+    details.faq-item {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 1rem 1.25rem
+    }
+
+    details.faq-item summary {
+      cursor: pointer;
+      font-weight: 800;
+      font-size: .95rem;
+      list-style: none;
+      color: var(--color-text);
+      display: flex;
+      justify-content: space-between;
+      align-items: center
+    }
+
+    details.faq-item summary::-webkit-details-marker {
+      display: none
+    }
+
+    details.faq-item summary::after {
+      content: '+';
+      font-size: 1.4rem;
+      color: var(--color-primary);
+      font-weight: 400;
+      flex-shrink: 0
+    }
+
+    details.faq-item[open] summary::after {
+      content: '−'
+    }
+
+    details.faq-item p {
+      padding-top: .75rem;
+      font-size: .9rem;
+      color: var(--color-text-muted);
+      line-height: 1.7
+    }
+
+    .cp-sidebar {
+      position: sticky;
+      top: 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem
+    }
+
+    .seva-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      overflow: hidden
+    }
+
+    .seva-card-top {
+      padding: 1.5rem 1.5rem 1.25rem;
+      border-bottom: 1px solid var(--color-border);
+      background: linear-gradient(135deg, var(--color-primary-highlight), var(--color-surface))
+    }
+
+    .seva-price-display {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      color: var(--color-primary);
+      line-height: 1
+    }
+
+    .seva-card-body {
+      padding: 1.25rem 1.5rem 1.5rem
+    }
+
+    .seva-includes {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .6rem;
+      margin-bottom: 1.25rem
+    }
+
+    .seva-includes li {
+      font-size: .85rem;
+      color: var(--color-text-muted);
+      display: flex;
+      align-items: center;
+      gap: .55rem
+    }
+
+    .check-icon {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0
+    }
+
+    .check-icon::after {
+      content: '';
+      width: 7px;
+      height: 4px;
+      border-left: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+      transform: rotate(-45deg) translateY(-1px);
+      display: block
+    }
+
+    .btn-apply-full {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      width: 100%;
+      padding: .95rem;
+      border-radius: var(--radius-lg);
+      font-size: .92rem;
+      font-weight: 800;
+      background: var(--color-primary);
+      color: #fff9f2;
+      transition: background .2s, transform .2s
+    }
+
+    .btn-apply-full:hover {
+      background: var(--color-primary-hover);
+      transform: translateY(-1px)
+    }
+
+    .btn-contact-full {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      width: 100%;
+      padding: .85rem;
+      border-radius: var(--radius-lg);
+      font-size: .88rem;
+      font-weight: 700;
+      background: var(--color-surface-2);
+      border: 1px solid var(--color-border);
+      color: var(--color-text-muted);
+      transition: all .2s;
+      margin-top: .65rem
+    }
+
+    .btn-contact-full:hover {
+      background: var(--color-surface-offset);
+      color: var(--color-text)
+    }
+
+    .sidebar-info {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: 1.25rem
+    }
+
+    .sidebar-info h4 {
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--color-text-faint);
+      margin-bottom: 1rem
+    }
+
+    .info-row {
+      display: flex;
+      align-items: flex-start;
+      gap: .75rem;
+      padding: .6rem 0;
+      border-bottom: 1px solid var(--color-border)
+    }
+
+    .info-row:last-child {
+      border-bottom: none
+    }
+
+    .info-row-label {
+      font-size: .78rem;
+      font-weight: 800;
+      color: var(--color-text-faint);
+      min-width: 80px;
+      flex-shrink: 0;
+      padding-top: .1rem
+    }
+
+    .info-row-val {
+      font-size: .85rem;
+      color: var(--color-text-muted);
+      line-height: 1.5
+    }
+
+    .dark-cta {
+      background: #0d0b08;
+      padding: clamp(3.5rem, 7vw, 5.5rem) 0;
+      position: relative;
+      overflow: hidden;
+      text-align: center
+    }
+
+    .dark-cta::before {
+      content: 'ॐ';
+      position: absolute;
+      font-size: clamp(14rem, 30vw, 26rem);
+      font-family: serif;
+      color: rgba(213, 170, 113, .04);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      line-height: 1;
+      pointer-events: none;
+      user-select: none
+    }
+
+    .dark-cta-inner {
+      position: relative;
+      z-index: 1
+    }
+
+    .dark-cta h2 {
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      color: #fff9f2;
+      margin: 1rem 0 1.25rem;
+      line-height: 1.1
+    }
+
+    .dark-cta h2 em {
+      font-style: italic;
+      color: #ddb878
+    }
+
+    .dark-cta p {
+      color: rgba(255, 248, 235, .6);
+      max-width: 48ch;
+      margin: 0 auto 2rem;
+      font-size: .97rem;
+      line-height: 1.75
+    }
+
+    .dark-cta-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center
+    }
+
+    .site-footer {
+      background: var(--color-surface);
+      border-top: 1px solid var(--color-border);
+      padding: clamp(3rem, 6vw, 5rem) 0 2rem
+    }
+
+    .footer-cols {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 3rem
+    }
+
+    .footer-brand strong {
+      display: block;
+      font-size: .8rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      margin-bottom: .9rem
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .55rem
+    }
+
+    .footer-links a {
+      font-size: .88rem;
+      color: var(--color-text-muted);
+      transition: color .2s
+    }
+
+    .footer-links a:hover {
+      color: var(--color-primary)
+    }
+
+    .footer-bottom {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--color-border);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem
+    }
+
+    .footer-bottom p {
+      font-size: .78rem;
+      color: var(--color-text-faint);
+      max-width: none
+    }
+
+    @media(max-width:1080px) {
+      .cp-layout {
+        grid-template-columns: 1fr
+      }
+
+      .cp-sidebar {
+        position: static
+      }
+
+      .footer-cols {
+        grid-template-columns: 1fr 1fr
+      }
+    }
+
+    @media(max-width:760px) {
+      .stat-strip-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .strip-stat {
+        border-right: none;
+        border-bottom: 1px solid var(--color-border)
+      }
+
+      .strip-stat:nth-child(odd) {
+        border-right: 1px solid var(--color-border)
+      }
+
+      .strip-stat:last-child,
+      .strip-stat:nth-last-child(2):nth-child(odd) {
+        border-bottom: none
+      }
+
+      .role-grid {
+        grid-template-columns: 1fr
+      }
+
+      .benefit-grid {
+        grid-template-columns: 1fr
+      }
+
+      .photo-strip {
+        grid-template-columns: 1fr
+      }
+
+      .photo-strip img {
+        height: 200px
+      }
+
+      .footer-cols {
+        grid-template-columns: 1fr
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+        text-align: center
+      }
+
+      .btn-hero-gold,
+      .btn-hero-ghost {
+        width: 100%;
+        justify-content: center
+      }
+
+      .dark-cta-btns .btn-hero-gold,
+      .dark-cta-btns .btn-hero-ghost {
+        width: auto
+      }
+    }
+
+    @media(max-width:480px) {
+      .dark-cta-btns {
+        flex-direction: column;
+        align-items: center
+      }
+
+      .dark-cta-btns .btn-hero-gold,
+      .dark-cta-btns .btn-hero-ghost {
+        width: 100%;
+        justify-content: center
+      }
+    }
+    /* ===== KARMA YOGA GALLERY (3-ROW SLIDING GRID) ===== */
+    .cp-gallery-section {
+      padding: clamp(3rem, 6vw, 5rem) 0;
+      background: var(--color-surface);
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .cp-gallery-header {
+      text-align: center;
+      max-width: 620px;
+      margin: 0 auto clamp(2rem, 4vw, 2.75rem);
+    }
+
+    .cp-gallery-header p {
+      color: var(--color-text-muted);
+      line-height: 1.75;
+      margin-top: .75rem;
+      font-size: .97rem;
+    }
+
+    /* 3 fixed rows; new columns are added automatically as slides scroll
+       sideways. Column width scales fluidly with the viewport (capped at
+       200px) so this works from small phones up to desktop with zero
+       breakpoints, and needs no changes when more photos are added later. */
+    .cp-gallery-grid {
+      display: grid;
+      grid-template-rows: repeat(3, 1fr);
+      grid-auto-flow: column;
+      grid-auto-columns: min(38vw, 200px);
+      gap: .85rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      padding: .25rem .25rem 1.5rem;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .cp-gallery-grid::-webkit-scrollbar {
+      display: none;
+    }
+
+    .cp-gallery-item {
+      position: relative;
+      display: block;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      padding: 0;
+      margin: 0;
+      border: none;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      cursor: pointer;
+      background: var(--color-surface-2);
+      scroll-snap-align: start;
+    }
+
+    .cp-gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .5s ease;
+    }
+
+    .cp-gallery-item::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(10, 7, 4, 0) 55%, rgba(10, 7, 4, .5) 100%);
+      opacity: 0;
+      transition: opacity .3s ease;
+    }
+
+    .cp-gallery-item::before {
+      content: '\2295';
+      position: absolute;
+      right: .6rem;
+      bottom: .55rem;
+      color: #fff9f2;
+      font-size: 1.1rem;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity .3s ease, transform .3s ease;
+      z-index: 1;
+    }
+
+    .cp-gallery-item:hover img {
+      transform: scale(1.08);
+    }
+
+    .cp-gallery-item:hover::after,
+    .cp-gallery-item:hover::before {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .cp-gallery-item:focus-visible {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 3px;
+    }
+
+    .cp-gallery-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.1rem;
+      margin-top: .5rem;
+      flex-wrap: wrap;
+    }
+
+    .cp-gallery-btn {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1px solid var(--color-border);
+      background: var(--color-surface);
+      color: var(--color-text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+      font-size: 1.1rem;
+      transition: background .2s, color .2s, border-color .2s;
+    }
+
+    .cp-gallery-btn:hover {
+      background: var(--color-primary);
+      color: #fff9f2;
+      border-color: var(--color-primary);
+    }
+
+    .cp-gallery-dots {
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 280px;
+    }
+
+    .cp-gallery-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--color-border);
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      transition: background .2s, transform .2s;
+    }
+
+    .cp-gallery-dot.active {
+      background: var(--color-primary);
+      transform: scale(1.35);
+    }
+
+    /* ===== LIGHTBOX ===== */
+    .cp-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(1rem, 5vw, 3rem);
+      background: rgba(10, 7, 4, .93);
+    }
+
+    .cp-lightbox.active {
+      display: flex;
+    }
+
+    .cp-lightbox-img {
+      max-width: 90vw;
+      max-height: 82vh;
+      border-radius: var(--radius-lg);
+      box-shadow: 0 25px 70px rgba(0, 0, 0, .55);
+    }
+
+    .cp-lightbox-counter {
+      position: absolute;
+      bottom: clamp(1rem, 4vw, 2rem);
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255, 248, 235, .75);
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .05em;
+    }
+
+    .cp-lightbox-close,
+    .cp-lightbox-prev,
+    .cp-lightbox-next {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, .1);
+      border: 1px solid rgba(255, 255, 255, .25);
+      color: #fff9f2;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background .2s, transform .2s;
+    }
+
+    .cp-lightbox-close:hover,
+    .cp-lightbox-prev:hover,
+    .cp-lightbox-next:hover {
+      background: rgba(255, 255, 255, .2);
+    }
+
+    .cp-lightbox-close {
+      top: clamp(1rem, 4vw, 1.75rem);
+      right: clamp(1rem, 4vw, 1.75rem);
+      width: 42px;
+      height: 42px;
+      font-size: 1.4rem;
+    }
+
+    .cp-lightbox-prev,
+    .cp-lightbox-next {
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      font-size: 1.1rem;
+    }
+
+    .cp-lightbox-prev {
+      left: clamp(.5rem, 3vw, 1.75rem);
+    }
+
+    .cp-lightbox-next {
+      right: clamp(.5rem, 3vw, 1.75rem);
+    }
+
+    @media (max-width: 420px) {
+      .cp-gallery-grid {
+        gap: .6rem;
+      }
+
+      .cp-lightbox-prev,
+      .cp-lightbox-next {
+        width: 38px;
+        height: 38px;
+      }
+
+      .cp-lightbox-close {
+        width: 36px;
+        height: 36px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <audio id="bgMusic" src="./music/bg.mp3" loop preload="auto"></audio>
+  <script>
+    (function () {
+      var audio = document.getElementById('bgMusic');
+      var KEY = 'msyBgMusicTime';
+
+      var saved = parseFloat(localStorage.getItem(KEY));
+      if (!isNaN(saved) && isFinite(saved)) {
+        audio.currentTime = saved;
+      }
+
+      function startPlayback() {
+        var p = audio.play();
+        if (p !== undefined) {
+          p.catch(function () {
+            var resume = function () {
+              audio.play();
+              document.removeEventListener('click', resume);
+              document.removeEventListener('touchstart', resume);
+              document.removeEventListener('keydown', resume);
+            };
+            document.addEventListener('click', resume);
+            document.addEventListener('touchstart', resume);
+            document.addEventListener('keydown', resume);
+          });
+        }
+      }
+      startPlayback();
+
+      setInterval(function () {
+        if (!audio.paused) localStorage.setItem(KEY, audio.currentTime);
+      }, 1000);
+
+      window.addEventListener('beforeunload', function () {
+        localStorage.setItem(KEY, audio.currentTime);
+      });
+    })();
+  </script>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="./index.html">
+        <span class="brand-mark"
+          style="background:none;border-radius:0;padding:0;box-shadow:none;width:auto;height:52px;display:inline-flex;align-items:center;justify-content:center;">
+          <img src="./photo/logo.png" alt="Mindful Shapes Yoga logo" style="width:auto;height:100%;object-fit:contain">
+        </span>
+        <span class="brand-copy">
+          <strong>Mindful Shapes Yoga</strong>
+          <span>Karma &amp; community support</span>
+        </span>
+      </a>
+      <div class="nav-wrap">
+        <nav>
+          <button class="menu-toggle" aria-label="Toggle navigation" data-menu-toggle>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+          </button>
+          <div class="nav-links" data-nav>
+            <a href="./index.html">Home</a>
+            <a href="./courses.html">Classes</a>
+            <a href="./teacher-training.html">Teacher Training</a>
+            <a href="./meet-the-gurus.html">Gurus</a>
+            <a href="./photo.html">Ashram</a>
+            <a href="./volunteer.html" class="active">Volunteer</a>
+            <a href="./blog.html">Blog</a>
+            <a href="./contact.html">Contact</a>
+          </div>
+        </nav>
+        <button class="theme-toggle" data-theme-toggle aria-label="Switch theme"></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="cp-hero">
+      <div class="cp-hero-video" aria-hidden="true">
+        <div class="cp-hero-video-frame" id="heroVideoFrameVolunteer">
+          <iframe
+            src="https://player.mediadelivery.net/embed/717605/ca6e0562-ce4c-4091-88a9-17dd742d1928?autoplay=true&loop=true&muted=true&preload=true&responsive=true"
+            loading="lazy"
+            allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;"
+            allowfullscreen="true"></iframe>
+        </div>
+      </div>
+      <div class="cp-hero-overlay" aria-hidden="true"></div>
+      <div class="cp-hero-inner">
+        <div class="cp-hero-tag">Seva · Service · Community</div>
+        <h1>Volunteer &amp; <em>Seva</em> — Learn Yoga by Living It</h1>
+        <p class="cp-hero-sub">Seva means selfless service. At Mindful Shapes Yoga, our Volunteer Program gives sincere
+          seekers the rare opportunity to support a running yoga ashram from the inside — assisting classes, supporting
+          events, contributing to community outreach — while deepening their own practice and understanding of yoga as a
+          way of life.</p>
+        <div class="cp-hero-btn-row">
+          <a class="btn-hero-gold"
+            href="https://wa.me/919004913827?text=Hi%20Amogh%20Sir%2C%20I%20am%20interested%20in%20the%20Yoga%20Volunteer%20%26%20Seva%20Program%20at%20Mindful%20Shapes%20Yoga.%20Please%20share%20more%20details."
+            target="_blank" rel="noopener noreferrer">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M12 5v14M5 12h14" />
+            </svg>
+            Apply to Volunteer
+          </a>
+          <a class="btn-hero-ghost" href="#program-details">Learn More</a>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      (function () {
+        var container = document.querySelector('.cp-hero');
+        var frame = document.getElementById('heroVideoFrameVolunteer');
+        if (!container || !frame) return;
+        var VIDEO_RATIO = 16 / 9;
+
+        function sizeHeroVideo() {
+          var cw = container.clientWidth;
+          var ch = container.clientHeight;
+          if (!cw || !ch) return;
+          var containerRatio = cw / ch;
+          var w, h;
+          if (containerRatio > VIDEO_RATIO) {
+            w = cw;
+            h = cw / VIDEO_RATIO;
+          } else {
+            h = ch;
+            w = ch * VIDEO_RATIO;
+          }
+          frame.style.width = w + 'px';
+          frame.style.height = h + 'px';
+        }
+
+        sizeHeroVideo();
+        window.addEventListener('resize', sizeHeroVideo);
+        window.addEventListener('orientationchange', sizeHeroVideo);
+        if (window.ResizeObserver) new ResizeObserver(sizeHeroVideo).observe(container);
+      })();
+    </script>
+
+    <div class="stat-strip">
+      <div class="container">
+        <div class="stat-strip-grid">
+          <div class="strip-stat">
+            <strong>Free</strong>
+            <span>No cost to participate</span>
+          </div>
+          <div class="strip-stat">
+            <strong>Seva Roles</strong>
+            <span>Classes, events, outreach</span>
+          </div>
+          <div class="strip-stat">
+            <strong>1–3 Months</strong>
+            <span>Recommended minimum stay</span>
+          </div>
+          <div class="strip-stat">
+            <strong>Certificate</strong>
+            <span>Issued on completion</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="cp-main" id="program-details">
+      <div class="container">
+        <div class="cp-layout">
+
+          <div class="cp-content">
+
+            <div class="cp-section reveal">
+              <span class="eyebrow">What is seva</span>
+              <h2>Service as Practice — The Ancient Path of Karma Yoga</h2>
+              <p>In the yogic tradition, seva — selfless service — is considered as important as asana and pranayama.
+                When you help without expectation of reward, you purify the mind, dissolve the ego, and experience yoga
+                in its deepest sense: union with something larger than yourself.</p>
+              <p>At Mindful Shapes Yoga, our Volunteer Program is not a free stay in exchange for chores. It is a
+                structured immersion in ashram service culture, where you contribute meaningfully to the work of the
+                ashram while learning the discipline, humility, and attentiveness that no classroom curriculum can
+                teach.</p>
+              <p>Volunteers attend all regular classes for free during their program, sit in on teacher training theory
+                sessions where permitted, and receive direct mentorship from Amogh Shinde and senior instructors. Many
+                of our best teachers began as volunteers.</p>
+            </div>
+
+            <div class="cp-card reveal">
+              <h3>Volunteer Role Options</h3>
+              <div class="role-grid">
+                <div class="role-card">
+                  <span class="role-tag">Class Support</span>
+                  <strong>Assistant Practice Support</strong>
+                  <span>Arrive early, prepare the shala, assist with prop distribution, support new students during
+                    class under instructor supervision, and close the space after sessions.</span>
+                </div>
+                <div class="role-card">
+                  <span class="role-tag">Events & Camps</span>
+                  <strong>Event Coordination Support</strong>
+                  <span>Set up and manage yoga camp logistics, registration support, equipment transport, crowd flow
+                    management, and post-event cleanup for community programs.</span>
+                </div>
+                <div class="role-card">
+                  <span class="role-tag">Administration</span>
+                  <strong>Ashram Administration Help</strong>
+                  <span>Assist with enrollment communication, student onboarding, social media support, photography for
+                    classes, and content support under supervision.</span>
+                </div>
+                <div class="role-card">
+                  <span class="role-tag">Outreach</span>
+                  <strong>Community Outreach Seva</strong>
+                  <span>Join our team for community yoga camps, school visits, hospital wellness programs, and public
+                    Yoga Day events as a certified assistant volunteer.</span>
+                </div>
+                <div class="role-card">
+                  <span class="role-tag">Campus Care</span>
+                  <strong>Ashram Maintenance</strong>
+                  <span>Maintain the cleanliness, order, and sacredness of practice spaces. Light gardening, space
+                    organisation, and general ashram upkeep contribute to the collective practice.</span>
+                </div>
+                <div class="role-card">
+                  <span class="role-tag">Teaching Support</span>
+                  <strong>TTC Study Support</strong>
+                  <span>For volunteers with prior training — assist TTC batches in supervised capacity, help teacher
+                    trainees with practice sessions, and support curriculum delivery.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="photo-strip reveal">
+              <img src="./courses/573.jpg" alt="Community savasana — volunteer participating in group yoga session"
+                width="600" height="440">
+              <img src="./courses/2.jpg" alt="Guided meditation session supported by seva volunteer" width="600"
+                height="440">
+            </div>
+
+            <div class="cp-card reveal">
+              <h3>What Volunteers Receive</h3>
+              <div class="benefit-grid">
+                <div class="benefit-item">
+                  <div class="benefit-dot"></div>
+                  <div>
+                    <strong>Free Class Access</strong>
+                    <span>Attend all regular yoga and pranayama classes for the duration of your volunteer program at no
+                      cost.</span>
+                  </div>
+                </div>
+                <div class="benefit-item">
+                  <div class="benefit-dot"></div>
+                  <div>
+                    <strong>Ashram Meals (on-campus volunteers)</strong>
+                    <span>For volunteers staying on campus — sattvik vegetarian meals are provided during your service
+                      hours.</span>
+                  </div>
+                </div>
+                <div class="benefit-item">
+                  <div class="benefit-dot"></div>
+                  <div>
+                    <strong>Theory Session Access</strong>
+                    <span>Sit in on permitted TTC theory classes — yoga philosophy, anatomy basics, and teaching
+                      methodology.</span>
+                  </div>
+                </div>
+                <div class="benefit-item">
+                  <div class="benefit-dot"></div>
+                  <div>
+                    <strong>Mentorship from Amogh Shinde</strong>
+                    <span>Regular group check-ins and occasional one-on-one guidance from the founder himself.</span>
+                  </div>
+                </div>
+                <div class="benefit-item">
+                  <div class="benefit-dot"></div>
+                  <div>
+                    <strong>Volunteer Certificate</strong>
+                    <span>Formal certificate of completion for volunteers who complete their minimum commitment.</span>
+                  </div>
+                </div>
+                <div class="benefit-item">
+                  <div class="benefit-dot"></div>
+                  <div>
+                    <strong>Pathway to TTC</strong>
+                    <span>Completed volunteers receive a 10–15% scholarship on Teacher Training enrollment — the seva
+                      pathway to certification.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="cp-card reveal">
+              <h3>How to Apply — Step by Step</h3>
+              <div class="process-steps">
+                <div class="process-step">
+                  <div class="step-num">1</div>
+                  <div class="step-text">
+                    <strong>Submit Your Expression of Interest</strong>
+                    <span>Contact us via the contact page or WhatsApp with a brief introduction — who you are, your
+                      connection to yoga, and which volunteer role interests you most.</span>
+                  </div>
+                </div>
+                <div class="process-step">
+                  <div class="step-num">2</div>
+                  <div class="step-text">
+                    <strong>Introductory Conversation</strong>
+                    <span>A brief phone or in-person conversation with our team to understand your intentions,
+                      availability, and any questions you have about the program.</span>
+                  </div>
+                </div>
+                <div class="process-step">
+                  <div class="step-num">3</div>
+                  <div class="step-text">
+                    <strong>Orientation Day</strong>
+                    <span>A half-day visit to the ashram where you meet the team, observe a class, understand the
+                      culture and expectations, and confirm your role.</span>
+                  </div>
+                </div>
+                <div class="process-step">
+                  <div class="step-num">4</div>
+                  <div class="step-text">
+                    <strong>Begin Your Seva</strong>
+                    <span>Start your volunteer commitment on an agreed date. Minimum 1 month, ideally 3 months. A clear
+                      schedule is agreed in advance.</span>
+                  </div>
+                </div>
+                <div class="process-step">
+                  <div class="step-num">5</div>
+                  <div class="step-text">
+                    <strong>Completion &amp; Certificate</strong>
+                    <span>On completion of your commitment, you receive your volunteer certificate and are welcomed as a
+                      lifetime member of the Mindful Shapes Yoga community.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="cp-section reveal">
+              <span class="eyebrow">Is this right for you</span>
+              <h2>The Volunteer Program is Ideal If You Are...</h2>
+              <ul class="cp-list">
+                <li>A yoga practitioner looking to deepen your understanding from the inside</li>
+                <li>Someone considering teacher training but wanting to experience the ashram environment first</li>
+                <li>A student, fresh graduate, or professional on a gap period seeking meaningful engagement</li>
+                <li>Someone drawn to yoga philosophy and ashram life beyond just exercise</li>
+                <li>A person willing to work with humility, patience, and a genuine spirit of service</li>
+                <li>Someone in Pune or willing to relocate temporarily to Pune for the duration</li>
+              </ul>
+            </div>
+
+            <div class="cp-section reveal">
+              <span class="eyebrow">Common questions</span>
+              <h2>Frequently Asked Questions</h2>
+              <div class="faq-list">
+                <details class="faq-item">
+                  <summary>Is the volunteer program truly free?</summary>
+                  <p>Yes. There is no fee to participate in the Mindful Shapes Yoga Volunteer Program. In return for
+                    your genuine service and committed presence, you receive free class access, meals on campus during
+                    service hours, mentorship, and a certificate. The only cost is your time and intention.</p>
+                </details>
+                <details class="faq-item">
+                  <summary>Do I need yoga experience to volunteer?</summary>
+                  <p>Some prior experience with yoga is helpful but not mandatory for all roles. Roles like campus care,
+                    event support, and administration do not require any yoga background. Roles involving class support
+                    or TTC assistance require a minimum of 6 months of regular yoga practice. We assess this during the
+                    orientation conversation.</p>
+                </details>
+                <details class="faq-item">
+                  <summary>How many hours per day is the volunteer commitment?</summary>
+                  <p>Typically 4–6 hours of seva per day, 5 days a week. The rest of your time is your own — for
+                    classes, self-practice, study, or rest. The schedule is agreed in advance and respected. We do not
+                    ask volunteers to be available at all hours. A balanced structure is important to us.</p>
+                </details>
+                <details class="faq-item">
+                  <summary>Can I do the volunteer program remotely or online?</summary>
+                  <p>Most volunteer roles require physical presence at the ashram in Pedhambee, Chiplun, Maharashtra.
+                    However, some administration and content support roles can be done remotely for candidates outside
+                    Chiplun. Please mention your location when you <a
+                      href="https://wa.me/919004913827?text=Hi%20Amogh%20Sir%2C%20I%20am%20interested%20in%20volunteering%20remotely%20with%20Mindful%20Shapes%20Yoga.%20Please%20share%20more%20details."
+                      target="_blank" rel="noopener noreferrer"
+                      style="color:var(--color-primary);font-weight:700">WhatsApp us</a> and we will assess what is
+                    possible.</p>
+                </details>
+                <details class="faq-item">
+                  <summary>Does volunteering count toward Teacher Training certification?</summary>
+                  <p>Volunteering itself is not a replacement for TTC. However, volunteers gain deep practical exposure
+                    that significantly accelerates their progress through TTC if they choose to enroll later. Completed
+                    volunteers also receive a 10–15% scholarship on TTC fees as an appreciation for their service.</p>
+                </details>
+                <details class="faq-item">
+                  <summary>What is the minimum commitment period?</summary>
+                  <p>We ask for a minimum of 4 weeks (1 month). This is the minimum needed for meaningful immersion. 3
+                    months is the recommended duration for those wanting a genuine transformative experience and the
+                    full certificate. We can discuss flexible arrangements for candidates with constraints.</p>
+                </details>
+              </div>
+            </div>
+
+          </div>
+
+          <aside class="cp-sidebar">
+            <div class="seva-card reveal">
+              <div class="seva-card-top">
+                <span class="eyebrow" style="margin-bottom:.75rem;display:block">Program cost</span>
+                <div class="seva-price-display">Free</div>
+                <p style="font-size:.85rem;color:var(--color-text-muted);margin-top:.6rem;line-height:1.6">Seva is given
+                  freely. In return: free classes, meals on campus, mentorship, and a certificate. No fees. No hidden
+                  charges.</p>
+              </div>
+              <div class="seva-card-body">
+                <ul class="seva-includes">
+                  <li><span class="check-icon"></span>All regular classes — free</li>
+                  <li><span class="check-icon"></span>Campus meals during service hours</li>
+                  <li><span class="check-icon"></span>TTC theory session access</li>
+                  <li><span class="check-icon"></span>Mentorship from Amogh Shinde</li>
+                  <li><span class="check-icon"></span>Volunteer completion certificate</li>
+                  <li><span class="check-icon"></span>TTC scholarship (10–15%) on completion</li>
+                  <li><span class="check-icon"></span>Lifelong community membership</li>
+                </ul>
+                <a class="btn-apply-full"
+                  href="https://wa.me/919004913827?text=Hi%20Amogh%20Sir%2C%20I%20am%20interested%20in%20the%20Yoga%20Volunteer%20%26%20Seva%20Program%20at%20Mindful%20Shapes%20Yoga.%20I%20would%20like%20to%20apply."
+                  target="_blank" rel="noopener noreferrer">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M12 5v14M5 12h14" />
+                  </svg>
+                  Apply to Volunteer
+                </a>
+                <a class="btn-contact-full"
+                  href="https://wa.me/919004913827?text=Hi%20Amogh%20Sir%2C%20I%20have%20a%20question%20about%20the%20Yoga%20Volunteer%20%26%20Seva%20Program%20at%20Mindful%20Shapes%20Yoga."
+                  target="_blank" rel="noopener noreferrer">Ask a Question First</a>
+              </div>
+            </div>
+
+            <div class="sidebar-info reveal">
+              <h4>Program Details</h4>
+              <div class="info-row">
+                <span class="info-row-label">Cost</span>
+                <span class="info-row-val">Free — no fees of any kind</span>
+              </div>
+              <div class="info-row">
+                <span class="info-row-label">Location</span>
+                <span class="info-row-val">Mindful Shapes Yoga Ashram, Pune</span>
+              </div>
+              <div class="info-row">
+                <span class="info-row-label">Commitment</span>
+                <span class="info-row-val">Minimum 1 month (3 months recommended)</span>
+              </div>
+              <div class="info-row">
+                <span class="info-row-label">Hours</span>
+                <span class="info-row-val">4–6 hrs/day, 5 days/week</span>
+              </div>
+              <div class="info-row">
+                <span class="info-row-label">Language</span>
+                <span class="info-row-val">English, Marathi, Hindi, Spanish &amp; French</span>
+              </div>
+              <div class="info-row">
+                <span class="info-row-label">Intakes</span>
+                <span class="info-row-val">Rolling — <a
+                    href="https://wa.me/919004913827?text=Hi%20Amogh%20Sir%2C%20I%20am%20interested%20in%20the%20Yoga%20Volunteer%20%26%20Seva%20Program.%20Please%20let%20me%20know%20the%20availability%20for%20joining."
+                    target="_blank" rel="noopener noreferrer"
+                    style="color:var(--color-primary);font-weight:700">WhatsApp to check availability</a></span>
+              </div>
+            </div>
+
+            <div class="sidebar-info reveal">
+              <h4>A Word from Amogh Shinde</h4>
+              <p style="font-size:.88rem;color:var(--color-text-muted);line-height:1.7;font-style:italic;">"Seva taught
+                me more about yoga than any course I attended. When you sweep the floor with the same attention you
+                bring to your asana, when you help a student find their mat with the same care you bring to pranayama —
+                that is yoga. The volunteer program exists to offer others that discovery."</p>
+              <p style="font-size:.8rem;color:var(--color-text-faint);margin-top:.75rem;max-width:none">— Amogh Shinde,
+                Founder</p>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="cp-gallery-section" aria-labelledby="gallery-heading">
+      <div class="container">
+        <div class="cp-gallery-header reveal">
+          <span class="eyebrow">Seva In Action</span>
+          <h2 id="gallery-heading">A Glimpse Into Our Karma Yoga Work</h2>
+          <p>From feeding and caring for street animals to community outreach drives — a look at what our volunteers
+            give their time to. Swipe or use the arrows to see more.</p>
+        </div>
+
+        <div class="cp-gallery-grid" id="cpGalleryGrid">
+          <!-- To add more photos later: copy one .cp-gallery-item block, change
+               the image src and data-index, and paste it before the closing tag. -->
+          <button class="cp-gallery-item reveal" type="button" data-index="0">
+            <img src="./karma/1.png" alt="Street cow being cared for, with a compassion message overlay" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="1">
+            <img src="./karma/2.png" alt="Volunteer feeding a street cow by hand" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="2">
+            <img src="./karma/3.png" alt="Street cow being fed near a roadside wall" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="3">
+            <img src="./karma/4.png" alt="Street cow resting while being cared for by volunteers" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="4">
+            <img src="./karma/5.png" alt="Street cat eating a meal, with a compassion quote overlay" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="5">
+            <img src="./karma/6.png" alt="Street cat eating from a cardboard plate, with a quote overlay" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="6">
+            <img src="./karma/7.png" alt="Street dog eating from a cardboard plate, with a quote overlay" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="7">
+            <img src="./karma/8.png" alt="Volunteer walking through a crowded street during an outreach drive" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="8">
+            <img src="./karma/9.png" alt="Crowd of volunteers and locals gathered during a community event" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="9">
+            <img src="./karma/10.png" alt="Busy street market during a community outreach visit" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="10">
+            <img src="./karma/11.png" alt="Group enjoying time together at a swimming pool" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="11">
+            <img src="./karma/12.png" alt="Volunteer gently bathing a rescued cat" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="12">
+            <img src="./karma/13.png" alt="Steps beside a swimming pool area" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="13">
+            <img src="./karma/14.png" alt="Rescued dog yawning while resting" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="14">
+            <img src="./karma/15.png" alt="Volunteer gently cradling a rescued puppy" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="15">
+            <img src="./karma/16.png" alt="Street dog sitting and looking at the camera" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="16">
+            <img src="./karma/17.png" alt="Close-up portrait of a rescued street dog" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="17">
+            <img src="./karma/18.png" alt="Street dog with mouth open, looking cheerful" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="18">
+            <img src="./karma/20.png" alt="Cat eating food from a bowl on the pavement" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="19">
+            <img src="./karma/21.png" alt="Volunteer hand-feeding a treat to a street dog" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="20">
+            <img src="./karma/22.png" alt="Dog resting with paws stretched out on the pavement" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="21">
+            <img src="./karma/23.png" alt="Group photo of volunteers and community members outdoors" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="22">
+            <img src="./karma/24.png" alt="Volunteers distributing supplies to children in the community" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="23">
+            <img src="./karma/25.png" alt="Children gathered around volunteers during an outreach event" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="24">
+            <img src="./karma/26.png" alt="Group of children and volunteers at a community gathering" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="25">
+            <img src="./karma/27.png" alt="Volunteer holding a young child during an outreach visit" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="26">
+            <img src="./karma/28.png" alt="Volunteers posing together with community members" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="27">
+            <img src="./karma/29.png" alt="Volunteer interacting with children during a distribution drive" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="28">
+            <img src="./karma/30.png" alt="Volunteer handing out supplies to children on the street" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="29">
+            <img src="./karma/31.png" alt="Volunteer walking with children during a community outreach" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="30">
+            <img src="./karma/33.png" alt="Volunteers standing together along a street during an event" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="31">
+            <img src="./karma/34.png" alt="Group of children and volunteers wearing masks at a gathering" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="32">
+            <img src="./karma/35.png" alt="Volunteers and children celebrating together, some in Santa hats" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="33">
+            <img src="./karma/36.png" alt="Hall being prepared ahead of a community activity" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="34">
+            <img src="./karma/37.png" alt="Rescued dog resting calmly on a mat outdoors" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="35">
+            <img src="./karma/38.png" alt="Rescued dog lying peacefully on a mat outdoors" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="36">
+            <img src="./karma/39.png" alt="Dog resting on the ground outdoors" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="37">
+            <img src="./karma/40.png" alt="Cat eating from a food container outdoors" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="38">
+            <img src="./karma/41.png" alt="Volunteers and community members gathered together outdoors" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="39">
+            <img src="./karma/42.png" alt="Volunteer dancing joyfully during a street event" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="40">
+            <img src="./karma/43.png" alt="Group walking together during a community outreach event" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="41">
+            <img src="./karma/44.png" alt="Crowd of volunteers and community members at sunset during an event" loading="lazy">
+          </button>
+          <button class="cp-gallery-item reveal" type="button" data-index="42">
+            <img src="./karma/45.png" alt="Street dog resting on a paved pathway" loading="lazy">
+          </button>
+        </div>
+
+        <div class="cp-gallery-controls">
+          <button class="cp-gallery-btn" id="cpGalleryPrev" aria-label="Previous photos">&#10094;</button>
+          <div class="cp-gallery-dots" id="cpGalleryDots"></div>
+          <button class="cp-gallery-btn" id="cpGalleryNext" aria-label="Next photos">&#10095;</button>
+        </div>
+      </div>
+    </section>
+
+    <div class="cp-lightbox" id="cpLightbox" aria-hidden="true">
+      <button class="cp-lightbox-close" id="cpLightboxClose" aria-label="Close gallery">&times;</button>
+      <button class="cp-lightbox-prev" id="cpLightboxPrev" aria-label="Previous image">&#10094;</button>
+      <img class="cp-lightbox-img" id="cpLightboxImg" src="" alt="">
+      <button class="cp-lightbox-next" id="cpLightboxNext" aria-label="Next image">&#10095;</button>
+      <span class="cp-lightbox-counter" id="cpLightboxCounter"></span>
+    </div>
+
+    <section class="dark-cta">
+      <div class="container dark-cta-inner">
+        <span class="eyebrow">Answer the call</span>
+        <h2>Serve with sincerity. <em>Grow beyond what you expect.</em></h2>
+        <p>Applications are accepted on a rolling basis. Reach out to begin your seva journey at Mindful Shapes Yoga.
+        </p>
+        <div class="dark-cta-btns">
+          <a class="btn-hero-gold"
+            href="https://wa.me/919004913827?text=Hi%20Amogh%20Sir%2C%20I%20am%20interested%20in%20the%20Yoga%20Volunteer%20%26%20Seva%20Program%20at%20Mindful%20Shapes%20Yoga.%20I%20would%20like%20to%20apply."
+            target="_blank" rel="noopener noreferrer">Apply Now</a>
+          <a class="btn-hero-ghost" href="./courses.html">Explore Other Programs</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-cols">
+        <div class="footer-brand">
+          <strong>Mindful Shapes Yoga</strong>
+          <p style="font-size:.88rem;line-height:1.7;max-width:34ch;">Founded by Amogh Shinde — traditional
+            ashram-rooted yoga education for modern seekers, across Maharashtra and online.</p>
+        </div>
+        <div>
+          <h4
+            style="font-size:.78rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--color-text-faint);margin-bottom:1rem">
+            All Programs</h4>
+          <ul class="footer-links">
+            <li><a href="./regular-classes.html">Regular Yoga Classes</a></li>
+            <li><a href="./prenatal-yoga.html">Prenatal Yoga</a></li>
+            <li><a href="./pranayama-workshop.html">Pranayama Workshop</a></li>
+            <li><a href="./camps-workshops.html">Camps &amp; Workshops</a></li>
+            <li><a href="./teacher-training.html">Teacher Training (200H / 500H)</a></li>
+            <li><a href="./volunteer.html">Volunteer &amp; Seva</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4
+            style="font-size:.78rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--color-text-faint);margin-bottom:1rem">
+            Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./courses.html">All Classes</a></li>
+            <li><a href="./meet-the-gurus.html">Meet the Gurus</a></li>
+            <li><a href="./contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Mindful Shapes Yoga. Founded by Amogh Shinde. All rights reserved.</p>
+        <div class="footer-creator-credit">
+          <span>Created by</span>
+          <span class="creator-name-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            Mr. Vedant Pravin Surve
+          </span>
+        </div>
+        <p style="color:var(--color-primary);font-weight:700">Pedhambee, Chiplun, Maharashtra &mdash; Online &amp;
+          On-Campus</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./assets/app.js" defer></script>
+  <script>
+    (function () {
+      var grid = document.getElementById('cpGalleryGrid');
+      var items = Array.prototype.slice.call(document.querySelectorAll('#cpGalleryGrid .cp-gallery-item'));
+      if (!grid || !items.length) return;
+
+      var ROWS = 3;
+      var totalCols = Math.ceil(items.length / ROWS);
+      var prevBtn = document.getElementById('cpGalleryPrev');
+      var nextBtn = document.getElementById('cpGalleryNext');
+      var dotsWrap = document.getElementById('cpGalleryDots');
+      var activeCol = 0;
+      var syncing = false;
+
+      // Build one dot per column of photos so this auto-adjusts whenever
+      // more images are added later — no HTML edits needed.
+      for (var c = 0; c < totalCols; c++) {
+        (function (colIndex) {
+          var dot = document.createElement('button');
+          dot.type = 'button';
+          dot.className = 'cp-gallery-dot' + (colIndex === 0 ? ' active' : '');
+          dot.setAttribute('aria-label', 'Go to photo set ' + (colIndex + 1));
+          dot.addEventListener('click', function () { goToCol(colIndex); });
+          dotsWrap.appendChild(dot);
+        })(c);
+      }
+      var dots = Array.prototype.slice.call(dotsWrap.children);
+
+      function columnStep() {
+        var style = getComputedStyle(grid);
+        var gap = parseFloat(style.columnGap || style.gap || '0') || 0;
+        return items[0].getBoundingClientRect().width + gap;
+      }
+
+      function setActive(colIndex) {
+        activeCol = Math.max(0, Math.min(totalCols - 1, colIndex));
+        dots.forEach(function (d, i) { d.classList.toggle('active', i === activeCol); });
+      }
+
+      function goToCol(colIndex) {
+        syncing = true;
+        grid.scrollTo({ left: columnStep() * colIndex, behavior: 'smooth' });
+        setActive(colIndex);
+        window.setTimeout(function () { syncing = false; }, 400);
+      }
+
+      prevBtn.addEventListener('click', function () { goToCol(activeCol - 1); });
+      nextBtn.addEventListener('click', function () { goToCol(activeCol + 1); });
+
+      // Keep dots in sync if the person swipes/drags the grid directly
+      var rafPending = false;
+      grid.addEventListener('scroll', function () {
+        if (syncing || rafPending) return;
+        rafPending = true;
+        window.requestAnimationFrame(function () {
+          var step = columnStep();
+          if (step > 0) setActive(Math.round(grid.scrollLeft / step));
+          rafPending = false;
+        });
+      });
+    })();
+  </script>
+  <script>
+    (function () {
+      var items = Array.prototype.slice.call(document.querySelectorAll('#cpGalleryGrid .cp-gallery-item'));
+      if (!items.length) return;
+
+      var lightbox = document.getElementById('cpLightbox');
+      var lightboxImg = document.getElementById('cpLightboxImg');
+      var counter = document.getElementById('cpLightboxCounter');
+      var closeBtn = document.getElementById('cpLightboxClose');
+      var prevBtn = document.getElementById('cpLightboxPrev');
+      var nextBtn = document.getElementById('cpLightboxNext');
+      var current = 0;
+
+      function show(index) {
+        current = (index + items.length) % items.length;
+        var img = items[current].querySelector('img');
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        counter.textContent = (current + 1) + ' / ' + items.length;
+      }
+
+      function open(index) {
+        show(index);
+        lightbox.classList.add('active');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function close() {
+        lightbox.classList.remove('active');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      items.forEach(function (item, i) {
+        item.addEventListener('click', function () { open(i); });
+      });
+
+      closeBtn.addEventListener('click', close);
+      prevBtn.addEventListener('click', function () { show(current - 1); });
+      nextBtn.addEventListener('click', function () { show(current + 1); });
+
+      lightbox.addEventListener('click', function (e) {
+        if (e.target === lightbox) close();
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === 'Escape') close();
+        if (e.key === 'ArrowLeft') show(current - 1);
+        if (e.key === 'ArrowRight') show(current + 1);
+      });
+    })();
+  </script>
+</body>
+
+</html>

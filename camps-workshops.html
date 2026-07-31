@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Camps & Wellness Workshops | Mindful Shapes Yoga — Amogh Shinde</title>
+  <meta name="description"
+    content="Corporate yoga, wellness camps, school programs, and community workshops by Mindful Shapes Yoga and Amogh Shinde. Custom group sessions starting from ₹5,000 per session.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./assets/styles.css">
+  <style>
+    .cp-hero {
+      position: relative;
+      min-height: clamp(55vh, 70vh, 80vh);
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      background: #0d0b08
+    }
+
+    .cp-hero-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: .44
+    }
+
+    .cp-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(175deg, rgba(10, 7, 4, .15) 0%, rgba(10, 7, 4, .9) 100%)
+    }
+
+    .cp-hero-inner {
+      position: relative;
+      z-index: 2;
+      width: min(calc(100% - 2rem), 1200px);
+      margin-inline: auto;
+      padding: clamp(3rem, 6vw, 5rem) 0 clamp(2.5rem, 5vw, 4rem)
+    }
+
+    .cp-hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .4rem 1rem;
+      border-radius: 999px;
+      background: rgba(165, 90, 42, .2);
+      border: 1px solid rgba(165, 90, 42, .35);
+      color: #ddb878;
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem
+    }
+
+    .cp-hero-inner h1 {
+      font-size: clamp(2.2rem, 5.5vw, 4.2rem);
+      color: #fff9f2;
+      line-height: 1.05;
+      max-width: 18ch;
+      margin-bottom: 1rem
+    }
+
+    .cp-hero-inner h1 em {
+      font-style: italic;
+      color: #ddb878
+    }
+
+    .cp-hero-sub {
+      color: rgba(255, 248, 235, .72);
+      font-size: clamp(.9rem, 1.6vw, 1.1rem);
+      max-width: 52ch;
+      line-height: 1.75;
+      margin-bottom: 2rem
+    }
+
+    .cp-hero-btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .85rem
+    }
+
+    .btn-hero-gold {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .85rem 1.9rem;
+      border-radius: 999px;
+      font-size: .9rem;
+      font-weight: 800;
+      background: #ddb878;
+      color: #1a1008;
+      transition: background .2s, transform .2s
+    }
+
+    .btn-hero-gold:hover {
+      background: #ebca94;
+      transform: translateY(-2px)
+    }
+
+    .btn-hero-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .85rem 1.7rem;
+      border-radius: 999px;
+      font-size: .9rem;
+      font-weight: 800;
+      background: rgba(255, 255, 255, .1);
+      border: 1px solid rgba(255, 255, 255, .25);
+      color: #fff9f2;
+      transition: background .2s, transform .2s
+    }
+
+    .btn-hero-ghost:hover {
+      background: rgba(255, 255, 255, .18);
+      transform: translateY(-2px)
+    }
+
+    .stat-strip {
+      background: var(--color-surface);
+      border-bottom: 1px solid var(--color-border);
+      padding: 1.5rem 0
+    }
+
+    .stat-strip-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr)
+    }
+
+    .strip-stat {
+      padding: .75rem 1.5rem;
+      border-right: 1px solid var(--color-border);
+      text-align: center
+    }
+
+    .strip-stat:last-child {
+      border-right: none
+    }
+
+    .strip-stat strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: clamp(1.3rem, 2.5vw, 1.9rem);
+      color: var(--color-primary);
+      line-height: 1;
+      margin-bottom: .25rem
+    }
+
+    .strip-stat span {
+      font-size: .72rem;
+      color: var(--color-text-muted);
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase
+    }
+
+    .cp-main {
+      padding: clamp(3rem, 6vw, 5rem) 0
+    }
+
+    .cp-layout {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 2.5rem;
+      align-items: start
+    }
+
+    .cp-section {
+      margin-bottom: 2.5rem
+    }
+
+    .cp-section h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      margin: .6rem 0 1rem;
+      line-height: 1.1
+    }
+
+    .cp-section p {
+      font-size: .97rem;
+      line-height: 1.8;
+      color: var(--color-text-muted);
+      margin-bottom: .9rem;
+      max-width: 65ch
+    }
+
+    .cp-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: 1.75rem;
+      margin-bottom: 1.25rem
+    }
+
+    .cp-card h3 {
+      font-size: clamp(1.2rem, 2vw, 1.55rem);
+      margin-bottom: 1rem
+    }
+
+    .program-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1rem
+    }
+
+    .program-card {
+      background: var(--color-surface-2);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 1.4rem
+    }
+
+    .program-tag {
+      font-size: .68rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      display: block;
+      margin-bottom: .5rem
+    }
+
+    .program-card h4 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--color-text);
+      margin-bottom: .5rem
+    }
+
+    .program-card p {
+      font-size: .83rem;
+      color: var(--color-text-muted);
+      line-height: 1.55;
+      max-width: none;
+      margin: 0
+    }
+
+    .offering-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .65rem;
+      margin-top: 1rem
+    }
+
+    .offering-list li {
+      font-size: .9rem;
+      color: var(--color-text-muted);
+      display: flex;
+      align-items: flex-start;
+      gap: .75rem;
+      padding: .9rem 1rem;
+      background: var(--color-surface-2);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md)
+    }
+
+    .offering-list li::before {
+      content: '→';
+      color: var(--color-primary);
+      font-weight: 800;
+      flex-shrink: 0
+    }
+
+    .photo-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1.5rem 0;
+      border-radius: var(--radius-xl);
+      overflow: hidden
+    }
+
+    .photo-strip img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block
+    }
+
+    .pricing-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      border-radius: var(--radius-lg);
+      overflow: hidden
+    }
+
+    .pricing-table th {
+      background: var(--color-primary);
+      color: #fff;
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      padding: .85rem 1rem;
+      text-align: left
+    }
+
+    .pricing-table td {
+      padding: .85rem 1rem;
+      font-size: .88rem;
+      color: var(--color-text-muted);
+      border-bottom: 1px solid var(--color-border)
+    }
+
+    .pricing-table tr:last-child td {
+      border-bottom: none
+    }
+
+    .pricing-table tr:nth-child(even) td {
+      background: var(--color-surface-2)
+    }
+
+    .pricing-table td:first-child {
+      font-weight: 700;
+      color: var(--color-text)
+    }
+
+    .cp-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .55rem
+    }
+
+    .cp-list li {
+      font-size: .875rem;
+      color: var(--color-text-muted);
+      display: flex;
+      align-items: flex-start;
+      gap: .6rem;
+      line-height: 1.5
+    }
+
+    .cp-list li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      flex-shrink: 0;
+      margin-top: .45rem
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+      margin-top: 1rem
+    }
+
+    details.faq-item {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 1rem 1.25rem
+    }
+
+    details.faq-item summary {
+      cursor: pointer;
+      font-weight: 800;
+      font-size: .95rem;
+      list-style: none;
+      color: var(--color-text);
+      display: flex;
+      justify-content: space-between;
+      align-items: center
+    }
+
+    details.faq-item summary::-webkit-details-marker {
+      display: none
+    }
+
+    details.faq-item summary::after {
+      content: '+';
+      font-size: 1.4rem;
+      color: var(--color-primary);
+      font-weight: 400;
+      flex-shrink: 0
+    }
+
+    details.faq-item[open] summary::after {
+      content: '−'
+    }
+
+    details.faq-item p {
+      padding-top: .75rem;
+      font-size: .9rem;
+      color: var(--color-text-muted);
+      line-height: 1.7
+    }
+
+    .cp-sidebar {
+      position: sticky;
+      top: 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem
+    }
+
+    .price-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      overflow: hidden
+    }
+
+    .price-card-top {
+      padding: 1.5rem 1.5rem 1.25rem;
+      border-bottom: 1px solid var(--color-border);
+      background: linear-gradient(135deg, var(--color-primary-highlight), var(--color-surface))
+    }
+
+    .price-main {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      color: var(--color-text);
+      line-height: 1
+    }
+
+    .price-main small {
+      font-family: var(--font-body);
+      font-size: .8rem;
+      color: var(--color-text-muted);
+      font-weight: 600
+    }
+
+    .price-card-body {
+      padding: 1.25rem 1.5rem 1.5rem
+    }
+
+    .price-includes {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .6rem;
+      margin-bottom: 1.25rem
+    }
+
+    .price-includes li {
+      font-size: .85rem;
+      color: var(--color-text-muted);
+      display: flex;
+      align-items: center;
+      gap: .55rem
+    }
+
+    .check-icon {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0
+    }
+
+    .check-icon::after {
+      content: '';
+      width: 7px;
+      height: 4px;
+      border-left: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+      transform: rotate(-45deg) translateY(-1px);
+      display: block
+    }
+
+    .btn-enroll-full {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      width: 100%;
+      padding: .95rem;
+      border-radius: var(--radius-lg);
+      font-size: .92rem;
+      font-weight: 800;
+      background: var(--color-primary);
+      color: #fff9f2;
+      transition: background .2s, transform .2s
+    }
+
+    .btn-enroll-full:hover {
+      background: var(--color-primary-hover);
+      transform: translateY(-1px)
+    }
+
+    .btn-contact-full {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      width: 100%;
+      padding: .85rem;
+      border-radius: var(--radius-lg);
+      font-size: .88rem;
+      font-weight: 700;
+      background: var(--color-surface-2);
+      border: 1px solid var(--color-border);
+      color: var(--color-text-muted);
+      transition: all .2s;
+      margin-top: .65rem
+    }
+
+    .btn-contact-full:hover {
+      background: var(--color-surface-offset);
+      color: var(--color-text)
+    }
+
+    .sidebar-info {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      padding: 1.25rem
+    }
+
+    .sidebar-info h4 {
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--color-text-faint);
+      margin-bottom: 1rem
+    }
+
+    .info-row {
+      display: flex;
+      align-items: flex-start;
+      gap: .75rem;
+      padding: .6rem 0;
+      border-bottom: 1px solid var(--color-border)
+    }
+
+    .info-row:last-child {
+      border-bottom: none
+    }
+
+    .info-row-label {
+      font-size: .78rem;
+      font-weight: 800;
+      color: var(--color-text-faint);
+      min-width: 80px;
+      flex-shrink: 0;
+      padding-top: .1rem
+    }
+
+    .info-row-val {
+      font-size: .85rem;
+      color: var(--color-text-muted);
+      line-height: 1.5
+    }
+
+    .dark-cta {
+      background: #0d0b08;
+      padding: clamp(3.5rem, 7vw, 5.5rem) 0;
+      position: relative;
+      overflow: hidden;
+      text-align: center
+    }
+
+    .dark-cta::before {
+      content: 'ॐ';
+      position: absolute;
+      font-size: clamp(14rem, 30vw, 26rem);
+      font-family: serif;
+      color: rgba(213, 170, 113, .04);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      line-height: 1;
+      pointer-events: none;
+      user-select: none
+    }
+
+    .dark-cta-inner {
+      position: relative;
+      z-index: 1
+    }
+
+    .dark-cta h2 {
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      color: #fff9f2;
+      margin: 1rem 0 1.25rem;
+      line-height: 1.1
+    }
+
+    .dark-cta h2 em {
+      font-style: italic;
+      color: #ddb878
+    }
+
+    .dark-cta p {
+      color: rgba(255, 248, 235, .6);
+      max-width: 48ch;
+      margin: 0 auto 2rem;
+      font-size: .97rem;
+      line-height: 1.75
+    }
+
+    .dark-cta-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center
+    }
+
+    .site-footer {
+      background: var(--color-surface);
+      border-top: 1px solid var(--color-border);
+      padding: clamp(3rem, 6vw, 5rem) 0 2rem
+    }
+
+    .footer-cols {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 3rem
+    }
+
+    .footer-brand strong {
+      display: block;
+      font-size: .8rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      margin-bottom: .9rem
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .55rem
+    }
+
+    .footer-links a {
+      font-size: .88rem;
+      color: var(--color-text-muted);
+      transition: color .2s
+    }
+
+    .footer-links a:hover {
+      color: var(--color-primary)
+    }
+
+    .footer-bottom {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--color-border);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem
+    }
+
+    .footer-bottom p {
+      font-size: .78rem;
+      color: var(--color-text-faint);
+      max-width: none
+    }
+
+    @media(max-width:1080px) {
+      .cp-layout {
+        grid-template-columns: 1fr
+      }
+
+      .cp-sidebar {
+        position: static
+      }
+
+      .footer-cols {
+        grid-template-columns: 1fr 1fr
+      }
+    }
+
+    @media(max-width:760px) {
+      .stat-strip-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .strip-stat {
+        border-right: none;
+        border-bottom: 1px solid var(--color-border)
+      }
+
+      .strip-stat:nth-child(odd) {
+        border-right: 1px solid var(--color-border)
+      }
+
+      .strip-stat:last-child,
+      .strip-stat:nth-last-child(2):nth-child(odd) {
+        border-bottom: none
+      }
+
+      .program-grid {
+        grid-template-columns: 1fr
+      }
+
+      .photo-strip {
+        grid-template-columns: 1fr
+      }
+
+      .photo-strip img {
+        height: 200px
+      }
+
+      .pricing-table {
+        font-size: .82rem
+      }
+
+      .pricing-table th,
+      .pricing-table td {
+        padding: .65rem .75rem
+      }
+
+      .footer-cols {
+        grid-template-columns: 1fr
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+        text-align: center
+      }
+
+      .btn-hero-gold,
+      .btn-hero-ghost {
+        width: 100%;
+        justify-content: center
+      }
+
+      .dark-cta-btns .btn-hero-gold,
+      .dark-cta-btns .btn-hero-ghost {
+        width: auto
+      }
+    }
+
+    @media(max-width:480px) {
+      .dark-cta-btns {
+        flex-direction: column;
+        align-items: center
+      }
+
+      .dark-cta-btns .btn-hero-gold,
+      .dark-cta-btns .btn-hero-ghost {
+        width: 100%;
+        justify-content: center
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <audio id="bgMusic" src="./music/bg.mp3" loop preload="auto"></audio>
+  <script>
+    (function () {
+      var audio = document.getElementById('bgMusic');
+      var KEY = 'msyBgMusicTime';
+
+      var saved = parseFloat(localStorage.getItem(KEY));
+      if (!isNaN(saved) && isFinite(saved)) {
+        audio.currentTime = saved;
+      }
+
+      function startPlayback() {
+        var p = audio.play();
+        if (p !== undefined) {
+          p.catch(function () {
+            var resume = function () {
+              audio.play();
+              document.removeEventListener('click', resume);
+              document.removeEventListener('touchstart', resume);
+              document.removeEventListener('keydown', resume);
+            };
+            document.addEventListener('click', resume);
+            document.addEventListener('touchstart', resume);
+            document.addEventListener('keydown', resume);
+          });
+        }
+      }
+      startPlayback();
+
+      setInterval(function () {
+        if (!audio.paused) localStorage.setItem(KEY, audio.currentTime);
+      }, 1000);
+
+      window.addEventListener('beforeunload', function () {
+        localStorage.setItem(KEY, audio.currentTime);
+      });
+    })();
+  </script>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="./index.html">
+        <span class="brand-mark"
+          style="background:none;border-radius:0;padding:0;box-shadow:none;width:auto;height:52px;display:inline-flex;align-items:center;justify-content:center;">
+          <img src="./photo/logo.png" alt="Mindful Shapes Yoga logo" style="width:auto;height:100%;object-fit:contain">
+        </span>
+        <span class="brand-copy">
+          <strong>Mindful Shapes Yoga</strong>
+          <span>Camps, corporate &amp; community wellness</span>
+        </span>
+      </a>
+      <div class="nav-wrap">
+        <nav>
+          <button class="menu-toggle" aria-label="Toggle navigation" data-menu-toggle>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+          </button>
+          <div class="nav-links" data-nav>
+            <a href="./index.html">Home</a>
+            <a href="./courses.html">Classes</a>
+            <a href="./teacher-training.html">Teacher Training</a>
+            <a href="./meet-the-gurus.html">Gurus</a>
+            <a href="./photo.html">Ashram</a>
+            <a href="./volunteer.html">Volunteer</a>
+            <a href="./blog.html">Blog</a>
+            <a href="./contact.html">Contact</a>
+          </div>
+        </nav>
+        <button class="theme-toggle" data-theme-toggle aria-label="Switch theme"></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="cp-hero">
+      <img class="cp-hero-img" src="./courses/958.jpg"
+        alt="Large outdoor group yoga session — Mindful Shapes Yoga camps and community wellness" width="1200"
+        height="800">
+      <div class="cp-hero-overlay"></div>
+      <div class="cp-hero-inner">
+        <div class="cp-hero-tag">Camps · Corporate · Community · Schools</div>
+        <h1>Yoga <em>Camps &amp; Wellness Workshops</em> for Groups</h1>
+        <p class="cp-hero-sub">Mindful Shapes Yoga brings certified yoga and wellness programs to your organisation,
+          school, community, or event. Custom-designed sessions led by Amogh Shinde and our certified instructors —
+          on-site, at our campus, or at your venue anywhere in Maharashtra.</p>
+        <div class="cp-hero-btn-row">
+          <a class="btn-hero-gold"
+            href="https://wa.me/919004913827?text=Hi%20Amogh%20Sir%2C%20I%20am%20interested%20in%20Camps%20%26%20Wellness%20Workshops%20at%20Mindful%20Shapes%20Yoga.%20Please%20share%20custom%20pricing%20and%20details."
+            target="_blank" rel="noopener noreferrer">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M12 5v14M5 12h14" />
+            </svg>
+            Request a Custom Quote
+          </a>
+          <a class="btn-hero-ghost"
+            href="https://wa.me/919004913827?text=Hi%20Amogh%20Sir%2C%20I%20am%20interested%20in%20a%20yoga%20program%20at%20Mindful%20Shapes%20Yoga.%20Please%20share%20more%20details."
+            target="_blank" rel="noopener noreferrer">View Pricing</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="stat-strip">
+      <div class="container">
+        <div class="stat-strip-grid">
+          <div class="strip-stat">
+            <strong>Custom</strong>
+            <span>Designed for your group</span>
+          </div>
+          <div class="strip-stat">
+            <strong>On-Site</strong>
+            <span>We come to your venue</span>
+          </div>
+          <div class="strip-stat">
+            <strong>₹5,000+</strong>
+            <span>Starting per session</span>
+          </div>
+          <div class="strip-stat">
+            <strong>All Sectors</strong>
+            <span>Corporate, schools, communities</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="cp-main">
+      <div class="container">
+        <div class="cp-layout">
+
+          <div class="cp-content">
+
+            <div class="cp-section reveal">
+              <span class="eyebrow">About this program</span>
+              <h2>Bringing Yoga to Where People Are — Not Just Where Yogis Go</h2>
+              <p>Most people who need yoga the most — stressed office workers, teenagers with exam anxiety, communities
+                recovering from hardship — never make it to a yoga studio. Our Camps and Wellness Workshops program
+                exists to close that gap.</p>
+              <p>Mindful Shapes Yoga designs and delivers custom wellness programs for organisations, schools,
+                residential societies, hospitals, NGOs, and events. Each program is built around your group's specific
+                needs — the right intensity, duration, language (English, Marathi, Hindi, Spanish &amp; French), and
+                focus — so that it actually creates value rather than checking a wellness box.</p>
+              <p>We travel to your location anywhere in Pune, Mumbai, and across Maharashtra. We bring all equipment,
+                mats, and instructors. You provide a suitable space — the rest is handled by us.</p>
+            </div>
+
+            <div class="cp-card reveal">
+              <h3>Program Types We Offer</h3>
+              <div class="program-grid">
+                <div class="program-card">
+                  <span class="program-tag">Corporate Wellness</span>
+                  <h4>Workplace Yoga &amp; Stress Management</h4>
+                  <p>Chair yoga, desk stretches, breathwork for stress, mindfulness for focus, and full session yoga —
+                    designed for office teams during work hours or wellness days.</p>
+                </div>
+                <div class="program-card">
+                  <span class="program-tag">School & College</span>
+                  <h4>Youth Yoga &amp; Mental Wellness</h4>
+                  <p>Age-appropriate yoga for students — asana, breathing for exam stress, focus techniques, and
+                    anti-anxiety practices delivered in school halls and playgrounds.</p>
+                </div>
+                <div class="program-card">
+                  <span class="program-tag">Community Camp</span>
+                  <h4>Public Yoga Camps</h4>
+                  <p>Large-group outdoor or indoor yoga camps for residential societies, temples, public parks,
+                    government events, and Yoga Day celebrations.</p>
+                </div>
+                <div class="program-card">
+                  <span class="program-tag">Special Events</span>
+                  <h4>Event &amp; Festival Wellness</h4>
+                  <p>Yoga and breathwork sessions at conferences, health fairs, HR events, women's day programs,
+                    cultural celebrations, and corporate team-building days.</p>
+                </div>
+                <div class="program-card">
+                  <span class="program-tag">Healthcare & NGO</span>
+                  <h4>Therapeutic Wellness Programs</h4>
+                  <p>Yoga for recovery, elderly populations, hospital outpatient programs, mental health NGOs, and
+                    differently-abled communities — adapted and supervised.</p>
+                </div>
+                <div class="program-card">
+                  <span class="program-tag">Residential Camps</span>
+                  <h4>Multi-Day Wellness Camps</h4>
+                  <p>2–5 day residential or day-format group wellness camps for organisations wanting deeper engagement,
+                    habit formation, and team wellbeing transformation.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="photo-strip reveal">
+              <img src="./courses/958.jpg" alt="Large outdoor yoga camp with community group at Mindful Shapes"
+                width="600" height="440">
+              <img src="./courses/2.jpg" alt="Corporate group yoga session with meditation outdoors" width="600"
+                height="440">
+            </div>
+
+            <div class="cp-card reveal">
+              <h3>What a Typical Session Includes</h3>
+              <ul class="offering-list">
+                <li>Pre-session consultation with your team to understand goals, fitness levels, and space</li>
+                <li>Customised session design — format, duration, intensity, and language
+                  (English/Marathi/Hindi/Spanish/French)</li>
+                <li>All props and mats provided on-site (up to 50 participants)</li>
+                <li>Qualified certified instructor(s) — Amogh Shinde leads flagship sessions personally</li>
+                <li>Asana, pranayama, meditation, or a blended format based on your group's needs</li>
+                <li>Post-session handout with simple home practices your team can continue</li>
+                <li>Optional follow-up session for accountability and habit support</li>
+              </ul>
+            </div>
+
+            <div class="cp-section reveal">
+              <span class="eyebrow">Transparent pricing</span>
+              <h2>Starting Rates — Custom Quotes on Request</h2>
+              <p>All pricing is per session or per program depending on format. Discounts available for ongoing
+                partnerships and multi-session bookings.</p>
+              <div style="overflow-x:auto;-webkit-overflow-scrolling:touch">
+                <table class="pricing-table">
+                  <thead>
+                    <tr>
+                      <th>Program Type</th>
+                      <th>Duration</th>
+                      <th>Group Size</th>
+                      <th>Starting Price</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Corporate Single Session</td>
+                      <td>60–90 min</td>
+                      <td>Up to 30</td>
+                      <td>₹5,000</td>
+                    </tr>
+                    <tr>
+                      <td>Corporate Monthly Package</td>
+                      <td>4 sessions/month</td>
+                      <td>Up to 30</td>
+                      <td>₹16,000/month</td>
+                    </tr>
+                    <tr>
+                      <td>School / College Session</td>
+                      <td>60 min</td>
+                      <td>Up to 60</td>
+                      <td>₹4,000</td>
+                    </tr>
+                    <tr>
+                      <td>Community Yoga Camp (half day)</td>
+                      <td>3–4 hours</td>
+                      <td>Up to 100</td>
+                      <td>₹12,000</td>
+                    </tr>
+                    <tr>
+                      <td>Multi-Day Wellness Camp</td>
+                      <td>2–5 days</td>
+                      <td>Up to 50</td>
+                      <td>₹25,000+</td>
+                    </tr>
+                    <tr>
+                      <td>Event / Conference Session</td>
+                      <td>45–60 min</td>
+                      <td>Up to 50</td>
+                      <td>₹7,000</td>
+                    </tr>
+                    <tr>
+                      <td>NGO / Social Welfare (discounted)</td>
+                      <td>Custom</td>
+                      <td>Custom</td>
+                      <td><a
+                          href="https://wa.me/919004913827?text=Hi%20Amogh%20Sir%2C%20I%20represent%20an%20NGO%20and%20am%20interested%20in%20Camps%20%26%20Wellness%20Workshops%20at%20Mindful%20Shapes%20Yoga.%20Please%20share%20discounted%20pricing%20details."
+                          target="_blank" rel="noopener noreferrer"
+                          style="color:var(--color-primary);font-weight:700">WhatsApp us</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p style="font-size:.82rem;color:var(--color-text-faint);margin-top:.85rem">Prices include instructor
+                travel within Chiplun. Additional travel charges apply for locations outside Chiplun. Mats and basic
+                props included for groups up to 50. All prices exclusive of taxes. <a
+                  href="https://wa.me/919004913827?text=Hi%20Amogh%20Sir%2C%20I%20am%20interested%20in%20Camps%20%26%20Wellness%20Workshops%20and%20need%20a%20detailed%20quote."
+                  target="_blank" rel="noopener noreferrer" style="color:var(--color-primary);font-weight:700">WhatsApp
+                  us</a> for a detailed quote for your specific requirements.</p>
+            </div>
+
+            <div class="cp-section reveal">
+              <span class="eyebrow">Common questions</span>
+              <h2>Frequently Asked Questions</h2>
+              <div class="faq-list">
+                <details class="faq-item">
+                  <summary>We are a company in Mumbai. Can you come to our office?</summary>
+                  <p>Yes. We travel to Mumbai, Pune, Nashik, Nagpur, and across Maharashtra for corporate and event
+                    sessions. Based in Chiplun, Pedhambee — travel and accommodation charges apply for locations outside
+                    Chiplun. <a
+                      href="https://wa.me/919004913827?text=Hi%20Amogh%20Sir%2C%20I%20need%20a%20yoga%20session%20at%20our%20office%20location.%20Please%20share%20details%20and%20pricing."
+                      target="_blank" rel="noopener noreferrer"
+                      style="color:var(--color-primary);font-weight:700">WhatsApp us</a> for a location-specific quote.
+                    We have conducted sessions in Mumbai offices for teams ranging from 10 to 200 people.</p>
+                </details>
+                <details class="faq-item">
+                  <summary>Our employees have varying fitness levels — will this work for everyone?</summary>
+                  <p>Absolutely. Our corporate sessions are specifically designed for mixed groups — we use chair yoga,
+                    gentle stretches, and modifications that work for anyone regardless of age, fitness, or flexibility.
+                    We never ask anyone to do something beyond their comfort level. The emphasis is on participation,
+                    not performance.</p>
+                </details>
+                <details class="faq-item">
+                  <summary>How much space do we need for a corporate session?</summary>
+                  <p>For a standard 30-person session, a clear floor space of approximately 20x30 feet is sufficient. We
+                    can also work in conference rooms, terraces, lawns, or any open space. We will assess the space
+                    during our pre-session consultation and advise on the best setup.</p>
+                </details>
+                <details class="faq-item">
+                  <summary>Can we book regular monthly sessions on a retainer?</summary>
+                  <p>Yes — and this is strongly recommended. One-off sessions raise awareness; monthly programs create
+                    lasting wellbeing habits. Our corporate retainer packages (4 sessions per month) are priced at a 20%
+                    discount versus individual sessions. Several Pune organisations have been on our monthly program for
+                    over a year.</p>
+                </details>
+                <details class="faq-item">
+                  <summary>Do you provide a certificate for employee participation?</summary>
+                  <p>Yes. For ongoing corporate wellness programs and wellness day events, we can issue branded
+                    participation certificates for each employee who completes the program. These work well as HR
+                    wellness incentives and are well received by participants.</p>
+                </details>
+              </div>
+            </div>
+
+          </div>
+
+          <aside class="cp-sidebar">
+            <div class="price-card reveal">
+              <div class="price-card-top">
+                <span class="eyebrow" style="margin-bottom:.75rem;display:block">Start with a session</span>
+                <div class="price-main">₹5,000 <small>/ session</small></div>
+                <p style="font-size:.82rem;color:var(--color-text-muted);margin-top:.5rem;line-height:1.5">One 60–90 min
+                  corporate or group yoga session. Instructor on-site, props included, custom to your group.</p>
+              </div>
+              <div class="price-card-body">
+                <ul class="price-includes">
+                  <li><span class="check-icon"></span>Pre-session needs consultation</li>
+                  <li><span class="check-icon"></span>Certified instructor on-site</li>
+                  <li><span class="check-icon"></span>Mats and props (up to 30)</li>
+                  <li><span class="check-icon"></span>Custom session design</li>
+                  <li><span class="check-icon"></span>Home practice handout</li>
+                  <li><span class="check-icon"></span>Participation certificates (optional)</li>
+                </ul>
+                <a class="btn-enroll-full"
+                  href="https://wa.me/919004913827?text=Hi%20Amogh%20Sir%2C%20I%20am%20interested%20in%20Camps%20%26%20Wellness%20Workshops%20at%20Mindful%20Shapes%20Yoga.%20Please%20share%20custom%20pricing%20and%20details."
+                  target="_blank" rel="noopener noreferrer">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M12 5v14M5 12h14" />
+                  </svg>
+                  Request a Quote
+                </a>
+                <a class="btn-contact-full"
+                  href="https://wa.me/919004913827?text=Hi%20Amogh%20Sir%2C%20I%20am%20interested%20in%20Camps%20%26%20Wellness%20Workshops%20at%20Mindful%20Shapes%20Yoga.%20Please%20share%20all%20rates%20and%20packages."
+                  target="_blank" rel="noopener noreferrer">View All Rates</a>
+              </div>
+            </div>
+
+            <div class="sidebar-info reveal">
+              <h4>Program Details</h4>
+              <div class="info-row">
+                <span class="info-row-label">Location</span>
+                <span class="info-row-val">On-site at your venue or our campus</span>
+              </div>
+              <div class="info-row">
+                <span class="info-row-label">Coverage</span>
+                <span class="info-row-val">Pune, Mumbai, Maharashtra-wide</span>
+              </div>
+              <div class="info-row">
+                <span class="info-row-label">Group size</span>
+                <span class="info-row-val">10 to 200+ participants</span>
+              </div>
+              <div class="info-row">
+                <span class="info-row-label">Language</span>
+                <span class="info-row-val">English, Marathi, Hindi, Spanish &amp; French (any combination)</span>
+              </div>
+              <div class="info-row">
+                <span class="info-row-label">Lead time</span>
+                <span class="info-row-val">Minimum 7 days notice preferred</span>
+              </div>
+              <div class="info-row">
+                <span class="info-row-label">Props</span>
+                <span class="info-row-val">Mats, blocks, straps included up to 50</span>
+              </div>
+            </div>
+
+            <div class="sidebar-info reveal">
+              <h4>Who Has Worked With Us</h4>
+              <ul style="list-style:none;display:flex;flex-direction:column;gap:.55rem">
+                <li style="font-size:.85rem;color:var(--color-text-muted)">Technology companies in Hinjewadi, Pune</li>
+                <li style="font-size:.85rem;color:var(--color-text-muted)">Schools in Kothrud and Shivajinagar</li>
+                <li style="font-size:.85rem;color:var(--color-text-muted)">Municipal welfare camps — PCMC</li>
+                <li style="font-size:.85rem;color:var(--color-text-muted)">Women's NGOs and healthcare programs</li>
+                <li style="font-size:.85rem;color:var(--color-text-muted)">Yoga Day events — district and city level
+                </li>
+              </ul>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="dark-cta">
+      <div class="container dark-cta-inner">
+        <span class="eyebrow">Partner with us</span>
+        <h2>Bring wellness to your team, school, or <em>community</em></h2>
+        <p>Tell us about your group and we will design a program that actually makes a difference. No cookie-cutter
+          sessions.</p>
+        <div class="dark-cta-btns">
+          <a class="btn-hero-gold"
+            href="https://wa.me/919004913827?text=Hi%20Amogh%20Sir%2C%20I%20am%20interested%20in%20Camps%20%26%20Wellness%20Workshops%20at%20Mindful%20Shapes%20Yoga.%20Please%20share%20custom%20pricing%20and%20details."
+            target="_blank" rel="noopener noreferrer">Request a Custom Quote</a>
+          <a class="btn-hero-ghost"
+            href="https://wa.me/919004913827?text=Hi%20Amogh%20Sir%2C%20I%20am%20interested%20in%20a%20yoga%20program%20at%20Mindful%20Shapes%20Yoga.%20Please%20share%20more%20details."
+            target="_blank" rel="noopener noreferrer">See Pricing</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-cols">
+        <div class="footer-brand">
+          <strong>Mindful Shapes Yoga</strong>
+          <p style="font-size:.88rem;line-height:1.7;max-width:34ch;">Founded by Amogh Shinde — traditional
+            ashram-rooted yoga education for modern seekers, across Maharashtra and online.</p>
+        </div>
+        <div>
+          <h4
+            style="font-size:.78rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--color-text-faint);margin-bottom:1rem">
+            All Programs</h4>
+          <ul class="footer-links">
+            <li><a href="./regular-classes.html">Regular Yoga Classes</a></li>
+            <li><a href="./prenatal-yoga.html">Prenatal Yoga</a></li>
+            <li><a href="./pranayama-workshop.html">Pranayama Workshop</a></li>
+            <li><a href="./camps-workshops.html">Camps &amp; Workshops</a></li>
+            <li><a href="./teacher-training.html">Teacher Training (200H / 500H)</a></li>
+            <li><a href="./volunteer.html">Volunteer &amp; Seva</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4
+            style="font-size:.78rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--color-text-faint);margin-bottom:1rem">
+            Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./courses.html">All Classes</a></li>
+            <li><a href="./courses.html">All Classes</a></li>
+            <li><a href="./contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Mindful Shapes Yoga. Founded by Amogh Shinde. All rights reserved.</p>
+        <div class="footer-creator-credit">
+          <span>Created by</span>
+          <span class="creator-name-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            Mr. Vedant Pravin Surve
+          </span>
+        </div>
+        <p style="color:var(--color-primary);font-weight:700">Pedhambee, Chiplun, Maharashtra &mdash; Online &amp;
+          On-Campus</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./assets/app.js" defer></script>
+</body>
+
+</html>

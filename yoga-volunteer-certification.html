@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoga Volunteer Certification | Mindful Shapes Yoga</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./assets/styles.css">
+</head>
+
+<body>
+    <audio id="bgMusic" src="./music/bg.mp3" loop preload="auto"></audio>
+    <script>
+        (function () {
+            var audio = document.getElementById('bgMusic');
+            var KEY = 'msyBgMusicTime';
+
+            var saved = parseFloat(localStorage.getItem(KEY));
+            if (!isNaN(saved) && isFinite(saved)) {
+                audio.currentTime = saved;
+            }
+
+            function startPlayback() {
+                var p = audio.play();
+                if (p !== undefined) {
+                    p.catch(function () {
+                        var resume = function () {
+                            audio.play();
+                            document.removeEventListener('click', resume);
+                            document.removeEventListener('touchstart', resume);
+                            document.removeEventListener('keydown', resume);
+                        };
+                        document.addEventListener('click', resume);
+                        document.addEventListener('touchstart', resume);
+                        document.addEventListener('keydown', resume);
+                    });
+                }
+            }
+            startPlayback();
+
+            setInterval(function () {
+                if (!audio.paused) localStorage.setItem(KEY, audio.currentTime);
+            }, 1000);
+
+            window.addEventListener('beforeunload', function () {
+                localStorage.setItem(KEY, audio.currentTime);
+            });
+        })();
+    </script>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+        <div class="container header-inner"><a class="brand" href="./index.html">
+                <span class="brand-mark"
+                    style="background:none;border-radius:0;padding:0;box-shadow:none;width:auto;height:52px;display:inline-flex;align-items:center;justify-content:center;">
+                    <img src="./photo/logo.png" alt="Mindful Shapes Yoga logo"
+                        style="width:auto;height:100%;object-fit:contain">
+                </span><span class="brand-copy"><strong>Mindful Shapes Yoga</strong><span>Yoga volunteer
+                        certification</span></span></a>
+            <div class="nav-wrap">
+                <nav><button class="menu-toggle" aria-label="Toggle navigation" data-menu-toggle><svg width="20"
+                            height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 7h16M4 12h16M4 17h16" />
+                        </svg></button>
+          <div class="nav-links" data-nav>
+            <a href="./index.html">Home</a>
+            <a href="./courses.html">Classes</a>
+            <a href="./teacher-training.html">Teacher Training</a>
+            <a href="./meet-the-gurus.html">Gurus</a>
+            <a href="./volunteer.html">Volunteer</a>
+            <a href="./blog.html">Blog</a>
+            <a href="./contact.html">Contact</a>
+          </div>
+                </nav><button class="theme-toggle" data-theme-toggle></button>
+            </div>
+        </div>
+    </header>
+    <main id="main">
+        <section class="page-hero">
+            <div class="container reveal"><span class="eyebrow">Yoga volunteer certification</span>
+                <h1>A page for students who want service, fundamentals, and guided practical exposure.</h1>
+                <p>Volunteer certification programs often include yoga theory, history, fundamentals, food principles,
+                    practical asanas, pranayama, meditation, and preventive wellness education, so this page reflects
+                    that type of structure. [web:28]</p>
+            </div>
+        </section>
+        <section>
+            <div class="container detail-grid">
+                <article class="detail-card reveal"><span class="label">Bridge pathway</span>
+                    <h2>Learning and service together</h2>
+                    <p>This program connects yoga fundamentals with community service and helps sincere students
+                        participate meaningfully before moving toward bigger teaching roles.</p>
+                    <div class="detail-columns">
+                        <div class="detail-box">
+                            <h3>Syllabus style</h3>
+                            <ul class="list">
+                                <li>Yoga fundamentals</li>
+                                <li>Simple theory and history</li>
+                                <li>Practical asanas</li>
+                                <li>Breath and meditation basics</li>
+                            </ul>
+                        </div>
+                        <div class="detail-box">
+                            <h3>Good for</h3>
+                            <ul class="list">
+                                <li>Service-minded students</li>
+                                <li>Beginners seeking structured entry</li>
+                                <li>Community event helpers</li>
+                                <li>Future teacher pathway candidates</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+                <article class="detail-card reveal"><span class="label">Apply</span>
+                    <h2>Join the volunteer certification path</h2>
+                    <div class="button-row"><a class="btn btn-primary"
+                            href="https://wa.me/919004913827?text=Hi%20Amogh%20Sir%2C%20I%20am%20interested%20in%20the%20Yoga%20Volunteer%20%26%20Seva%20Program.%20Please%20share%20more%20details."
+                            target="_blank" rel="noopener noreferrer">Apply now</a></div>
+                </article>
+            </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container footer-grid">
+            <div class="reveal"><span class="eyebrow">Useful entry path</span>
+                <h2 style="font-size:var(--text-2xl);margin:1rem 0;">This page helps the academy present seva as a
+                    serious guided learning route.</h2>
+            </div>
+            <div class="content-card card reveal">
+                <h3>Add later</h3>
+                <ul class="list">
+                    <li>Orientation calendar</li>
+                    <li>Mentorship map</li>
+                    <li>Volunteer code of conduct</li>
+                    <li>Progression to TTC</li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bottom" style="margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--color-border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
+            <p>© 2025 Mindful Shapes Yoga. Founded by Amogh Shinde. All rights reserved.</p>
+            <div class="footer-creator-credit">
+                <span>Created by</span>
+                <span class="creator-name-badge">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    Mr. Vedant Pravin Surve
+                </span>
+            </div>
+            <p style="color:var(--color-primary);font-weight:700">Pedhambee, Chiplun, Maharashtra</p>
+        </div>
+    </footer>
+    <script src="./assets/app.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kanika Karmakar — Yoga Guru | Mindful Shapes Yoga</title>
+  <meta name="description"
+    content="Meet Kanika Karmakar, Yoga Guru at Mindful Shapes Yoga — a Hatha and Ashtanga Yoga teacher, 200-hour certified from Yoga Vidyapeeth, Mumbai, teaching with authenticity and compassion.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./assets/styles.css">
+  <style>
+    /* ====== GURU PROFILE — HERO ====== */
+    .gp-hero {
+      padding: clamp(2.5rem, 5vw, 3.5rem) 0 clamp(3rem, 6vw, 5rem);
+      background: var(--color-surface);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .gp-back {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      font-size: .85rem;
+      font-weight: 700;
+      color: var(--color-text-muted);
+      text-decoration: none;
+      margin-bottom: 1.5rem;
+    }
+
+    .gp-back:hover {
+      color: var(--color-primary);
+    }
+
+    .gp-hero-grid {
+      display: grid;
+      grid-template-columns: minmax(260px, 380px) 1fr;
+      gap: clamp(2rem, 5vw, 4rem);
+      align-items: start;
+    }
+
+    .gp-hero-photo {
+      aspect-ratio: 4/5;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      position: relative;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .gp-hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .gp-hero-content .eyebrow {
+      margin-bottom: .75rem;
+    }
+
+    .gp-hero-content h1 {
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      line-height: 1.05;
+      margin: 0 0 1.25rem;
+    }
+
+    .gp-quote {
+      border-left: 3px solid var(--color-primary);
+      padding: .3rem 0 .3rem 1.25rem;
+      margin: 0 0 1.5rem;
+    }
+
+    .gp-quote-sk {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      color: var(--color-primary);
+      margin-bottom: .3rem;
+      line-height: 1.4;
+    }
+
+    .gp-quote-en {
+      display: block;
+      font-style: italic;
+      color: var(--color-text-muted);
+      font-size: .92rem;
+      line-height: 1.6;
+    }
+
+    .gp-chips {
+      display: flex;
+      flex-direction: column;
+      gap: .65rem;
+      margin: 0 0 1.75rem;
+      max-width: 30rem;
+    }
+
+    .chip {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      padding: .7rem 1rem;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      font-size: .83rem;
+      font-weight: 700;
+      color: var(--color-text);
+    }
+
+    .chip-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      flex-shrink: 0;
+    }
+
+    .gp-hero-link {
+      display: block;
+      width: fit-content;
+      margin: 1rem 0 0;
+      font-size: .85rem;
+      font-weight: 700;
+      color: var(--color-text-muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: 2px;
+      transition: color .2s ease, border-color .2s ease;
+    }
+
+    .gp-hero-link:hover {
+      color: var(--color-primary);
+      border-color: var(--color-primary);
+    }
+
+    /* ====== BIO SECTION ====== */
+    .gp-bio-section {
+      padding: clamp(3.5rem, 7vw, 5.5rem) 0;
+    }
+
+    .gp-bio {
+      max-width: 72ch;
+      margin: 0 auto;
+    }
+
+    .gp-bio p {
+      font-size: 1.02rem;
+      line-height: 1.9;
+      color: var(--color-text);
+      margin: 0 0 1.5rem;
+    }
+
+    .gp-pullquote {
+      text-align: center;
+      margin: 2.75rem auto;
+      padding: 1.75rem 1rem;
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .gp-pullquote .gp-quote-sk {
+      font-size: 1.5rem;
+      margin-bottom: .5rem;
+    }
+
+    .gp-pullquote .gp-quote-en {
+      font-size: .95rem;
+    }
+
+    /* ====== GALLERY (masonry) ====== */
+    .gp-gallery-section {
+      padding: clamp(3rem, 6vw, 5rem) 0;
+      background: var(--color-surface);
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .gp-gallery-header {
+      text-align: center;
+      max-width: 560px;
+      margin: 0 auto clamp(2rem, 4vw, 2.75rem);
+    }
+
+    .gp-gallery-header p {
+      color: var(--color-text-muted);
+      margin-top: .5rem;
+      line-height: 1.75;
+    }
+
+    .gp-gallery {
+      column-count: 3;
+      column-gap: 1rem;
+    }
+
+    .gp-gallery-item {
+      display: block;
+      width: 100%;
+      break-inside: avoid;
+      margin-bottom: 1rem;
+      border: none;
+      padding: 0;
+      background: none;
+      cursor: pointer;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .gp-gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform .5s ease;
+    }
+
+    .gp-gallery-item::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(10, 7, 4, 0) 60%, rgba(10, 7, 4, .45) 100%);
+      opacity: 0;
+      transition: opacity .3s ease;
+    }
+
+    .gp-gallery-item:hover img {
+      transform: scale(1.06);
+    }
+
+    .gp-gallery-item:hover::after {
+      opacity: 1;
+    }
+
+    .gp-gallery-item:focus-visible {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 3px;
+    }
+
+    /* ====== LIGHTBOX ====== */
+    .gp-lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(1rem, 5vw, 3rem);
+      background: rgba(10, 7, 4, .93);
+    }
+
+    .gp-lightbox.active {
+      display: flex;
+    }
+
+    .gp-lightbox-img {
+      max-width: 90vw;
+      max-height: 82vh;
+      border-radius: var(--radius-lg);
+      box-shadow: 0 25px 70px rgba(0, 0, 0, .55);
+    }
+
+    .gp-lightbox-counter {
+      position: absolute;
+      bottom: clamp(1rem, 4vw, 2rem);
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255, 248, 235, .75);
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .05em;
+    }
+
+    .gp-lightbox-close,
+    .gp-lightbox-prev,
+    .gp-lightbox-next {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, .1);
+      border: 1px solid rgba(255, 255, 255, .25);
+      color: #fff9f2;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background .2s;
+    }
+
+    .gp-lightbox-close:hover,
+    .gp-lightbox-prev:hover,
+    .gp-lightbox-next:hover {
+      background: rgba(255, 255, 255, .2);
+    }
+
+    .gp-lightbox-close {
+      top: clamp(1rem, 4vw, 1.75rem);
+      right: clamp(1rem, 4vw, 1.75rem);
+      width: 42px;
+      height: 42px;
+      font-size: 1.4rem;
+    }
+
+    .gp-lightbox-prev,
+    .gp-lightbox-next {
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      font-size: 1.1rem;
+    }
+
+    .gp-lightbox-prev {
+      left: clamp(.5rem, 3vw, 1.75rem);
+    }
+
+    .gp-lightbox-next {
+      right: clamp(.5rem, 3vw, 1.75rem);
+    }
+
+    /* ====== FOOTER ====== */
+    .site-footer {
+      background: var(--color-surface);
+      border-top: 1px solid var(--color-border);
+      padding: clamp(3rem, 6vw, 5rem) 0 2rem;
+    }
+
+    .footer-cols {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: clamp(2rem, 5vw, 3rem);
+      margin-bottom: 2.5rem;
+    }
+
+    .footer-brand strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      color: var(--color-text);
+      margin-bottom: .6rem;
+    }
+
+    .footer-brand p {
+      color: var(--color-text-muted);
+      margin: 0;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .6rem;
+    }
+
+    .footer-links a {
+      font-size: .9rem;
+      font-weight: 600;
+      color: var(--color-text-muted);
+      text-decoration: none;
+      transition: color .2s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--color-primary);
+    }
+
+    .footer-bottom {
+      padding-top: 1.75rem;
+      border-top: 1px solid var(--color-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-bottom p {
+      font-size: .8rem;
+      color: var(--color-text-faint);
+      margin: 0;
+    }
+
+    /* ====== RESPONSIVE ====== */
+    @media (max-width: 860px) {
+      .gp-hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gp-hero-photo {
+        max-width: 340px;
+        margin: 0 auto;
+      }
+
+      .gp-hero-content {
+        text-align: center;
+      }
+
+      .gp-quote,
+      .gp-chips,
+      .gp-hero-link {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .gp-quote {
+        text-align: left;
+      }
+
+      .gp-gallery {
+        column-count: 2;
+      }
+
+      .footer-cols {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-brand {
+        grid-column: span 2;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .gp-gallery {
+        column-count: 1;
+      }
+
+      .gp-lightbox-prev,
+      .gp-lightbox-next {
+        width: 38px;
+        height: 38px;
+      }
+
+      .gp-lightbox-close {
+        width: 36px;
+        height: 36px;
+      }
+
+      .footer-cols {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-brand {
+        grid-column: span 1;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <audio id="bgMusic" src="./music/bg.mp3" loop preload="auto"></audio>
+  <script>
+    (function () {
+      var audio = document.getElementById('bgMusic');
+      var KEY = 'msyBgMusicTime';
+
+      var saved = parseFloat(localStorage.getItem(KEY));
+      if (!isNaN(saved) && isFinite(saved)) {
+        audio.currentTime = saved;
+      }
+
+      function startPlayback() {
+        var p = audio.play();
+        if (p !== undefined) {
+          p.catch(function () {
+            var resume = function () {
+              audio.play();
+              document.removeEventListener('click', resume);
+              document.removeEventListener('touchstart', resume);
+              document.removeEventListener('keydown', resume);
+            };
+            document.addEventListener('click', resume);
+            document.addEventListener('touchstart', resume);
+            document.addEventListener('keydown', resume);
+          });
+        }
+      }
+      startPlayback();
+
+      setInterval(function () {
+        if (!audio.paused) localStorage.setItem(KEY, audio.currentTime);
+      }, 1000);
+
+      window.addEventListener('beforeunload', function () {
+        localStorage.setItem(KEY, audio.currentTime);
+      });
+    })();
+  </script>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ====== HEADER ====== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="./index.html">
+        <span class="brand-mark"
+          style="background:none;border-radius:0;padding:0;box-shadow:none;width:auto;height:52px;display:inline-flex;align-items:center;justify-content:center;">
+          <img src="./photo/logo.png" alt="Mindful Shapes Yoga logo" style="width:auto;height:100%;object-fit:contain">
+        </span>
+        <span class="brand-copy">
+          <strong>Mindful Shapes Yoga</strong>
+          <span>Yoga Guru</span>
+        </span>
+      </a>
+      <div class="nav-wrap">
+        <nav>
+          <button class="menu-toggle" aria-label="Toggle navigation" data-menu-toggle>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+          </button>
+          <div class="nav-links" data-nav>
+            <a href="./index.html">Home</a>
+            <a href="./courses.html">Classes</a>
+            <a href="./teacher-training.html">Teacher Training</a>
+            <a href="./meet-the-gurus.html"class="active">Gurus</a>
+            <a href="./photo.html">Ashram</a>
+            <a href="./volunteer.html">Volunteer</a>
+            <a href="./blog.html">Blog</a>
+            <a href="./contact.html">Contact</a>
+          </div>
+        </nav>
+        <button class="theme-toggle" data-theme-toggle aria-label="Switch theme"></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ====== HERO ====== -->
+    <section class="gp-hero">
+      <div class="container">
+        <a class="gp-back" href="./meet-the-gurus.html">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M19 12H5M12 19l-7-7 7-7" />
+          </svg>
+          Meet the Gurus
+        </a>
+        <div class="gp-hero-grid">
+          <div class="gp-hero-photo reveal">
+            <img src="./kanika/9.png" alt="Kanika Karmakar standing in mountain pose outdoors" loading="lazy">
+          </div>
+          <div class="gp-hero-content reveal">
+            <span class="eyebrow">Yoga Guru — Mindful Shapes Yoga</span>
+            <h1>Kanika Karmakar</h1>
+            <blockquote class="gp-quote">
+              <span class="gp-quote-sk">योगः चित्तवृत्ति निरोधः</span>
+              <span class="gp-quote-en">"Yoga is the stilling of the fluctuations of the mind." — Yoga Sutras of
+                Patanjali</span>
+            </blockquote>
+            <div class="gp-chips">
+              <div class="chip"><span class="chip-dot"></span>Hatha Yoga &amp; Ashtanga Yoga Teacher</div>
+              <div class="chip"><span class="chip-dot"></span>200-Hour Yoga Teacher Training — Yoga Vidyapeeth,
+                Mumbai</div>
+            </div>
+            <a class="btn btn-primary"
+              href="https://wa.me/919004913827?text=Hi%2C%20I%20would%20like%20to%20connect%20and%20know%20more%20about%20Kanika%27s%20yoga%20classes%20at%20Mindful%20Shapes%20Yoga."
+              target="_blank" rel="noopener noreferrer">Connect with Kanika</a>
+            <a class="gp-hero-link" href="./courses.html">Or explore our programs →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== BIO ====== -->
+    <section class="gp-bio-section">
+      <div class="container gp-bio">
+        <p class="reveal">Kanika Karmakar is a dedicated Yoga Guru with a strong foundation in the traditional
+          disciplines of Hatha Yoga and Ashtanga Yoga. She has successfully completed her 200-hour Yoga Teacher
+          Training from Yoga Vidyapeeth, Mumbai, and is devoted to preserving and sharing the timeless wisdom of the
+          Vedic yogic tradition.</p>
+
+        <p class="reveal">Guided by the principle that yoga is not merely a practice but a way of life, Kanika
+          teaches with authenticity, compassion, and discipline. Her sessions integrate mindful movement, conscious
+          breathing, proper alignment, and meditative awareness, enabling students to cultivate strength,
+          flexibility, balance, and inner harmony.</p>
+
+        <blockquote class="gp-pullquote reveal">
+          <span class="gp-quote-sk">समत्वं योग उच्यते</span>
+          <span class="gp-quote-en">"Yoga is the state of inner equanimity." — Bhagavad Gita 2.48</span>
+        </blockquote>
+
+        <p class="reveal">Inspired by this ancient Vedic teaching, she encourages every practitioner to move beyond
+          the physical postures and experience yoga as a path of self-discovery, self-mastery, and spiritual
+          growth. With a calm and encouraging presence, Kanika creates a supportive environment where students of
+          all ages and abilities can deepen their practice, awaken inner awareness, and embrace the transformative
+          essence of yoga.</p>
+
+        <blockquote class="gp-pullquote reveal">
+          <span class="gp-quote-sk">विद्या ददाति विनयम्</span>
+          <span class="gp-quote-en">"True knowledge gives rise to humility."</span>
+        </blockquote>
+
+        <p class="reveal">This timeless ideal reflects her approach to teaching — sharing knowledge with sincerity,
+          humility, and respect for the ancient yogic lineage.</p>
+      </div>
+    </section>
+
+    <!-- ====== GALLERY ====== -->
+    <section class="gp-gallery-section" aria-labelledby="gallery-heading">
+      <div class="container">
+        <div class="gp-gallery-header reveal">
+          <span class="eyebrow">In Practice</span>
+          <h2 id="gallery-heading">Movement, Breath &amp; Balance</h2>
+          <p>Glimpses of Kanika's own practice — from sunrise sequences by the sea to quiet moments at home.</p>
+        </div>
+        <div class="gp-gallery" id="gpGallery">
+          <button class="gp-gallery-item reveal" type="button" data-index="0">
+            <img src="./kanika/1.png" alt="Kanika Karmakar practicing a yoga pose at home" loading="lazy">
+          </button>
+          <button class="gp-gallery-item reveal" type="button" data-index="1">
+            <img src="./kanika/2.png" alt="Kanika Karmakar in triangle pose on the beach at sunrise" loading="lazy">
+          </button>
+          <button class="gp-gallery-item reveal" type="button" data-index="2">
+            <img src="./kanika/3.png" alt="Kanika Karmakar in a backbend pose on the beach" loading="lazy">
+          </button>
+          <button class="gp-gallery-item reveal" type="button" data-index="3">
+            <img src="./kanika/4.png" alt="Kanika Karmakar in camel pose by the sea" loading="lazy">
+          </button>
+          <button class="gp-gallery-item reveal" type="button" data-index="4">
+            <img src="./kanika/5.png" alt="Kanika Karmakar in a headstand pose on the beach" loading="lazy">
+          </button>
+          <button class="gp-gallery-item reveal" type="button" data-index="5">
+            <img src="./kanika/6.png" alt="Kanika Karmakar in a deep backbend pose on the beach" loading="lazy">
+          </button>
+          <button class="gp-gallery-item reveal" type="button" data-index="6">
+            <img src="./kanika/7.png" alt="Kanika Karmakar in a seated stretch pose indoors" loading="lazy">
+          </button>
+          <button class="gp-gallery-item reveal" type="button" data-index="7">
+            <img src="./kanika/9.png" alt="Kanika Karmakar standing in mountain pose outdoors" loading="lazy">
+          </button>
+          <button class="gp-gallery-item reveal" type="button" data-index="8">
+            <img src="./kanika/10.png" alt="Kanika Karmakar seated by a river surrounded by mountains" loading="lazy">
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <div class="gp-lightbox" id="gpLightbox" aria-hidden="true">
+      <button class="gp-lightbox-close" id="gpLightboxClose" aria-label="Close gallery">&times;</button>
+      <button class="gp-lightbox-prev" id="gpLightboxPrev" aria-label="Previous image">&#10094;</button>
+      <img class="gp-lightbox-img" id="gpLightboxImg" src="" alt="">
+      <button class="gp-lightbox-next" id="gpLightboxNext" aria-label="Next image">&#10095;</button>
+      <span class="gp-lightbox-counter" id="gpLightboxCounter"></span>
+    </div>
+
+    <!-- ====== CTA ====== -->
+    <section class="dark-cta">
+      <div class="container dark-cta-inner">
+        <span class="eyebrow">Learn from Kanika</span>
+        <h2>Deepen your practice with <em>calm, disciplined guidance</em></h2>
+        <p>Join a class taught by Kanika and experience Hatha and Ashtanga Yoga rooted in authentic, mindful
+          tradition.</p>
+        <div class="dark-cta-btns">
+          <a class="btn-hero-gold"
+            href="https://wa.me/919004913827?text=Hi%2C%20I%20would%20like%20to%20connect%20and%20know%20more%20about%20Kanika%27s%20yoga%20classes%20at%20Mindful%20Shapes%20Yoga."
+            target="_blank" rel="noopener noreferrer">Connect on WhatsApp</a>
+          <a class="btn-hero-ghost" href="./meet-the-gurus.html">Meet the Other Gurus</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-cols">
+        <div class="footer-brand">
+          <strong>Mindful Shapes Yoga</strong>
+          <p style="font-size:.88rem;line-height:1.7;max-width:34ch;">Founded by Amogh Shinde — traditional
+            ashram-rooted yoga education for modern seekers, across Maharashtra and online.</p>
+        </div>
+        <div>
+          <h4
+            style="font-size:.78rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--color-text-faint);margin-bottom:1rem">
+            All Programs</h4>
+          <ul class="footer-links">
+            <li><a href="./regular-classes.html">Regular Yoga Classes</a></li>
+            <li><a href="./pranayama-workshop.html">Pranayama Workshop</a></li>
+            <li><a href="./camps-workshops.html">Camps &amp; Workshops</a></li>
+            <li><a href="./teacher-training.html">Teacher Training (200H / 500H)</a></li>
+            <li><a href="./volunteer.html">Volunteer &amp; Seva</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4
+            style="font-size:.78rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--color-text-faint);margin-bottom:1rem">
+            Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./courses.html">All Classes</a></li>
+            <li><a href="./meet-the-gurus.html">Meet the Gurus</a></li>
+            <li><a href="./contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Mindful Shapes Yoga. Founded by Amogh Shinde. All rights reserved.</p>
+        <div class="footer-creator-credit">
+          <span>Created by</span>
+          <span class="creator-name-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            Mr. Vedant Pravin Surve
+          </span>
+        </div>
+        <p style="color:var(--color-primary);font-weight:700">Pedhambee, Chiplun, Maharashtra &mdash; Online &amp;
+          On-Campus</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./assets/app.js" defer></script>
+  <script>
+    (function () {
+      var items = Array.prototype.slice.call(document.querySelectorAll('#gpGallery .gp-gallery-item'));
+      if (!items.length) return;
+
+      var lightbox = document.getElementById('gpLightbox');
+      var lightboxImg = document.getElementById('gpLightboxImg');
+      var counter = document.getElementById('gpLightboxCounter');
+      var closeBtn = document.getElementById('gpLightboxClose');
+      var prevBtn = document.getElementById('gpLightboxPrev');
+      var nextBtn = document.getElementById('gpLightboxNext');
+      var current = 0;
+
+      function show(index) {
+        current = (index + items.length) % items.length;
+        var img = items[current].querySelector('img');
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        counter.textContent = (current + 1) + ' / ' + items.length;
+      }
+
+      function open(index) {
+        show(index);
+        lightbox.classList.add('active');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function close() {
+        lightbox.classList.remove('active');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      items.forEach(function (item, i) {
+        item.addEventListener('click', function () { open(i); });
+      });
+
+      closeBtn.addEventListener('click', close);
+      prevBtn.addEventListener('click', function () { show(current - 1); });
+      nextBtn.addEventListener('click', function () { show(current + 1); });
+
+      lightbox.addEventListener('click', function (e) {
+        if (e.target === lightbox) close();
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === 'Escape') close();
+        if (e.key === 'ArrowLeft') show(current - 1);
+        if (e.key === 'ArrowRight') show(current + 1);
+      });
+    })();
+  </script>
+</body>
+
+</html>

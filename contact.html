@@ -740,10 +740,22 @@
     (function () {
       var audio = document.getElementById('bgMusic');
       var KEY = 'msyBgMusicTime';
+      var hasRestored = false;
 
-      var saved = parseFloat(localStorage.getItem(KEY));
-      if (!isNaN(saved) && isFinite(saved)) {
-        audio.currentTime = saved;
+      function saveTime() {
+        try {
+          if (!audio.paused && isFinite(audio.currentTime)) {
+            localStorage.setItem(KEY, audio.currentTime);
+          }
+        } catch (e) {}
+      }
+
+      function restoreTime() {
+        var saved = parseFloat(localStorage.getItem(KEY));
+        if (!isNaN(saved) && isFinite(saved) && audio.duration && saved < audio.duration) {
+          audio.currentTime = saved;
+          hasRestored = true;
+        }
       }
 
       function startPlayback() {
@@ -751,7 +763,7 @@
         if (p !== undefined) {
           p.catch(function () {
             var resume = function () {
-              audio.play();
+              startPlayback();
               document.removeEventListener('click', resume);
               document.removeEventListener('touchstart', resume);
               document.removeEventListener('keydown', resume);
@@ -762,15 +774,30 @@
           });
         }
       }
-      startPlayback();
 
-      setInterval(function () {
-        if (!audio.paused) localStorage.setItem(KEY, audio.currentTime);
-      }, 1000);
-
-      window.addEventListener('beforeunload', function () {
-        localStorage.setItem(KEY, audio.currentTime);
+      audio.addEventListener('loadedmetadata', function () {
+        if (!hasRestored) {
+          restoreTime();
+        }
       });
+
+      restoreTime();
+      startPlayback();
+      audio.addEventListener('timeupdate', saveTime);
+
+      document.addEventListener('visibilitychange', function () {
+        if (document.hidden) {
+          saveTime();
+        } else if (!audio.paused) {
+          if (!hasRestored) {
+            restoreTime();
+          }
+          startPlayback();
+        }
+      });
+
+      window.addEventListener('pagehide', saveTime);
+      window.addEventListener('beforeunload', saveTime);
     })();
   </script>
   <a class="skip-link" href="#main">Skip to content</a>

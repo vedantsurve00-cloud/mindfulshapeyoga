@@ -690,14 +690,30 @@
     (function () {
       var audio = document.getElementById('bgMusic');
       var KEY = 'msyBgMusicTime';
-      var saved = parseFloat(localStorage.getItem(KEY));
-      if (!isNaN(saved) && isFinite(saved)) { audio.currentTime = saved; }
+      var hasRestored = false;
+
+      function saveTime() {
+        try {
+          if (!audio.paused && isFinite(audio.currentTime)) {
+            localStorage.setItem(KEY, audio.currentTime);
+          }
+        } catch (e) {}
+      }
+
+      function restoreTime() {
+        var saved = parseFloat(localStorage.getItem(KEY));
+        if (!isNaN(saved) && isFinite(saved) && audio.duration && saved < audio.duration) {
+          audio.currentTime = saved;
+          hasRestored = true;
+        }
+      }
+
       function startPlayback() {
         var p = audio.play();
         if (p !== undefined) {
           p.catch(function () {
             var resume = function () {
-              audio.play();
+              startPlayback();
               document.removeEventListener('click', resume);
               document.removeEventListener('touchstart', resume);
               document.removeEventListener('keydown', resume);
@@ -708,9 +724,30 @@
           });
         }
       }
+
+      audio.addEventListener('loadedmetadata', function () {
+        if (!hasRestored) {
+          restoreTime();
+        }
+      });
+
+      restoreTime();
       startPlayback();
-      setInterval(function () { if (!audio.paused) localStorage.setItem(KEY, audio.currentTime); }, 1000);
-      window.addEventListener('beforeunload', function () { localStorage.setItem(KEY, audio.currentTime); });
+      audio.addEventListener('timeupdate', saveTime);
+
+      document.addEventListener('visibilitychange', function () {
+        if (document.hidden) {
+          saveTime();
+        } else if (!audio.paused) {
+          if (!hasRestored) {
+            restoreTime();
+          }
+          startPlayback();
+        }
+      });
+
+      window.addEventListener('pagehide', saveTime);
+      window.addEventListener('beforeunload', saveTime);
     })();
   </script>
 
@@ -945,9 +982,9 @@
         category: "Yoga Philosophy",
         date: "2026-07-16",
         readMin: 5,
-        image: "./blog-thumbs/ajna-chakra-marathi.png",
+        image: "./blog-thumbs/ajna.png",
         alt: "Ajna Chakra: The Third Eye and Its Mystical Significance PDF cover",
-        pdf: "./blog-pdfs/ajna-chakra-marathi.pdf"
+        pdf: "./blog-pdfs/ajna.pdf"
       },
       {
         title: "Pranayama for Asthma",
@@ -965,9 +1002,9 @@
         category: "Meditation",
         date: "2026-07-12",
         readMin: 4,
-        image: "./blog-thumbs/benefits-of-meditation.png",
+        image: "./blog-thumbs/benefits.png",
         alt: "Benefits of Meditation PDF cover",
-        pdf: "./blog-pdfs/benefits-of-meditation.pdf"
+        pdf: "./blog-pdfs/benefits.pdf"
       },
       {
         title: "Binaural Beats: The Sound of Deep Meditation",
@@ -975,9 +1012,9 @@
         category: "Meditation",
         date: "2026-07-08",
         readMin: 6,
-        image: "./blog-thumbs/binaural-beats.png",
+        image: "./blog-thumbs/binaural.png",
         alt: "Binaural Beats blog post PDF cover",
-        pdf: "./blog-pdfs/binaural-beats.pdf"
+        pdf: "./blog-pdfs/binaural.pdf"
       },
       {
         title: "Breath as Biology, Breath as Prāṇa",
@@ -985,9 +1022,9 @@
         category: "Pranayama & Breathwork",
         date: "2026-07-06",
         readMin: 5,
-        image: "./blog-thumbs/Breath as Biology.png",
+        image: "./blog-thumbs/Breath.png",
         alt: "Breath as Biology, Breath as Prāṇa PDF cover",
-        pdf: "./blog-pdfs/Breath as Biology, Breath as Prāṇa.pdf"
+        pdf: "./blog-pdfs/breath.pdf"
       },
       {
         title: "Facts on Meditation",
@@ -995,9 +1032,9 @@
         category: "Meditation",
         date: "2026-07-05",
         readMin: 3,
-        image: "./blog-thumbs/Facts On Meditattion.png",
+        image: "./blog-thumbs/Facts.png",
         alt: "Facts on Meditation PDF cover",
-        pdf: "./blog-pdfs/Facts On Meditattion.pdf"
+        pdf: "./blog-pdfs/facts.pdf"
       },
       {
         title: "Meditation Facts",
@@ -1005,9 +1042,9 @@
         category: "Meditation",
         date: "2026-07-04",
         readMin: 4,
-        image: "./blog-thumbs/meditation-facts.png",
+        image: "./blog-thumbs/meditation.png",
         alt: "Meditation Facts PDF cover",
-        pdf: "./blog-pdfs/meditation-facts.pdf"
+        pdf: "./blog-pdfs/meditation.pdf"
       },
       {
         title: "Himsa to Ahimsa: From Conflict to Harmony",
@@ -1015,9 +1052,9 @@
         category: "Yoga Philosophy",
         date: "2026-06-30",
         readMin: 3,
-        image: "./blog-thumbs/himsa-to-ahimsa.png",
+        image: "./blog-thumbs/himsa.png",
         alt: "Himsa to Ahimsa blog post PDF cover",
-        pdf: "./blog-pdfs/himsa-to-ahimsa.pdf"
+        pdf: "./blog-pdfs/himsa.pdf"
       },
       {
         title: "The Legend of Jyotirlinga: The Infinite Pillar of Light",
@@ -1025,9 +1062,9 @@
         category: "Yoga Philosophy",
         date: "2026-06-26",
         readMin: 6,
-        image: "./blog-thumbs/jyotirlinga-legend.png",
+        image: "./blog-thumbs/jyotirlinga.png",
         alt: "The Legend of Jyotirlinga PDF cover",
-        pdf: "./blog-pdfs/jyotirlinga-legend.pdf"
+        pdf: "./blog-pdfs/jyotirlinga.pdf"
       },
       {
         title: "Karma Yoga: The Path of Selfless Action",
@@ -1035,9 +1072,9 @@
         category: "Yoga Philosophy",
         date: "2026-06-21",
         readMin: 5,
-        image: "./blog-thumbs/karma-yoga.png",
+        image: "./blog-thumbs/karma.png",
         alt: "Karma Yoga: The Path of Selfless Action PDF cover",
-        pdf: "./blog-pdfs/karma-yoga.pdf"
+        pdf: "./blog-pdfs/karma.pdf"
       },
       {
         title: "Klesha: The Causes of Suffering in Yoga Philosophy",
@@ -1045,9 +1082,9 @@
         category: "Yoga Philosophy",
         date: "2026-06-17",
         readMin: 7,
-        image: "./blog-thumbs/klesha-causes-of-suffering.png",
+        image: "./blog-thumbs/klesha.png",
         alt: "Klesha: The Causes of Suffering in Yoga Philosophy PDF cover",
-        pdf: "./blog-pdfs/klesha-causes-of-suffering.pdf"
+        pdf: "./blog-pdfs/klesha.pdf"
       },
       {
         title: "Mahashivratri: The Great Night of Shiva",
@@ -1067,7 +1104,7 @@
         readMin: 7,
         image: "./blog-thumbs/Neelkant.png",
         alt: "The Legend of Neelkanth PDF cover",
-        pdf: "./blog-pdfs/Neelkant.pdf"
+        pdf: "./blog-pdfs/neelkant.pdf"
       },
       {
         title: "Prevention of Heart Attacks",
@@ -1075,9 +1112,9 @@
         category: "Ayurveda & Wellness",
         date: "2026-05-29",
         readMin: 3,
-        image: "./blog-thumbs/prevention-of-heart-disease.png",
+        image: "./blog-thumbs/prevention.png",
         alt: "Prevention of Heart Attacks PDF cover",
-        pdf: "./blog-pdfs/prevention-of-heart-disease.pdf"
+        pdf: "./blog-pdfs/prevention.pdf"
       },
       {
         title: "Shad Darshanas: The Six Philosophical Schools of India",
@@ -1095,9 +1132,9 @@
         category: "Meditation",
         date: "2026-05-14",
         readMin: 4,
-        image: "./blog-thumbs/what-is-meditation.png",
+        image: "./blog-thumbs/what.png",
         alt: "What is Meditation PDF cover",
-        pdf: "./blog-pdfs/what-is-meditation.pdf"
+        pdf: "./blog-pdfs/what.pdf"
       },
       {
         title: "Yamas: The Art of Righteous Living",
@@ -1105,9 +1142,9 @@
         category: "Yoga Philosophy",
         date: "2026-05-09",
         readMin: 4,
-        image: "./blog-thumbs/yamas-righteous-living.png",
+        image: "./blog-thumbs/yamas.png",
         alt: "Yamas: The Art of Righteous Living PDF cover",
-        pdf: "./blog-pdfs/yamas-righteous-living.pdf"
+        pdf: "./blog-pdfs/yamas.pdf"
       },
       {
         title: "आज्ञा चक्र: तिसरे नेत्र आणि त्याचे आध्यात्मिक रहस्य",
@@ -1115,9 +1152,9 @@
         category: "Yoga Philosophy",
         date: "2026-05-04",
         readMin: 5,
-        image: "./blog-thumbs/आज्ञा चक्र तिसरे नेत्र आणि त्याचे आध्यात्मिक रहस्य.png",
+        image: "./blog-thumbs/आज्ञा.png",
         alt: "आज्ञा चक्र PDF cover",
-        pdf: "./blog-pdfs/आज्ञा चक्र तिसरे नेत्र आणि त्याचे आध्यात्मिक रहस्य.pdf"
+        pdf: "./blog-pdfs/आज्ञा.pdf"
       },
       {
         title: "कर्मयोग: निष्काम कर्माचा मार्ग",
@@ -1125,9 +1162,9 @@
         category: "Yoga Philosophy",
         date: "2026-04-29",
         readMin: 5,
-        image: "./blog-thumbs/कर्मयोग निष्काम कर्माचा मार्ग.png",
+        image: "./blog-thumbs/कर्मयोग.png",
         alt: "कर्मयोग PDF cover",
-        pdf: "./blog-pdfs/कर्मयोग निष्काम कर्माचा मार्ग.pdf"
+        pdf: "./blog-pdfs/कर्मयोग.pdf"
       },
       {
         title: "महाशिवरात्रीचे वेद आणि आगमांतील महत्त्व",
@@ -1135,9 +1172,9 @@
         category: "Yoga Philosophy",
         date: "2026-04-24",
         readMin: 4,
-        image: "./blog-thumbs/महाशिवरात्रीचे वेद आणि आगमांतील महत्त्व.png",
+        image: "./blog-thumbs/महाशिवरात्रीचे.png",
         alt: "महाशिवरात्री PDF cover",
-        pdf: "./blog-pdfs/महाशिवरात्रीचे वेद आणि आगमांतील महत्त्व.pdf"
+        pdf: "./blog-pdfs/महाशिवरात्रीचे.pdf"
       }
     ];
 

@@ -1,1 +1,4 @@
-.gitecho node_modulesecho .wranglerecho wrangler.jsonc
+.git 
+node_modules 
+.wrangler 
+wrangler.jsonc 

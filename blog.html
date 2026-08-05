@@ -231,6 +231,24 @@
       transform: scale(1.06);
     }
 
+    /* If a thumbnail file is missing/mis-named/blocked, show a clear
+       placeholder instead of a silently blank box, so it's obvious a photo
+       is expected here rather than looking like the whole card failed. */
+    .post-thumb.img-failed {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .post-thumb.img-failed::after {
+      content: 'PDF preview unavailable';
+      font-size: .78rem;
+      font-weight: 700;
+      color: var(--color-text-faint, #9a8b76);
+      text-align: center;
+      padding: 0 1rem;
+    }
+
     .post-cat-badge {
       position: absolute;
       top: .85rem;
@@ -1216,7 +1234,8 @@
       return `
         <article class="post-card">
           <a class="post-thumb" href="${p.pdf}" target="_blank" rel="noopener noreferrer" aria-hidden="true" tabindex="-1">
-            <img src="${p.image}" alt="${p.alt || ""}" loading="lazy">
+            <img src="${p.image}" alt="${p.alt || ""}" loading="lazy"
+              onerror="this.closest('.post-thumb').classList.add('img-failed'); this.remove();">
             <span class="post-cat-badge">${p.category}</span>
             <span class="post-pdf-badge">PDF</span>
           </a>
@@ -1240,18 +1259,28 @@
     }
 
     function render() {
-      const filtered = getFiltered();
-      const toShow = filtered.slice(0, visibleCount);
+      try {
+        const filtered = getFiltered();
+        const toShow = filtered.slice(0, visibleCount);
 
-      gridEl.innerHTML = toShow.map(cardHTML).join("");
-      emptyEl.style.display = filtered.length === 0 ? "block" : "none";
-      gridEl.style.display = filtered.length === 0 ? "none" : "grid";
+        gridEl.innerHTML = toShow.map(cardHTML).join("");
+        emptyEl.style.display = filtered.length === 0 ? "block" : "none";
+        gridEl.style.display = filtered.length === 0 ? "none" : "grid";
 
-      metaEl.textContent = filtered.length
-        ? `Showing ${toShow.length} of ${filtered.length} article${filtered.length === 1 ? "" : "s"}`
-        : "";
+        metaEl.textContent = filtered.length
+          ? `Showing ${toShow.length} of ${filtered.length} article${filtered.length === 1 ? "" : "s"}`
+          : "";
 
-      loadMoreBtn.style.display = visibleCount >= filtered.length ? "none" : "inline-flex";
+        loadMoreBtn.style.display = visibleCount >= filtered.length ? "none" : "inline-flex";
+      } catch (err) {
+        // If rendering ever throws for any reason, fail visibly instead of
+        // leaving a silent blank grid — makes real bugs obvious immediately
+        // rather than looking like "nothing is there."
+        console.error("Blog render failed:", err);
+        gridEl.style.display = "none";
+        emptyEl.style.display = "block";
+        emptyEl.innerHTML = "<h3>Articles failed to load</h3><p>Please refresh the page. If this keeps happening, let us know.</p>";
+      }
     }
 
     document.getElementById("blogCats").addEventListener("click", function (e) {

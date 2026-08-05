@@ -971,8 +971,10 @@
           (the path to the PDF file in /blog-pdfs/).
        4. Save. No other code needs to change — search, filters, sorting,
           and "Load More" pagination all work automatically off this list.
-          Each card's thumbnail, title, and "Download PDF" button all link
-          straight to the PDF file — clicking any of them downloads it.
+          Each card's thumbnail, title, and "View PDF" button all link
+          straight to the PDF file, opening it in a new tab so it displays
+          in the browser's built-in PDF viewer on any device (desktop,
+          Android, iPhone/iPad) instead of silently downloading.
   ======================================================================= -->
   <script>
     const posts = [
@@ -1211,10 +1213,9 @@
     }
 
     function cardHTML(p) {
-      const fileName = p.pdf.split("/").pop();
       return `
         <article class="post-card">
-          <a class="post-thumb" href="${p.pdf}" download aria-hidden="true" tabindex="-1">
+          <a class="post-thumb" href="${p.pdf}" target="_blank" rel="noopener noreferrer" aria-hidden="true" tabindex="-1">
             <img src="${p.image}" alt="${p.alt || ""}" loading="lazy">
             <span class="post-cat-badge">${p.category}</span>
             <span class="post-pdf-badge">PDF</span>
@@ -1225,12 +1226,13 @@
               <span class="dot" aria-hidden="true"></span>
               <span>${p.readMin} min read</span>
             </div>
-            <h3><a href="${p.pdf}" download style="color:inherit">${p.title}</a></h3>
+            <h3><a href="${p.pdf}" target="_blank" rel="noopener noreferrer" style="color:inherit">${p.title}</a></h3>
             <p>${p.excerpt}</p>
-            <a class="post-read-link" href="${p.pdf}" download="${fileName}">
-              Download PDF
+            <a class="post-read-link" href="${p.pdf}" target="_blank" rel="noopener noreferrer">
+              View PDF
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <path d="M12 3v12m0 0l-4-4m4 4l4-4M4 19h16" />
+                <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z" />
+                <circle cx="12" cy="12" r="3" />
               </svg>
             </a>
           </div>
@@ -1320,7 +1322,7 @@
       const card = link.closest(".post-card");
       const titleEl = card && card.querySelector("h3");
       const title = titleEl ? titleEl.textContent.trim() : "PDF";
-      showPdfToast("Downloading \u201c" + title + "\u201d\u2026");
+      showPdfToast("Opening \u201c" + title + "\u201d\u2026");
     });
 
     render();

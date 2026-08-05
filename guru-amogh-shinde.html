@@ -578,9 +578,23 @@
           </div>
         </nav>
         <button class="theme-toggle" data-theme-toggle aria-label="Switch theme"></button>
-      </div>
-    </div>
-  </header>
+                                
+                
+                <div class="lang-switcher" data-lang-switcher>
+          <button class="lang-btn" aria-label="Change language" aria-expanded="false">
+            <span class="lang-btn-flag">🌐</span>
+            <span class="lang-btn-code">EN</span>
+            <svg class="lang-btn-arrow" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 4.5l3 3 3-3"/></svg>
+          </button>
+          <div class="lang-dropdown" role="menu">
+            <button role="menuitem" data-lang="en"><span class="lang-dropdown-flag">🇬🇧</span> English</button>
+            <button role="menuitem" data-lang="mr"><span class="lang-dropdown-flag">🇮🇳</span> मराठी</button>
+            <button role="menuitem" data-lang="fr"><span class="lang-dropdown-flag">🇫🇷</span> Français</button>
+            <button role="menuitem" data-lang="es"><span class="lang-dropdown-flag">🇪🇸</span> Español</button>
+          </div>
+        </div>
+
+</header>
 
   <main id="main">
 
@@ -782,6 +796,7 @@
     </div>
   </footer>
 
+  <script src="./assets/translations.js" defer></script>
   <script src="./assets/app.js" defer></script>
   <script>
     (function () {
